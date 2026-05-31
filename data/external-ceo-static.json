@@ -1,0 +1,1605 @@
+﻿{
+  "atualizadoEm": "2026-05-31T19:54:38.405Z",
+  "origem": "HTML publico, DNS, SSL, inputs manuais e PageSpeed opcional",
+  "pesos": {
+    "tecnico": 0.25,
+    "social": 0.2,
+    "seo": 0.15,
+    "reputacao": 0.15,
+    "jornada": 0.1,
+    "promocoes": 0.1,
+    "compliance": 0.05
+  },
+  "sites": [
+    {
+      "id": "maxima",
+      "nome": "Maxima Bet",
+      "alias": "maxima.bet",
+      "url": "https://www.maxima.bet.br/",
+      "urlFinal": "https://maxima.bet.br/",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 423,
+      "redirects": 1,
+      "htmlBytes": 615942,
+      "headers": {
+        "server": "Vercel",
+        "contentType": "text/html; charset=utf-8",
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cfCache": ""
+      },
+      "cdn": false,
+      "dns": {
+        "ok": false,
+        "hostname": "www.maxima.bet.br",
+        "records": [],
+        "latenciaMs": 10,
+        "erro": "queryA EDESTRUCTION www.maxima.bet.br"
+      },
+      "ssl": {
+        "ok": true,
+        "hostname": "www.maxima.bet.br",
+        "autorizado": true,
+        "erro": "",
+        "validoAte": "Aug  1 22:15:06 2026 GMT",
+        "emissor": "Google Trust Services",
+        "latenciaMs": 30
+      },
+      "robots": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 324,
+        "urlFinal": "https://maxima.bet.br/"
+      },
+      "sitemap": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 386,
+        "urlFinal": "https://maxima.bet.br/"
+      },
+      "metricas": {
+        "titulo": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
+        "totalPagoHoje": 13594123.97,
+        "totalJogosDetectados": 5872,
+        "categorias": [
+          "Slots",
+          "Cassino ao vivo",
+          "Esportes",
+          "Esportes ao vivo",
+          "Pagou mais hoje",
+          "Jogos populares",
+          "Jogos crash",
+          "Novos jogos",
+          "Top 10 Brasil",
+          "Jogo responsavel"
+        ],
+        "linksLegais": 9,
+        "possuiLogin": true,
+        "possuiCadastro": true,
+        "possuiSuporte": true,
+        "possuiLicenca": true,
+        "seo": {
+          "title": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
+          "metaDescription": "Cassino Online e Apostas Esportivas regulamentadas no Brasil. Cashback diário, promoções, saque rápido e variedade de jogos.",
+          "h1": "Máxima Bet: Cassino Online e Apostas Esportivas no Brasil",
+          "canonical": "https://maxima.bet.br/",
+          "schemaOrg": true,
+          "openGraph": 11,
+          "scoreBase": 86,
+          "robots": true,
+          "sitemap": true,
+          "score": 95
+        },
+        "compliance": {
+          "checks": {
+            "cnpj": true,
+            "licenca": true,
+            "termos": true,
+            "privacidade": true,
+            "cookies": true,
+            "jogoResponsavel": true,
+            "regrasBonus": true,
+            "regrasSaque": true,
+            "suporte": true,
+            "aviso18": true
+          },
+          "score": 100
+        },
+        "jornada": {
+          "checks": {
+            "home": true,
+            "cadastro": true,
+            "login": true,
+            "cassino": true,
+            "sportsbook": true,
+            "promocoes": true,
+            "suporte": true,
+            "termos": true,
+            "privacidade": true,
+            "jogoResponsavel": true
+          },
+          "score": 100,
+          "playwright": {
+            "status": "pendente",
+            "runner": "public-journey-audit.mjs",
+            "passos": [
+              "home",
+              "cadastro",
+              "login",
+              "cassino",
+              "sportsbook",
+              "promocoes",
+              "suporte",
+              "termos",
+              "privacidade",
+              "jogo responsavel"
+            ]
+          }
+        },
+        "promocoes": {
+          "banners": [],
+          "termos": [
+            {
+              "termo": "bonus",
+              "total": 71
+            },
+            {
+              "termo": "bônus",
+              "total": 47
+            },
+            {
+              "termo": "promo",
+              "total": 70
+            },
+            {
+              "termo": "promocao",
+              "total": 0
+            },
+            {
+              "termo": "promoção",
+              "total": 3
+            },
+            {
+              "termo": "freebet",
+              "total": 0
+            },
+            {
+              "termo": "cassino",
+              "total": 229
+            },
+            {
+              "termo": "casino",
+              "total": 1453
+            },
+            {
+              "termo": "sportsbook",
+              "total": 3
+            }
+          ],
+          "bonusCadastro": true,
+          "campanhasCassino": true,
+          "campanhasSportsbook": true,
+          "contentHash": "92158b2d99bfdaef3e146bd182a2e1074579f4cd",
+          "score": 100
+        },
+        "socialLinks": {
+          "instagram": "https://instagram.com/maximabet.br",
+          "tiktok": "",
+          "twitter": "",
+          "youtube": "https://www.youtube.com/channel/UCMQqCHKvpb9SdRMdO9aa10g",
+          "linkedin": ""
+        },
+        "termosRisco": [
+          {
+            "termo": "golpe",
+            "total": 0
+          },
+          {
+            "termo": "saque",
+            "total": 58
+          },
+          {
+            "termo": "bloqueado",
+            "total": 1
+          },
+          {
+            "termo": "reclamacao",
+            "total": 0
+          },
+          {
+            "termo": "reclamação",
+            "total": 0
+          },
+          {
+            "termo": "nao paga",
+            "total": 0
+          },
+          {
+            "termo": "não paga",
+            "total": 0
+          },
+          {
+            "termo": "demora",
+            "total": 4
+          },
+          {
+            "termo": "suporte",
+            "total": 13
+          }
+        ],
+        "alertas": []
+      },
+      "alertas": [],
+      "coletadoEm": "2026-05-31T19:54:38.353Z"
+    },
+    {
+      "id": "ultra",
+      "nome": "Ultra Bet",
+      "alias": "ultra.bet",
+      "url": "https://www.ultra.bet.br/",
+      "urlFinal": "https://ultra.bet.br/",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 476,
+      "redirects": 1,
+      "htmlBytes": 605724,
+      "headers": {
+        "server": "Vercel",
+        "contentType": "text/html; charset=utf-8",
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cfCache": ""
+      },
+      "cdn": false,
+      "dns": {
+        "ok": false,
+        "hostname": "www.ultra.bet.br",
+        "records": [],
+        "latenciaMs": 7,
+        "erro": "queryA ECONNREFUSED www.ultra.bet.br"
+      },
+      "ssl": {
+        "ok": true,
+        "hostname": "www.ultra.bet.br",
+        "autorizado": true,
+        "erro": "",
+        "validoAte": "Aug  6 06:22:42 2026 GMT",
+        "emissor": "Let's Encrypt",
+        "latenciaMs": 28
+      },
+      "robots": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 17,
+        "urlFinal": "https://www.ultra.bet.br/robots.txt"
+      },
+      "sitemap": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 368,
+        "urlFinal": "https://ultra.bet.br/"
+      },
+      "metricas": {
+        "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
+        "totalPagoHoje": 8427299.09,
+        "totalJogosDetectados": 4531,
+        "categorias": [
+          "Slots",
+          "Cassino ao vivo",
+          "Esportes",
+          "Esportes ao vivo",
+          "Pagou mais hoje",
+          "Jogos populares",
+          "Jogos crash",
+          "Novos jogos",
+          "Top 10 Brasil",
+          "Jogo responsavel"
+        ],
+        "linksLegais": 9,
+        "possuiLogin": true,
+        "possuiCadastro": true,
+        "possuiSuporte": true,
+        "possuiLicenca": true,
+        "seo": {
+          "title": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
+          "metaDescription": "Apostas Esportivas e Cassino Online. Bet Autorizada. Promoções exclusivas, saque instantâneo e cashback diário. Ative o modo ULTRA!",
+          "h1": "ULTRA bet: Cassino Online e Apostas Esportivas no Brasil",
+          "canonical": "https://ultra.bet.br/",
+          "schemaOrg": true,
+          "openGraph": 11,
+          "scoreBase": 86,
+          "robots": true,
+          "sitemap": true,
+          "score": 95
+        },
+        "compliance": {
+          "checks": {
+            "cnpj": true,
+            "licenca": true,
+            "termos": true,
+            "privacidade": true,
+            "cookies": true,
+            "jogoResponsavel": true,
+            "regrasBonus": true,
+            "regrasSaque": true,
+            "suporte": true,
+            "aviso18": true
+          },
+          "score": 100
+        },
+        "jornada": {
+          "checks": {
+            "home": true,
+            "cadastro": true,
+            "login": true,
+            "cassino": true,
+            "sportsbook": true,
+            "promocoes": true,
+            "suporte": true,
+            "termos": true,
+            "privacidade": true,
+            "jogoResponsavel": true
+          },
+          "score": 100,
+          "playwright": {
+            "status": "pendente",
+            "runner": "public-journey-audit.mjs",
+            "passos": [
+              "home",
+              "cadastro",
+              "login",
+              "cassino",
+              "sportsbook",
+              "promocoes",
+              "suporte",
+              "termos",
+              "privacidade",
+              "jogo responsavel"
+            ]
+          }
+        },
+        "promocoes": {
+          "banners": [],
+          "termos": [
+            {
+              "termo": "bonus",
+              "total": 80
+            },
+            {
+              "termo": "bônus",
+              "total": 48
+            },
+            {
+              "termo": "promo",
+              "total": 91
+            },
+            {
+              "termo": "promocao",
+              "total": 0
+            },
+            {
+              "termo": "promoção",
+              "total": 18
+            },
+            {
+              "termo": "freebet",
+              "total": 0
+            },
+            {
+              "termo": "cassino",
+              "total": 188
+            },
+            {
+              "termo": "casino",
+              "total": 1387
+            },
+            {
+              "termo": "sportsbook",
+              "total": 0
+            }
+          ],
+          "bonusCadastro": true,
+          "campanhasCassino": true,
+          "campanhasSportsbook": true,
+          "contentHash": "995225eb7ce745eb49e629104b1591afd4a3bdf2",
+          "score": 100
+        },
+        "socialLinks": {
+          "instagram": "https://instagram.com/ultrabet.br",
+          "tiktok": "",
+          "twitter": "https://x.com/ultrabetbr",
+          "youtube": "",
+          "linkedin": ""
+        },
+        "termosRisco": [
+          {
+            "termo": "golpe",
+            "total": 0
+          },
+          {
+            "termo": "saque",
+            "total": 51
+          },
+          {
+            "termo": "bloqueado",
+            "total": 1
+          },
+          {
+            "termo": "reclamacao",
+            "total": 0
+          },
+          {
+            "termo": "reclamação",
+            "total": 0
+          },
+          {
+            "termo": "nao paga",
+            "total": 0
+          },
+          {
+            "termo": "não paga",
+            "total": 0
+          },
+          {
+            "termo": "demora",
+            "total": 0
+          },
+          {
+            "termo": "suporte",
+            "total": 20
+          }
+        ],
+        "alertas": []
+      },
+      "alertas": [],
+      "coletadoEm": "2026-05-31T19:54:38.391Z"
+    },
+    {
+      "id": "suprema",
+      "nome": "Suprema Bet",
+      "alias": "suprema.bet",
+      "url": "https://www.suprema.bet.br/",
+      "urlFinal": "https://suprema.bet.br/",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 436,
+      "redirects": 1,
+      "htmlBytes": 609373,
+      "headers": {
+        "server": "Vercel",
+        "contentType": "text/html; charset=utf-8",
+        "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cfCache": ""
+      },
+      "cdn": false,
+      "dns": {
+        "ok": false,
+        "hostname": "www.suprema.bet.br",
+        "records": [],
+        "latenciaMs": 3,
+        "erro": "queryA ECONNREFUSED www.suprema.bet.br"
+      },
+      "ssl": {
+        "ok": true,
+        "hostname": "www.suprema.bet.br",
+        "autorizado": true,
+        "erro": "",
+        "validoAte": "Aug  1 22:08:56 2026 GMT",
+        "emissor": "Google Trust Services",
+        "latenciaMs": 23
+      },
+      "robots": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 312,
+        "urlFinal": "https://suprema.bet.br/"
+      },
+      "sitemap": {
+        "ok": true,
+        "status": 200,
+        "latenciaMs": 409,
+        "urlFinal": "https://suprema.bet.br/"
+      },
+      "metricas": {
+        "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
+        "totalPagoHoje": 27179962.529999997,
+        "totalJogosDetectados": 4293,
+        "categorias": [
+          "Slots",
+          "Cassino ao vivo",
+          "Esportes",
+          "Esportes ao vivo",
+          "Pagou mais hoje",
+          "Jogos populares",
+          "Jogos crash",
+          "Novos jogos",
+          "Top 10 Brasil",
+          "Jogo responsavel"
+        ],
+        "linksLegais": 9,
+        "possuiLogin": true,
+        "possuiCadastro": true,
+        "possuiSuporte": true,
+        "possuiLicenca": true,
+        "seo": {
+          "title": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
+          "metaDescription": "Saque instantâneo, cashback diário, promoções exclusivas e as melhores odds! Casa de aposta autorizada e legalizada. Jogue com responsabilidade.",
+          "h1": "Suprema Bet: Cassino Online e Apostas Esportivas com Tradição",
+          "canonical": "https://suprema.bet.br/",
+          "schemaOrg": true,
+          "openGraph": 11,
+          "scoreBase": 86,
+          "robots": true,
+          "sitemap": true,
+          "score": 95
+        },
+        "compliance": {
+          "checks": {
+            "cnpj": true,
+            "licenca": true,
+            "termos": true,
+            "privacidade": true,
+            "cookies": true,
+            "jogoResponsavel": true,
+            "regrasBonus": true,
+            "regrasSaque": true,
+            "suporte": true,
+            "aviso18": true
+          },
+          "score": 100
+        },
+        "jornada": {
+          "checks": {
+            "home": true,
+            "cadastro": true,
+            "login": true,
+            "cassino": true,
+            "sportsbook": true,
+            "promocoes": true,
+            "suporte": true,
+            "termos": true,
+            "privacidade": true,
+            "jogoResponsavel": true
+          },
+          "score": 100,
+          "playwright": {
+            "status": "pendente",
+            "runner": "public-journey-audit.mjs",
+            "passos": [
+              "home",
+              "cadastro",
+              "login",
+              "cassino",
+              "sportsbook",
+              "promocoes",
+              "suporte",
+              "termos",
+              "privacidade",
+              "jogo responsavel"
+            ]
+          }
+        },
+        "promocoes": {
+          "banners": [],
+          "termos": [
+            {
+              "termo": "bonus",
+              "total": 93
+            },
+            {
+              "termo": "bônus",
+              "total": 39
+            },
+            {
+              "termo": "promo",
+              "total": 47
+            },
+            {
+              "termo": "promocao",
+              "total": 0
+            },
+            {
+              "termo": "promoção",
+              "total": 0
+            },
+            {
+              "termo": "freebet",
+              "total": 0
+            },
+            {
+              "termo": "cassino",
+              "total": 199
+            },
+            {
+              "termo": "casino",
+              "total": 1381
+            },
+            {
+              "termo": "sportsbook",
+              "total": 1
+            }
+          ],
+          "bonusCadastro": true,
+          "campanhasCassino": true,
+          "campanhasSportsbook": true,
+          "contentHash": "e9f92dbf1653dbb2f76a73f9d3733eff9e286026",
+          "score": 100
+        },
+        "socialLinks": {
+          "instagram": "https://instagram.com/supremabet.br",
+          "tiktok": "https://tiktok.com/@suprema.bet",
+          "twitter": "",
+          "youtube": "",
+          "linkedin": ""
+        },
+        "termosRisco": [
+          {
+            "termo": "golpe",
+            "total": 0
+          },
+          {
+            "termo": "saque",
+            "total": 49
+          },
+          {
+            "termo": "bloqueado",
+            "total": 1
+          },
+          {
+            "termo": "reclamacao",
+            "total": 0
+          },
+          {
+            "termo": "reclamação",
+            "total": 0
+          },
+          {
+            "termo": "nao paga",
+            "total": 0
+          },
+          {
+            "termo": "não paga",
+            "total": 0
+          },
+          {
+            "termo": "demora",
+            "total": 0
+          },
+          {
+            "termo": "suporte",
+            "total": 25
+          }
+        ],
+        "alertas": []
+      },
+      "alertas": [],
+      "coletadoEm": "2026-05-31T19:54:38.395Z"
+    }
+  ],
+  "brands": [
+    {
+      "id": "maxima",
+      "nome": "Maxima Bet",
+      "alias": "maxima.bet",
+      "url": "https://www.maxima.bet.br/",
+      "scoreFinal": 60,
+      "componentes": {
+        "tecnico": 67,
+        "social": 22,
+        "seo": 95,
+        "reputacao": 0,
+        "jornada": 100,
+        "promocoes": 100,
+        "compliance": 100,
+        "appStore": 0
+      },
+      "site": {
+        "id": "maxima",
+        "nome": "Maxima Bet",
+        "alias": "maxima.bet",
+        "url": "https://www.maxima.bet.br/",
+        "urlFinal": "https://maxima.bet.br/",
+        "ok": true,
+        "statusHttp": 200,
+        "latenciaMs": 423,
+        "redirects": 1,
+        "htmlBytes": 615942,
+        "headers": {
+          "server": "Vercel",
+          "contentType": "text/html; charset=utf-8",
+          "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+          "cfCache": ""
+        },
+        "cdn": false,
+        "dns": {
+          "ok": false,
+          "hostname": "www.maxima.bet.br",
+          "records": [],
+          "latenciaMs": 10,
+          "erro": "queryA EDESTRUCTION www.maxima.bet.br"
+        },
+        "ssl": {
+          "ok": true,
+          "hostname": "www.maxima.bet.br",
+          "autorizado": true,
+          "erro": "",
+          "validoAte": "Aug  1 22:15:06 2026 GMT",
+          "emissor": "Google Trust Services",
+          "latenciaMs": 30
+        },
+        "robots": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 324,
+          "urlFinal": "https://maxima.bet.br/"
+        },
+        "sitemap": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 386,
+          "urlFinal": "https://maxima.bet.br/"
+        },
+        "metricas": {
+          "titulo": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
+          "totalPagoHoje": 13594123.97,
+          "totalJogosDetectados": 5872,
+          "categorias": [
+            "Slots",
+            "Cassino ao vivo",
+            "Esportes",
+            "Esportes ao vivo",
+            "Pagou mais hoje",
+            "Jogos populares",
+            "Jogos crash",
+            "Novos jogos",
+            "Top 10 Brasil",
+            "Jogo responsavel"
+          ],
+          "linksLegais": 9,
+          "possuiLogin": true,
+          "possuiCadastro": true,
+          "possuiSuporte": true,
+          "possuiLicenca": true,
+          "seo": {
+            "title": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
+            "metaDescription": "Cassino Online e Apostas Esportivas regulamentadas no Brasil. Cashback diário, promoções, saque rápido e variedade de jogos.",
+            "h1": "Máxima Bet: Cassino Online e Apostas Esportivas no Brasil",
+            "canonical": "https://maxima.bet.br/",
+            "schemaOrg": true,
+            "openGraph": 11,
+            "scoreBase": 86,
+            "robots": true,
+            "sitemap": true,
+            "score": 95
+          },
+          "compliance": {
+            "checks": {
+              "cnpj": true,
+              "licenca": true,
+              "termos": true,
+              "privacidade": true,
+              "cookies": true,
+              "jogoResponsavel": true,
+              "regrasBonus": true,
+              "regrasSaque": true,
+              "suporte": true,
+              "aviso18": true
+            },
+            "score": 100
+          },
+          "jornada": {
+            "checks": {
+              "home": true,
+              "cadastro": true,
+              "login": true,
+              "cassino": true,
+              "sportsbook": true,
+              "promocoes": true,
+              "suporte": true,
+              "termos": true,
+              "privacidade": true,
+              "jogoResponsavel": true
+            },
+            "score": 100,
+            "playwright": {
+              "status": "pendente",
+              "runner": "public-journey-audit.mjs",
+              "passos": [
+                "home",
+                "cadastro",
+                "login",
+                "cassino",
+                "sportsbook",
+                "promocoes",
+                "suporte",
+                "termos",
+                "privacidade",
+                "jogo responsavel"
+              ]
+            }
+          },
+          "promocoes": {
+            "banners": [],
+            "termos": [
+              {
+                "termo": "bonus",
+                "total": 71
+              },
+              {
+                "termo": "bônus",
+                "total": 47
+              },
+              {
+                "termo": "promo",
+                "total": 70
+              },
+              {
+                "termo": "promocao",
+                "total": 0
+              },
+              {
+                "termo": "promoção",
+                "total": 3
+              },
+              {
+                "termo": "freebet",
+                "total": 0
+              },
+              {
+                "termo": "cassino",
+                "total": 229
+              },
+              {
+                "termo": "casino",
+                "total": 1453
+              },
+              {
+                "termo": "sportsbook",
+                "total": 3
+              }
+            ],
+            "bonusCadastro": true,
+            "campanhasCassino": true,
+            "campanhasSportsbook": true,
+            "contentHash": "92158b2d99bfdaef3e146bd182a2e1074579f4cd",
+            "score": 100
+          },
+          "socialLinks": {
+            "instagram": "https://instagram.com/maximabet.br",
+            "tiktok": "",
+            "twitter": "",
+            "youtube": "https://www.youtube.com/channel/UCMQqCHKvpb9SdRMdO9aa10g",
+            "linkedin": ""
+          },
+          "termosRisco": [
+            {
+              "termo": "golpe",
+              "total": 0
+            },
+            {
+              "termo": "saque",
+              "total": 58
+            },
+            {
+              "termo": "bloqueado",
+              "total": 1
+            },
+            {
+              "termo": "reclamacao",
+              "total": 0
+            },
+            {
+              "termo": "reclamação",
+              "total": 0
+            },
+            {
+              "termo": "nao paga",
+              "total": 0
+            },
+            {
+              "termo": "não paga",
+              "total": 0
+            },
+            {
+              "termo": "demora",
+              "total": 4
+            },
+            {
+              "termo": "suporte",
+              "total": 13
+            }
+          ],
+          "alertas": []
+        },
+        "alertas": [],
+        "coletadoEm": "2026-05-31T19:54:38.353Z"
+      },
+      "manual": {
+        "brand_id": "maxima",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ],
+        "appScore": null,
+        "riskNotes": ""
+      },
+      "externalMetrics": {
+        "brand_id": "maxima",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ]
+      },
+      "pagespeed": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:47.668Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:48.758Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      },
+      "uptime": {
+        "h24": 100,
+        "d7": 100,
+        "d30": 100
+      }
+    },
+    {
+      "id": "ultra",
+      "nome": "Ultra Bet",
+      "alias": "ultra.bet",
+      "url": "https://www.ultra.bet.br/",
+      "scoreFinal": 60,
+      "componentes": {
+        "tecnico": 67,
+        "social": 22,
+        "seo": 95,
+        "reputacao": 0,
+        "jornada": 100,
+        "promocoes": 100,
+        "compliance": 100,
+        "appStore": 0
+      },
+      "site": {
+        "id": "ultra",
+        "nome": "Ultra Bet",
+        "alias": "ultra.bet",
+        "url": "https://www.ultra.bet.br/",
+        "urlFinal": "https://ultra.bet.br/",
+        "ok": true,
+        "statusHttp": 200,
+        "latenciaMs": 476,
+        "redirects": 1,
+        "htmlBytes": 605724,
+        "headers": {
+          "server": "Vercel",
+          "contentType": "text/html; charset=utf-8",
+          "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+          "cfCache": ""
+        },
+        "cdn": false,
+        "dns": {
+          "ok": false,
+          "hostname": "www.ultra.bet.br",
+          "records": [],
+          "latenciaMs": 7,
+          "erro": "queryA ECONNREFUSED www.ultra.bet.br"
+        },
+        "ssl": {
+          "ok": true,
+          "hostname": "www.ultra.bet.br",
+          "autorizado": true,
+          "erro": "",
+          "validoAte": "Aug  6 06:22:42 2026 GMT",
+          "emissor": "Let's Encrypt",
+          "latenciaMs": 28
+        },
+        "robots": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 17,
+          "urlFinal": "https://www.ultra.bet.br/robots.txt"
+        },
+        "sitemap": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 368,
+          "urlFinal": "https://ultra.bet.br/"
+        },
+        "metricas": {
+          "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
+          "totalPagoHoje": 8427299.09,
+          "totalJogosDetectados": 4531,
+          "categorias": [
+            "Slots",
+            "Cassino ao vivo",
+            "Esportes",
+            "Esportes ao vivo",
+            "Pagou mais hoje",
+            "Jogos populares",
+            "Jogos crash",
+            "Novos jogos",
+            "Top 10 Brasil",
+            "Jogo responsavel"
+          ],
+          "linksLegais": 9,
+          "possuiLogin": true,
+          "possuiCadastro": true,
+          "possuiSuporte": true,
+          "possuiLicenca": true,
+          "seo": {
+            "title": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
+            "metaDescription": "Apostas Esportivas e Cassino Online. Bet Autorizada. Promoções exclusivas, saque instantâneo e cashback diário. Ative o modo ULTRA!",
+            "h1": "ULTRA bet: Cassino Online e Apostas Esportivas no Brasil",
+            "canonical": "https://ultra.bet.br/",
+            "schemaOrg": true,
+            "openGraph": 11,
+            "scoreBase": 86,
+            "robots": true,
+            "sitemap": true,
+            "score": 95
+          },
+          "compliance": {
+            "checks": {
+              "cnpj": true,
+              "licenca": true,
+              "termos": true,
+              "privacidade": true,
+              "cookies": true,
+              "jogoResponsavel": true,
+              "regrasBonus": true,
+              "regrasSaque": true,
+              "suporte": true,
+              "aviso18": true
+            },
+            "score": 100
+          },
+          "jornada": {
+            "checks": {
+              "home": true,
+              "cadastro": true,
+              "login": true,
+              "cassino": true,
+              "sportsbook": true,
+              "promocoes": true,
+              "suporte": true,
+              "termos": true,
+              "privacidade": true,
+              "jogoResponsavel": true
+            },
+            "score": 100,
+            "playwright": {
+              "status": "pendente",
+              "runner": "public-journey-audit.mjs",
+              "passos": [
+                "home",
+                "cadastro",
+                "login",
+                "cassino",
+                "sportsbook",
+                "promocoes",
+                "suporte",
+                "termos",
+                "privacidade",
+                "jogo responsavel"
+              ]
+            }
+          },
+          "promocoes": {
+            "banners": [],
+            "termos": [
+              {
+                "termo": "bonus",
+                "total": 80
+              },
+              {
+                "termo": "bônus",
+                "total": 48
+              },
+              {
+                "termo": "promo",
+                "total": 91
+              },
+              {
+                "termo": "promocao",
+                "total": 0
+              },
+              {
+                "termo": "promoção",
+                "total": 18
+              },
+              {
+                "termo": "freebet",
+                "total": 0
+              },
+              {
+                "termo": "cassino",
+                "total": 188
+              },
+              {
+                "termo": "casino",
+                "total": 1387
+              },
+              {
+                "termo": "sportsbook",
+                "total": 0
+              }
+            ],
+            "bonusCadastro": true,
+            "campanhasCassino": true,
+            "campanhasSportsbook": true,
+            "contentHash": "995225eb7ce745eb49e629104b1591afd4a3bdf2",
+            "score": 100
+          },
+          "socialLinks": {
+            "instagram": "https://instagram.com/ultrabet.br",
+            "tiktok": "",
+            "twitter": "https://x.com/ultrabetbr",
+            "youtube": "",
+            "linkedin": ""
+          },
+          "termosRisco": [
+            {
+              "termo": "golpe",
+              "total": 0
+            },
+            {
+              "termo": "saque",
+              "total": 51
+            },
+            {
+              "termo": "bloqueado",
+              "total": 1
+            },
+            {
+              "termo": "reclamacao",
+              "total": 0
+            },
+            {
+              "termo": "reclamação",
+              "total": 0
+            },
+            {
+              "termo": "nao paga",
+              "total": 0
+            },
+            {
+              "termo": "não paga",
+              "total": 0
+            },
+            {
+              "termo": "demora",
+              "total": 0
+            },
+            {
+              "termo": "suporte",
+              "total": 20
+            }
+          ],
+          "alertas": []
+        },
+        "alertas": [],
+        "coletadoEm": "2026-05-31T19:54:38.391Z"
+      },
+      "manual": {
+        "brand_id": "ultra",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ],
+        "appScore": null,
+        "riskNotes": ""
+      },
+      "externalMetrics": {
+        "brand_id": "ultra",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ]
+      },
+      "pagespeed": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:48.998Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:50.008Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      },
+      "uptime": {
+        "h24": 100,
+        "d7": 100,
+        "d30": 100
+      }
+    },
+    {
+      "id": "suprema",
+      "nome": "Suprema Bet",
+      "alias": "suprema.bet",
+      "url": "https://www.suprema.bet.br/",
+      "scoreFinal": 60,
+      "componentes": {
+        "tecnico": 67,
+        "social": 22,
+        "seo": 95,
+        "reputacao": 0,
+        "jornada": 100,
+        "promocoes": 100,
+        "compliance": 100,
+        "appStore": 0
+      },
+      "site": {
+        "id": "suprema",
+        "nome": "Suprema Bet",
+        "alias": "suprema.bet",
+        "url": "https://www.suprema.bet.br/",
+        "urlFinal": "https://suprema.bet.br/",
+        "ok": true,
+        "statusHttp": 200,
+        "latenciaMs": 436,
+        "redirects": 1,
+        "htmlBytes": 609373,
+        "headers": {
+          "server": "Vercel",
+          "contentType": "text/html; charset=utf-8",
+          "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+          "cfCache": ""
+        },
+        "cdn": false,
+        "dns": {
+          "ok": false,
+          "hostname": "www.suprema.bet.br",
+          "records": [],
+          "latenciaMs": 3,
+          "erro": "queryA ECONNREFUSED www.suprema.bet.br"
+        },
+        "ssl": {
+          "ok": true,
+          "hostname": "www.suprema.bet.br",
+          "autorizado": true,
+          "erro": "",
+          "validoAte": "Aug  1 22:08:56 2026 GMT",
+          "emissor": "Google Trust Services",
+          "latenciaMs": 23
+        },
+        "robots": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 312,
+          "urlFinal": "https://suprema.bet.br/"
+        },
+        "sitemap": {
+          "ok": true,
+          "status": 200,
+          "latenciaMs": 409,
+          "urlFinal": "https://suprema.bet.br/"
+        },
+        "metricas": {
+          "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
+          "totalPagoHoje": 27179962.529999997,
+          "totalJogosDetectados": 4293,
+          "categorias": [
+            "Slots",
+            "Cassino ao vivo",
+            "Esportes",
+            "Esportes ao vivo",
+            "Pagou mais hoje",
+            "Jogos populares",
+            "Jogos crash",
+            "Novos jogos",
+            "Top 10 Brasil",
+            "Jogo responsavel"
+          ],
+          "linksLegais": 9,
+          "possuiLogin": true,
+          "possuiCadastro": true,
+          "possuiSuporte": true,
+          "possuiLicenca": true,
+          "seo": {
+            "title": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
+            "metaDescription": "Saque instantâneo, cashback diário, promoções exclusivas e as melhores odds! Casa de aposta autorizada e legalizada. Jogue com responsabilidade.",
+            "h1": "Suprema Bet: Cassino Online e Apostas Esportivas com Tradição",
+            "canonical": "https://suprema.bet.br/",
+            "schemaOrg": true,
+            "openGraph": 11,
+            "scoreBase": 86,
+            "robots": true,
+            "sitemap": true,
+            "score": 95
+          },
+          "compliance": {
+            "checks": {
+              "cnpj": true,
+              "licenca": true,
+              "termos": true,
+              "privacidade": true,
+              "cookies": true,
+              "jogoResponsavel": true,
+              "regrasBonus": true,
+              "regrasSaque": true,
+              "suporte": true,
+              "aviso18": true
+            },
+            "score": 100
+          },
+          "jornada": {
+            "checks": {
+              "home": true,
+              "cadastro": true,
+              "login": true,
+              "cassino": true,
+              "sportsbook": true,
+              "promocoes": true,
+              "suporte": true,
+              "termos": true,
+              "privacidade": true,
+              "jogoResponsavel": true
+            },
+            "score": 100,
+            "playwright": {
+              "status": "pendente",
+              "runner": "public-journey-audit.mjs",
+              "passos": [
+                "home",
+                "cadastro",
+                "login",
+                "cassino",
+                "sportsbook",
+                "promocoes",
+                "suporte",
+                "termos",
+                "privacidade",
+                "jogo responsavel"
+              ]
+            }
+          },
+          "promocoes": {
+            "banners": [],
+            "termos": [
+              {
+                "termo": "bonus",
+                "total": 93
+              },
+              {
+                "termo": "bônus",
+                "total": 39
+              },
+              {
+                "termo": "promo",
+                "total": 47
+              },
+              {
+                "termo": "promocao",
+                "total": 0
+              },
+              {
+                "termo": "promoção",
+                "total": 0
+              },
+              {
+                "termo": "freebet",
+                "total": 0
+              },
+              {
+                "termo": "cassino",
+                "total": 199
+              },
+              {
+                "termo": "casino",
+                "total": 1381
+              },
+              {
+                "termo": "sportsbook",
+                "total": 1
+              }
+            ],
+            "bonusCadastro": true,
+            "campanhasCassino": true,
+            "campanhasSportsbook": true,
+            "contentHash": "e9f92dbf1653dbb2f76a73f9d3733eff9e286026",
+            "score": 100
+          },
+          "socialLinks": {
+            "instagram": "https://instagram.com/supremabet.br",
+            "tiktok": "https://tiktok.com/@suprema.bet",
+            "twitter": "",
+            "youtube": "",
+            "linkedin": ""
+          },
+          "termosRisco": [
+            {
+              "termo": "golpe",
+              "total": 0
+            },
+            {
+              "termo": "saque",
+              "total": 49
+            },
+            {
+              "termo": "bloqueado",
+              "total": 1
+            },
+            {
+              "termo": "reclamacao",
+              "total": 0
+            },
+            {
+              "termo": "reclamação",
+              "total": 0
+            },
+            {
+              "termo": "nao paga",
+              "total": 0
+            },
+            {
+              "termo": "não paga",
+              "total": 0
+            },
+            {
+              "termo": "demora",
+              "total": 0
+            },
+            {
+              "termo": "suporte",
+              "total": 25
+            }
+          ],
+          "alertas": []
+        },
+        "alertas": [],
+        "coletadoEm": "2026-05-31T19:54:38.395Z"
+      },
+      "manual": {
+        "brand_id": "suprema",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ],
+        "appScore": null,
+        "riskNotes": ""
+      },
+      "externalMetrics": {
+        "brand_id": "suprema",
+        "sources": [
+          "instagram_graph",
+          "youtube_data",
+          "tiktok_business",
+          "hugme_reclame_aqui",
+          "google_play",
+          "app_store_connect",
+          "news_risk",
+          "manual"
+        ]
+      },
+      "pagespeed": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:51.058Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:52.054Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      },
+      "uptime": {
+        "h24": 100,
+        "d7": 100,
+        "d30": 100
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "id": "maxima",
+      "posicao": 1,
+      "score": 60
+    },
+    {
+      "id": "ultra",
+      "posicao": 2,
+      "score": 60
+    },
+    {
+      "id": "suprema",
+      "posicao": 3,
+      "score": 60
+    }
+  ],
+  "historico": [
+    {
+      "date": "2026-05-25",
+      "maxima": 57,
+      "ultra": 55,
+      "suprema": 55
+    },
+    {
+      "date": "2026-05-31",
+      "maxima": 60,
+      "ultra": 60,
+      "suprema": 60
+    }
+  ],
+  "manualInputs": {
+    "updatedAt": null,
+    "brands": {}
+  },
+  "pagespeed": {
+    "updatedAt": "2026-05-25T01:07:52.055Z",
+    "brands": {
+      "maxima": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:47.668Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:48.758Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      },
+      "ultra": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:48.998Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:50.008Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      },
+      "suprema": {
+        "mobile": {
+          "strategy": "mobile",
+          "collectedAt": "2026-05-25T01:07:51.058Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        },
+        "desktop": {
+          "strategy": "desktop",
+          "collectedAt": "2026-05-25T01:07:52.054Z",
+          "erro": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+        }
+      }
+    }
+  }
+}

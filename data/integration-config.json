@@ -1,0 +1,68 @@
+{
+  "updatedAt": null,
+  "sources": {
+    "instagram_graph": {
+      "enabled": true,
+      "tokenEnv": "INSTAGRAM_GRAPH_TOKEN"
+    },
+    "youtube_data": {
+      "enabled": true,
+      "apiKeyEnv": "YOUTUBE_API_KEY"
+    },
+    "tiktok_business": {
+      "enabled": true,
+      "tokenEnv": "TIKTOK_BUSINESS_TOKEN",
+      "endpoint": ""
+    },
+    "hugme_reclame_aqui": {
+      "enabled": true,
+      "tokenEnv": "HUGME_API_TOKEN",
+      "endpoint": ""
+    },
+    "google_play": {
+      "enabled": true,
+      "tokenEnv": "GOOGLE_PLAY_ACCESS_TOKEN"
+    },
+    "app_store_connect": {
+      "enabled": true,
+      "keyIdEnv": "APP_STORE_CONNECT_KEY_ID",
+      "issuerIdEnv": "APP_STORE_CONNECT_ISSUER_ID",
+      "privateKeyEnv": "APP_STORE_CONNECT_PRIVATE_KEY",
+      "privateKeyPathEnv": "APP_STORE_CONNECT_PRIVATE_KEY_PATH"
+    },
+    "news_risk": {
+      "enabled": true,
+      "newsApiKeyEnv": "NEWS_API_KEY",
+      "serpApiKeyEnv": "SERPAPI_KEY"
+    }
+  },
+  "brands": {
+    "maxima": {
+      "instagram_business_id": "",
+      "youtube_channel_id": "",
+      "tiktok_business_id": "",
+      "hugme_company_id": "",
+      "google_play_package": "",
+      "app_store_app_id": "",
+      "search_query": "maxima.bet saque bloqueado reclamação não paga suporte"
+    },
+    "ultra": {
+      "instagram_business_id": "",
+      "youtube_channel_id": "",
+      "tiktok_business_id": "",
+      "hugme_company_id": "",
+      "google_play_package": "",
+      "app_store_app_id": "",
+      "search_query": "ultra.bet saque bloqueado reclamação não paga suporte"
+    },
+    "suprema": {
+      "instagram_business_id": "",
+      "youtube_channel_id": "",
+      "tiktok_business_id": "",
+      "hugme_company_id": "",
+      "google_play_package": "",
+      "app_store_app_id": "",
+      "search_query": "suprema.bet saque bloqueado reclamação não paga suporte"
+    }
+  }
+}

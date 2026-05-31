@@ -1,0 +1,12 @@
+{
+  "name": "central-ceo-bets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Painel executivo local/online para benchmarking e monitoramento de operacoes de bets.",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benchmarking | Central CEO de Bets</title>
+    <link rel="stylesheet" href="styles.css?v=20260531-2" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">CB</div>
+          <div>
+            <p class="brand-name">Central CEO</p>
+            <p class="brand-subtitle">Operacao de bets</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Secoes">
+          <a class="nav-item" href="index.html" title="Visao geral" aria-label="Visao geral">VG</a>
+          <button class="nav-item" type="button" title="Sites">ST</button>
+          <button class="nav-item" type="button" title="Cotacao">CT</button>
+          <button class="nav-item" type="button" title="Risco">RK</button>
+          <button class="nav-item" type="button" title="Verificacao">KY</button>
+          <button class="nav-item" type="button" title="Jogo responsavel">JR</button>
+          <a class="nav-item is-active" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking" aria-current="page">BM</a>
+        </nav>
+
+        <div class="system-pill">
+          <span class="pulse-dot"></span>
+          <span>monitor ativo</span>
+        </div>
+      </aside>
+
+      <main class="dashboard benchmark-page">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Base importada da planilha</p>
+            <h1>Benchmarking</h1>
+            <p class="page-subtitle">
+              Banco local da planilha com ranking global, paises, metadados e marcas para consulta executiva.
+            </p>
+          </div>
+
+          <div class="topbar-actions">
+            <a class="ghost-button" href="index.html">Voltar ao painel</a>
+          </div>
+        </header>
+
+        <section id="benchmarking" class="benchmark-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Banco de dados local</p>
+              <h2>Consulta BM</h2>
+              <p class="section-subtitle">
+                Selecione uma aba, filtre por marca ou pais e navegue pelos dados importados.
+              </p>
+            </div>
+            <div class="market-badges">
+              <span id="benchmark-state">Carregando base</span>
+              <span id="benchmark-source">Planilha local</span>
+            </div>
+          </div>
+
+          <div class="benchmark-metrics">
+            <article class="benchmark-kpi">
+              <span>Abas</span>
+              <strong id="benchmark-sheets">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Linhas totais</span>
+              <strong id="benchmark-rows">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Paises</span>
+              <strong id="benchmark-countries">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Marcas no Brasil</span>
+              <strong id="benchmark-brazil">--</strong>
+            </article>
+          </div>
+
+          <div class="benchmark-controls">
+            <label>
+              Pais
+              <span class="benchmark-select">
+                <select id="benchmark-sheet-select" aria-hidden="true" tabindex="-1"></select>
+                <button id="benchmark-sheet-button" class="benchmark-select-button" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  Carregando paises
+                </button>
+                <span id="benchmark-sheet-menu" class="benchmark-select-menu" role="listbox" hidden></span>
+              </span>
+            </label>
+            <label>
+              Buscar
+              <input id="benchmark-search" type="search" placeholder="Filtrar linhas da aba selecionada" />
+            </label>
+            <button id="benchmark-brazil-button" class="ghost-button" type="button">Abrir Brasil</button>
+            <button id="benchmark-ranking-button" class="ghost-button" type="button">Abrir Ranking</button>
+          </div>
+
+          <div class="benchmark-summary" id="benchmark-summary"></div>
+
+          <div class="benchmark-table-wrap">
+            <table class="benchmark-table">
+              <thead id="benchmark-table-head"></thead>
+              <tbody id="benchmark-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="benchmarking.js?v=20260531-2"></script>
+  </body>
+</html>

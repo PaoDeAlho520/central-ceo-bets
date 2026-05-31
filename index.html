@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central CEO de Bets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">CB</div>
+          <div>
+            <p class="brand-name">Central CEO</p>
+            <p class="brand-subtitle">Operacao de bets</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Secoes">
+          <a class="nav-item is-active" href="#executive-overview" title="Executive Overview" aria-label="Executive Overview">EO</a>
+          <a class="nav-item" href="#website-performance" title="Website Performance" aria-label="Website Performance">WP</a>
+          <a class="nav-item" href="#uptime-latency" title="Uptime e Latencia" aria-label="Uptime e Latencia">UP</a>
+          <a class="nav-item" href="#social-media" title="Social Media Intelligence" aria-label="Social Media Intelligence">SM</a>
+          <a class="nav-item" href="#seo-visibility" title="SEO e Visibilidade" aria-label="SEO e Visibilidade">SV</a>
+          <a class="nav-item" href="#brand-reputation" title="Brand Reputation" aria-label="Brand Reputation">RP</a>
+          <a class="nav-item" href="#journey-audit" title="Public User Journey Audit" aria-label="Public User Journey Audit">JY</a>
+          <a class="nav-item" href="#promotions-content" title="Promotions e Conteudo" aria-label="Promotions e Conteudo">PR</a>
+          <a class="nav-item" href="#app-store" title="App Store Intelligence" aria-label="App Store Intelligence">AP</a>
+          <a class="nav-item" href="#public-compliance" title="Compliance Publico" aria-label="Compliance Publico">CO</a>
+          <a class="nav-item" href="#manual-inputs" title="Inputs Manuais" aria-label="Inputs Manuais">IN</a>
+          <a class="nav-item" href="#external-integrations" title="Integracoes externas" aria-label="Integracoes externas">EX</a>
+          <a class="nav-item" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking">BM</a>
+        </nav>
+
+        <div class="system-pill">
+          <span class="pulse-dot"></span>
+          <span>monitor ativo</span>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Painel executivo para operacao de apostas</p>
+            <h1>Central CEO de Bets</h1>
+            <p class="page-subtitle">
+              Comparativo em tempo real das marcas Maxima, Suprema e Ultra com sinais publicos, operacao diaria,
+              agentes de IA, risco, verificacao, pagamentos, atendimento e jogo responsavel.
+            </p>
+          </div>
+
+          <div class="topbar-actions">
+            <label class="search-box">
+              <span aria-hidden="true">/</span>
+              <input id="agent-search" type="search" placeholder="Buscar marca, agente, alerta ou metrica" />
+            </label>
+            <button id="sync-button" class="ghost-button sync-button" type="button">Atualizar dados</button>
+            <button id="pagespeed-button" class="ghost-button sync-button" type="button">Rodar PageSpeed</button>
+            <button id="briefing-button" class="primary-button" type="button">Resumo do CEO</button>
+          </div>
+        </header>
+
+        <section class="notice-panel">
+          <strong>Escopo dos dados conectados</strong>
+          <span>
+            Este painel busca dados publicos dos sites. Indicadores internos como receita liquida, margem real,
+            verificacao interna, saques e limites operacionais exigem credenciais/API oficiais das empresas.
+          </span>
+        </section>
+
+        <section class="ceo-strip" aria-label="Estado executivo">
+          <div class="ceo-card">
+            <span>Marcas monitoradas</span>
+            <strong>3</strong>
+            <p>Maxima, Suprema e Ultra.</p>
+          </div>
+          <div class="ceo-card">
+            <span>Status consolidado</span>
+            <strong id="global-status">Atualizando</strong>
+            <p>Disponibilidade publica e resposta dos sites.</p>
+          </div>
+          <div class="ceo-card">
+            <span>Ultima atualizacao</span>
+            <strong id="clock">--:--</strong>
+            <p id="last-refresh">Aguardando primeira coleta.</p>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="Resumo operacional">
+          <article class="metric-card">
+            <div class="metric-head">
+              <span>Sites ativos</span>
+              <span class="trend is-up" id="online-trend">tempo real</span>
+            </div>
+            <strong id="online-count">0/3</strong>
+            <p>Checagem HTTP publica feita pelo servidor local.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-head">
+              <span>Latencia media</span>
+              <span class="trend is-warn">rede publica</span>
+            </div>
+            <strong id="latency-count">--ms</strong>
+            <p>Tempo medio de resposta das paginas iniciais.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-head">
+              <span>Jogos detectados</span>
+              <span class="trend is-up">catalogo publico</span>
+            </div>
+            <strong id="games-count">0</strong>
+            <p>Soma dos blocos publicos “mostrar jogos”.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-head">
+              <span>Pago hoje visivel</span>
+              <span class="trend is-up">pagina inicial</span>
+            </div>
+            <strong id="paid-count">R$ 0</strong>
+            <p>Soma de valores “Pagou hoje” publicados.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-head">
+              <span>Links legais</span>
+              <span class="trend is-up">conformidade</span>
+            </div>
+            <strong id="legal-count">0</strong>
+            <p>Termos, privacidade, prevencao a lavagem de dinheiro e jogo responsavel detectados.</p>
+          </article>
+          <article class="metric-card rg-card">
+            <div class="metric-head">
+              <span>Alertas de coleta</span>
+              <span class="trend is-danger">monitor</span>
+            </div>
+            <strong id="alert-count">0</strong>
+            <p>Falhas, bloqueios, redirecionamentos ou campos ausentes.</p>
+          </article>
+        </section>
+
+        <section id="executive-overview" class="brands-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Executive Overview</p>
+              <h2>Ranking CEO das tres marcas</h2>
+              <p class="section-subtitle">
+                Score final de 0 a 100 ponderando tecnico, social, SEO, reputacao, jornada publica,
+                promocoes/conteudo e compliance publico.
+              </p>
+            </div>
+            <div class="market-badges">
+              <span id="collection-state">Coleta aguardando</span>
+              <span>Dados publicos</span>
+            </div>
+          </div>
+          <div id="score-grid" class="score-grid" aria-live="polite"></div>
+          <div class="overview-layout">
+            <div class="score-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ranking</th>
+                    <th>Marca</th>
+                    <th>Score</th>
+                    <th>Tecnico</th>
+                    <th>Social</th>
+                    <th>SEO</th>
+                    <th>Reputacao</th>
+                    <th>Jornada</th>
+                    <th>Promocoes</th>
+                    <th>Compliance</th>
+                  </tr>
+                </thead>
+                <tbody id="ranking-table"></tbody>
+              </table>
+            </div>
+            <div id="history-chart" class="history-chart" aria-label="Evolucao historica"></div>
+          </div>
+          <div class="module-spacer"></div>
+          <div id="brand-grid" class="brand-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="website-performance" class="module-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Website Performance</p>
+              <h2>PageSpeed, Core Web Vitals e erros tecnicos</h2>
+              <p class="section-subtitle">
+                Integracao com PageSpeed Insights API sob demanda. Sem API key, usa endpoint publico e cache local.
+              </p>
+            </div>
+            <span class="audit-badge" id="pagespeed-state">PageSpeed sob demanda</span>
+          </div>
+          <div id="website-performance-board" class="module-grid three-cols"></div>
+        </section>
+
+        <section id="uptime-latency" class="ops-grid">
+          <div class="market-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Metricas publicas extraidas</p>
+                <h2>Leitura em tempo real por site</h2>
+              </div>
+              <button id="force-fetch" class="ghost-button" type="button">Coletar agora</button>
+            </div>
+            <div id="site-board" class="site-board"></div>
+          </div>
+
+          <aside class="day-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">Rotina do CEO</p>
+                <h2>Controle dia a dia</h2>
+              </div>
+              <button id="compact-toggle" class="icon-button" type="button" aria-label="Alternar modo compacto" title="Modo compacto">CP</button>
+            </div>
+            <div id="day-list" class="day-list"></div>
+          </aside>
+        </section>
+
+        <section class="module-grid-section">
+          <div id="social-media" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Social Media Intelligence</p>
+                <h2>Redes sociais e engajamento</h2>
+              </div>
+              <span class="audit-badge">API ou input manual</span>
+            </div>
+            <div id="social-board" class="module-list"></div>
+          </div>
+
+          <div id="seo-visibility" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">SEO & Brand Visibility</p>
+                <h2>SEO publico e indexabilidade</h2>
+              </div>
+              <span class="audit-badge">HTML publico</span>
+            </div>
+            <div id="seo-board" class="module-list"></div>
+          </div>
+        </section>
+
+        <section class="module-grid-section">
+          <div id="brand-reputation" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Brand Reputation</p>
+                <h2>Reputacao e termos de risco</h2>
+              </div>
+              <span class="audit-badge">Fontes publicas/manual</span>
+            </div>
+            <div id="reputation-board" class="module-list"></div>
+          </div>
+
+          <div id="journey-audit" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Public User Journey Audit</p>
+                <h2>Fluxos publicos com Playwright</h2>
+              </div>
+              <span class="audit-badge">Runner preparado</span>
+            </div>
+            <div id="journey-board" class="module-list"></div>
+          </div>
+        </section>
+
+        <section class="module-grid-section">
+          <div id="promotions-content" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Promotions & Content Tracker</p>
+                <h2>Banners, bonus e campanhas</h2>
+              </div>
+              <span class="audit-badge">Comparacao diaria</span>
+            </div>
+            <div id="promotions-board" class="module-list"></div>
+          </div>
+
+          <div id="app-store" class="module-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">App Store Intelligence</p>
+                <h2>Apps, notas e reviews</h2>
+              </div>
+              <span class="audit-badge">Input/manual API</span>
+            </div>
+            <div id="app-store-board" class="module-list"></div>
+          </div>
+        </section>
+
+        <section id="public-compliance" class="module-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Public Compliance Checklist</p>
+              <h2>CNPJ, licenca, termos, privacidade, cookies, saque e 18+</h2>
+            </div>
+            <span class="audit-badge">Checklist publico</span>
+          </div>
+          <div id="compliance-board" class="module-grid three-cols"></div>
+        </section>
+
+        <section id="manual-inputs" class="module-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Inputs manuais</p>
+              <h2>Completar dados sem API disponivel</h2>
+              <p class="section-subtitle">
+                Use esta area para seguidores, engajamento, reviews, sentimento e observacoes enquanto APIs oficiais nao estao conectadas.
+              </p>
+            </div>
+            <span class="audit-badge" id="manual-state">Pronto para salvar</span>
+          </div>
+          <div id="manual-input-grid" class="manual-input-grid"></div>
+        </section>
+
+        <section id="external-integrations" class="module-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Camada de integracoes externas</p>
+              <h2>external_brand_metrics</h2>
+              <p class="section-subtitle">
+                Conectores configuraveis para Instagram Graph, YouTube Data, TikTok Business, HugMe/Reclame Aqui,
+                Google Play, App Store Connect e noticias/termos de risco. Quando a API nao esta conectada, entra fallback manual.
+              </p>
+            </div>
+            <div class="market-badges">
+              <span id="integrations-state">Aguardando status</span>
+              <button id="run-integrations-button" class="ghost-button" type="button">Rodar integracoes</button>
+            </div>
+          </div>
+
+          <div id="integration-status-board" class="integration-status-board"></div>
+
+          <div class="integration-table-wrap">
+            <table class="data-table external-metrics-table">
+              <thead>
+                <tr>
+                  <th>Marca</th>
+                  <th>Fontes</th>
+                  <th>Seguidores</th>
+                  <th>Engajamento</th>
+                  <th>Posts 7d</th>
+                  <th>Posts 30d</th>
+                  <th>Views medias</th>
+                  <th>Ultimo post</th>
+                  <th>Score social</th>
+                  <th>Score reputacao</th>
+                  <th>Reclamacoes 7d</th>
+                  <th>Reclamacoes 30d</th>
+                  <th>Google reviews</th>
+                  <th>App</th>
+                  <th>Nota app</th>
+                  <th>Reviews app</th>
+                  <th>Versao</th>
+                  <th>Atualizacao</th>
+                  <th>Sentimento</th>
+                  <th>Termos de risco</th>
+                </tr>
+              </thead>
+              <tbody id="external-metrics-table"></tbody>
+            </table>
+          </div>
+          <p class="module-note" id="external-metrics-footnote">Tabela local pronta para migrar para SQLite/PostgreSQL.</p>
+        </section>
+
+        <section class="control-grid">
+          <div class="agent-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Camada operacional de IA</p>
+                <h2>Agentes para controlar as tres bets</h2>
+              </div>
+              <div class="segmented" role="tablist" aria-label="Filtro de agentes">
+                <button class="segment is-selected" type="button" data-filter="all">Todos</button>
+                <button class="segment" type="button" data-filter="site">Sites</button>
+                <button class="segment" type="button" data-filter="risco">Risco</button>
+                <button class="segment" type="button" data-filter="compliance">Conformidade</button>
+              </div>
+            </div>
+
+            <div id="agent-grid" class="agent-grid" aria-live="polite"></div>
+          </div>
+
+          <aside class="priority-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">Decisoes executivas</p>
+                <h2>Prioridades agora</h2>
+              </div>
+            </div>
+            <div id="priority-list" class="priority-list"></div>
+          </aside>
+        </section>
+
+        <section class="lower-grid">
+          <div class="risk-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Risco, pagamentos e conformidade</p>
+                <h2>Mapa de controle da operacao</h2>
+              </div>
+              <button id="add-event" class="ghost-button" type="button">Simular evento</button>
+            </div>
+
+            <div class="risk-layout">
+              <div class="liability-map">
+                <div class="map-grid" aria-hidden="true">
+                  <span class="map-node soccer"></span>
+                  <span class="map-node tennis"></span>
+                  <span class="map-node basket"></span>
+                  <span class="map-node esports"></span>
+                  <span class="map-line line-a"></span>
+                  <span class="map-line line-b"></span>
+                  <span class="map-line line-c"></span>
+                </div>
+                <div>
+                  <p class="eyebrow">Radar executivo</p>
+                  <h3>Monitoramento cruzado das tres marcas</h3>
+                  <p>O painel separa sinais publicos de metricas internas para manter governanca e auditoria.</p>
+                </div>
+              </div>
+
+              <div id="risk-lanes" class="risk-lanes"></div>
+            </div>
+          </div>
+
+          <div class="command-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Comandos externos publicos</p>
+                <h2>Acoes por marca</h2>
+              </div>
+            </div>
+            <div id="external-commands" class="command-grid"></div>
+            <div class="terminal" aria-live="polite">
+              <div class="terminal-head">
+                <span></span><span></span><span></span>
+              </div>
+              <pre id="terminal-output">central-bets$ painel em portugues iniciado
+central-bets$ aguardando coleta publica...</pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="activity-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Registro operacional</p>
+              <h2>Atividade recente</h2>
+            </div>
+            <span class="audit-badge">Auditoria local habilitada</span>
+          </div>
+          <div id="activity-list" class="activity-list"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
