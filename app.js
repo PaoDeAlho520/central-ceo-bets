@@ -841,6 +841,7 @@ function renderizarCompliance() {
 }
 
 function renderizarManualInputs() {
+  if (!manualInputGrid) return;
   manualInputGrid.innerHTML = marcas
     .map((marca) => {
       const manual = brandPayload(marca.id)?.manual || {};
@@ -1181,7 +1182,7 @@ function renderizarModulosExternos() {
 async function salvarInputManual(form) {
   if (!form) return;
   const values = Object.fromEntries(new FormData(form).entries());
-  manualState.textContent = "Salvando...";
+  if (manualState) manualState.textContent = "Salvando...";
   try {
     const resposta = await fetch("/api/manual-inputs", {
       method: "POST",
@@ -1189,11 +1190,11 @@ async function salvarInputManual(form) {
       body: JSON.stringify({ brandId: form.dataset.brand, values }),
     });
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
-    manualState.textContent = "Inputs salvos";
+    if (manualState) manualState.textContent = "Inputs salvos";
     escreverTerminal(`inputs manuais salvos para ${form.dataset.brand}`);
     await coletarDados();
   } catch (erro) {
-    manualState.textContent = "Falha ao salvar";
+    if (manualState) manualState.textContent = "Falha ao salvar";
     escreverTerminal(`erro ao salvar input manual: ${erro.message}`);
   }
 }
