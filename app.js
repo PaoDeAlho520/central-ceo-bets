@@ -246,6 +246,10 @@ function googlePlayPayload(id) {
   return dadosGooglePlay?.brands?.find((brand) => brand.id === id);
 }
 
+function googlePlayDiarioAtivo() {
+  return (dadosGooglePlay?.brands || []).some((brand) => brand.collectedOk);
+}
+
 function rotuloStatus(status) {
   return {
     active: "ativo",
@@ -868,6 +872,7 @@ function nomeFonte(source) {
     tiktok_business: "TikTok Business",
     hugme_reclame_aqui: "HugMe/Reclame Aqui",
     google_play: "Google Play",
+    google_play_daily: "Google Play diario",
     app_store_connect: "App Store Connect",
     news_risk: "Noticias/Risco",
     manual: "Manual",
@@ -876,7 +881,14 @@ function nomeFonte(source) {
 
 function renderizarStatusIntegracoes() {
   const status = dadosIntegracoes?.status || [];
-  integrationStatusBoard.innerHTML = status
+  const googlePlayAtivo = googlePlayDiarioAtivo();
+  const statusComPlayDiario = status.map((item) =>
+    item.source === "google_play" && googlePlayAtivo
+      ? { ...item, connected: true, mode: "github_actions_daily", configuredBrands: (dadosGooglePlay?.brands || []).map((brand) => brand.id) }
+      : item,
+  );
+
+  integrationStatusBoard.innerHTML = statusComPlayDiario
     .map(
       (item) => `
         <article class="integration-status-card ${item.connected ? "is-connected" : "is-fallback"}">
@@ -894,8 +906,15 @@ function renderizarTabelaIntegracoes() {
   externalMetricsTable.innerHTML = marcas
     .map((marca) => {
       const metricas = latestByBrand[marca.id] || {};
-      const fontes = (metricas.sources || []).map(nomeFonte).join(", ") || "Manual pendente";
+      const googlePlay = googlePlayPayload(marca.id) || {};
+      const fontesSet = new Set(metricas.sources || []);
+      if (googlePlay.collectedOk) fontesSet.add("google_play_daily");
+      const fontes = Array.from(fontesSet).map(nomeFonte).join(", ") || "Manual pendente";
       const termos = Array.isArray(metricas.risk_terms) ? metricas.risk_terms.join(", ") : "";
+      const appNome = googlePlay.appId || metricas.app_name;
+      const appNota = googlePlay.ratingText || metricas.app_rating;
+      const appReviews = googlePlay.reviewsText || metricas.app_reviews;
+      const appAtualizado = googlePlay.collectedOk ? dataHoraOu(dadosGooglePlay?.collectedAt) : metricas.app_last_update;
       return `
         <tr>
           <td><strong>${marca.nome}</strong><span>${marca.dominio}</span></td>
@@ -911,11 +930,12 @@ function renderizarTabelaIntegracoes() {
           <td>${valorNumeroOu(metricas.complaints_7d)}</td>
           <td>${valorNumeroOu(metricas.complaints_30d)}</td>
           <td>${valorNumeroOu(metricas.google_reviews)}</td>
-          <td>${escaparHtml(valorOu(metricas.app_name))}</td>
-          <td>${valorOu(metricas.app_rating)}</td>
-          <td>${valorNumeroOu(metricas.app_reviews)}</td>
+          <td>${escaparHtml(valorOu(googlePlay.downloadsText))}</td>
+          <td>${googlePlay.detailsUrl ? `<a href="${escaparHtml(googlePlay.detailsUrl)}" target="_blank" rel="noreferrer">${escaparHtml(valorOu(appNome))}</a>` : escaparHtml(valorOu(appNome))}</td>
+          <td>${valorOu(appNota)}</td>
+          <td>${valorOu(appReviews)}</td>
           <td>${escaparHtml(valorOu(metricas.app_version))}</td>
-          <td>${valorOu(metricas.app_last_update)}</td>
+          <td>${valorOu(appAtualizado)}</td>
           <td>${valorOu(metricas.sentiment_score)}</td>
           <td>${escaparHtml(termos || "--")}</td>
         </tr>
@@ -923,7 +943,8 @@ function renderizarTabelaIntegracoes() {
     })
     .join("");
   const rows = dadosIntegracoes?.table?.rows?.length || 0;
-  externalMetricsFootnote.textContent = `${formatarNumero(rows)} registros em external_brand_metrics. Schema SQL salvo em data/external_brand_metrics.schema.sql.`;
+  const coletaPlay = dadosGooglePlay?.collectedAt ? ` Google Play diario: ${dataHoraOu(dadosGooglePlay.collectedAt)}.` : "";
+  externalMetricsFootnote.textContent = `${formatarNumero(rows)} registros em external_brand_metrics. Snapshots online atualizados 1x por dia.${coletaPlay}`;
 }
 
 async function carregarIntegracoesExternas() {
@@ -932,13 +953,13 @@ async function carregarIntegracoesExternas() {
       "/api/external-brand-metrics",
       "data/external-brand-metrics-static.json",
     ]);
-    integrationsState.textContent = "Tabela carregada";
+    integrationsState.textContent = dadosIntegracoes?.table ? "Snapshots carregados" : "Tabela carregada";
     renderizarStatusIntegracoes();
     renderizarTabelaIntegracoes();
   } catch (erro) {
     integrationsState.textContent = "Falha nas integracoes";
     integrationStatusBoard.innerHTML = "";
-    externalMetricsTable.innerHTML = `<tr><td colspan="20">Nao foi possivel carregar external_brand_metrics: ${escaparHtml(erro.message)}</td></tr>`;
+    externalMetricsTable.innerHTML = `<tr><td colspan="21">Nao foi possivel carregar external_brand_metrics: ${escaparHtml(erro.message)}</td></tr>`;
   }
 }
 
@@ -946,6 +967,10 @@ async function carregarGooglePlayMetrics() {
   try {
     dadosGooglePlay = await carregarJsonComFallback(["data/google-play-metrics.json"]);
     renderizarAppStore();
+    if (dadosIntegracoes) {
+      renderizarStatusIntegracoes();
+      renderizarTabelaIntegracoes();
+    }
   } catch (erro) {
     dadosGooglePlay = { brands: [] };
     escreverTerminal(`Google Play diario indisponivel: ${erro.message}`);
@@ -954,8 +979,8 @@ async function carregarGooglePlayMetrics() {
 }
 
 async function rodarIntegracoesExternas() {
-  integrationsState.textContent = "Rodando conectores...";
-  escreverTerminal("coleta de integracoes externas iniciada");
+  integrationsState.textContent = "Atualizando snapshots...";
+  escreverTerminal("atualizando snapshots de integracoes externas");
   try {
     const resposta = await fetch("/api/integrations/run");
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
@@ -965,8 +990,10 @@ async function rodarIntegracoesExternas() {
     await carregarIntegracoesExternas();
     await coletarDados();
   } catch (erro) {
-    integrationsState.textContent = "Falha nas integracoes";
-    escreverTerminal(`erro nas integracoes externas: ${erro.message}`);
+    await carregarIntegracoesExternas();
+    await carregarGooglePlayMetrics();
+    integrationsState.textContent = "Snapshots diarios carregados";
+    escreverTerminal("site online usa snapshots diarios do GitHub Actions; APIs ao vivo ficam no servidor Node local");
   }
 }
 
