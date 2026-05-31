@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-31T20:10:16.513Z",
+  "updatedAt": "2026-05-31T20:40:31.954Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23400,6 +23400,198 @@
       "statusHttp": 200,
       "latenciaMs": 446,
       "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:14:20.549Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 491,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:14:20.549Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 28717,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T20:14:20.549Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 26549,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T20:18:52.542Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 503,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:18:52.542Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 472,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:18:52.542Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 450,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:23:52.398Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 510,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:23:52.398Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 454,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:23:52.398Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 479,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:28:52.413Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 471,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:28:52.413Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 422,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:28:52.413Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 484,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:34:18.443Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 482,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:34:18.443Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 21497,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T20:34:18.443Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 26591,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T20:38:52.391Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 464,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:38:52.391Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 432,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:38:52.391Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 484,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:39:54.029Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 498,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:39:54.029Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 573,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:39:54.029Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 546,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:40:31.954Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 530,
+      "finalScore": 63
+    },
+    {
+      "at": "2026-05-31T20:40:31.954Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 477,
+      "finalScore": 63
+    },
+    {
+      "at": "2026-05-31T20:40:31.954Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 553,
+      "finalScore": 63
     }
   ],
   "daily": {
@@ -23454,12 +23646,12 @@
       }
     },
     "2026-05-31": {
-      "at": "2026-05-31T20:10:16.513Z",
+      "at": "2026-05-31T20:40:31.954Z",
       "brands": {
         "maxima": {
-          "scoreFinal": 60,
+          "scoreFinal": 63,
           "componentes": {
-            "tecnico": 67,
+            "tecnico": 77,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23469,12 +23661,12 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 631
+          "latenciaMs": 530
         },
         "ultra": {
-          "scoreFinal": 60,
+          "scoreFinal": 63,
           "componentes": {
-            "tecnico": 67,
+            "tecnico": 77,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23484,12 +23676,12 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 481
+          "latenciaMs": 477
         },
         "suprema": {
-          "scoreFinal": 60,
+          "scoreFinal": 63,
           "componentes": {
-            "tecnico": 67,
+            "tecnico": 77,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23499,7 +23691,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 446
+          "latenciaMs": 553
         }
       }
     }

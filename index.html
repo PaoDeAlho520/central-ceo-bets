@@ -56,7 +56,7 @@
               <input id="agent-search" type="search" placeholder="Buscar marca, agente, alerta ou metrica" />
             </label>
             <button id="sync-button" class="ghost-button sync-button" type="button">Atualizar dados</button>
-            <button id="pagespeed-button" class="ghost-button sync-button" type="button">Rodar PageSpeed</button>
+            <button id="pagespeed-button" class="ghost-button sync-button" type="button">Atualizar PageSpeed</button>
             <button id="briefing-button" class="primary-button" type="button">Resumo do CEO</button>
           </div>
         </header>
@@ -186,10 +186,10 @@
               <p class="eyebrow">Website Performance</p>
               <h2>PageSpeed, Core Web Vitals e erros tecnicos</h2>
               <p class="section-subtitle">
-                Integracao com PageSpeed Insights API sob demanda. Sem API key, usa endpoint publico e cache local.
+                Rotina diaria com PageSpeed Insights e fallback tecnico quando a API publica limita a coleta.
               </p>
             </div>
-            <span class="audit-badge" id="pagespeed-state">PageSpeed sob demanda</span>
+            <span class="audit-badge" id="pagespeed-state">PageSpeed diario</span>
           </div>
           <div id="website-performance-board" class="module-grid three-cols"></div>
         </section>
