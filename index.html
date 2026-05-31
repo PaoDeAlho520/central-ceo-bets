@@ -201,116 +201,6 @@
 
           <div id="integration-status-board" class="integration-status-board"></div>
 
-          <div class="integration-table-wrap">
-            <table class="data-table external-metrics-table">
-              <thead>
-                <tr>
-                  <th>Marca</th>
-                  <th>Fontes</th>
-                  <th>Seguidores</th>
-                  <th>Engajamento</th>
-                  <th>Posts 7d</th>
-                  <th>Posts 30d</th>
-                  <th>Views medias</th>
-                  <th>Ultimo post</th>
-                  <th>Score social</th>
-                  <th>Score reputacao</th>
-                  <th>Reclamacoes 7d</th>
-                  <th>Reclamacoes 30d</th>
-                  <th>Google reviews</th>
-                  <th>Downloads Play</th>
-                  <th>App</th>
-                  <th>Nota app</th>
-                  <th>Reviews app</th>
-                  <th>Versao</th>
-                  <th>Atualizacao</th>
-                  <th>Sentimento</th>
-                  <th>Termos de risco</th>
-                </tr>
-              </thead>
-              <tbody id="external-metrics-table"></tbody>
-            </table>
-          </div>
-          <p class="module-note" id="external-metrics-footnote">Tabela local pronta para migrar para SQLite/PostgreSQL.</p>
-        </section>
-
-        <section class="control-grid">
-          <div class="agent-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Camada operacional de IA</p>
-                <h2>Agentes para controlar as tres bets</h2>
-              </div>
-              <div class="segmented" role="tablist" aria-label="Filtro de agentes">
-                <button class="segment is-selected" type="button" data-filter="all">Todos</button>
-                <button class="segment" type="button" data-filter="site">Sites</button>
-                <button class="segment" type="button" data-filter="risco">Risco</button>
-                <button class="segment" type="button" data-filter="compliance">Conformidade</button>
-              </div>
-            </div>
-
-            <div id="agent-grid" class="agent-grid" aria-live="polite"></div>
-          </div>
-
-          <aside class="priority-panel">
-            <div class="section-head compact">
-              <div>
-                <p class="eyebrow">Decisoes executivas</p>
-                <h2>Prioridades agora</h2>
-              </div>
-            </div>
-            <div id="priority-list" class="priority-list"></div>
-          </aside>
-        </section>
-
-        <section class="lower-grid">
-          <div class="risk-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Risco, pagamentos e conformidade</p>
-                <h2>Mapa de controle da operacao</h2>
-              </div>
-              <button id="add-event" class="ghost-button" type="button">Simular evento</button>
-            </div>
-
-            <div class="risk-layout">
-              <div class="liability-map">
-                <div class="map-grid" aria-hidden="true">
-                  <span class="map-node soccer"></span>
-                  <span class="map-node tennis"></span>
-                  <span class="map-node basket"></span>
-                  <span class="map-node esports"></span>
-                  <span class="map-line line-a"></span>
-                  <span class="map-line line-b"></span>
-                  <span class="map-line line-c"></span>
-                </div>
-                <div>
-                  <p class="eyebrow">Radar executivo</p>
-                  <h3>Monitoramento cruzado das tres marcas</h3>
-                  <p>O painel separa sinais publicos de metricas internas para manter governanca e auditoria.</p>
-                </div>
-              </div>
-
-              <div id="risk-lanes" class="risk-lanes"></div>
-            </div>
-          </div>
-
-          <div class="command-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Comandos externos publicos</p>
-                <h2>Acoes por marca</h2>
-              </div>
-            </div>
-            <div id="external-commands" class="command-grid"></div>
-            <div class="terminal" aria-live="polite">
-              <div class="terminal-head">
-                <span></span><span></span><span></span>
-              </div>
-              <pre id="terminal-output">central-bets$ painel em portugues iniciado
-central-bets$ aguardando coleta publica...</pre>
-            </div>
-          </div>
         </section>
 
         <section class="module-grid-section">
@@ -351,6 +241,6 @@ central-bets$ aguardando coleta publica...</pre>
       </main>
     </div>
 
-    <script src="app.js?v=20260601-move-bottom-cards"></script>
+    <script src="app.js?v=20260601-remove-ops-panels"></script>
   </body>
 </html>

@@ -387,6 +387,7 @@ function renderizarRotina() {
 }
 
 function renderizarAgentes() {
+  if (!gradeAgentes || !busca) return;
   const termo = busca.value.trim().toLowerCase();
   const visiveis = agentes.filter((agente) => {
     const bateFiltro = filtroAtual === "all" || agente.grupo === filtroAtual;
@@ -415,6 +416,7 @@ function renderizarAgentes() {
 }
 
 function renderizarPrioridades() {
+  if (!listaPrioridades) return;
   listaPrioridades.innerHTML = prioridades
     .map(
       (item) => `
@@ -431,6 +433,7 @@ function renderizarPrioridades() {
 }
 
 function renderizarControles() {
+  if (!trilhasRisco) return;
   trilhasRisco.innerHTML = controles
     .map(
       (item) => `
@@ -465,6 +468,7 @@ function renderizarAtividades() {
 }
 
 function renderizarComandos() {
+  if (!comandosExternos) return;
   comandosExternos.innerHTML = marcas
     .flatMap((marca) => [
       { marca, tipo: "Site", url: marca.url },
@@ -521,6 +525,7 @@ function atualizarRelogio() {
 }
 
 function escreverTerminal(linha) {
+  if (!terminal) return;
   terminal.textContent = `${terminal.textContent}\ncentral-bets$ ${linha}`;
   terminal.scrollTop = terminal.scrollHeight;
 }
@@ -1056,6 +1061,7 @@ function renderizarStatusIntegracoes() {
 }
 
 function renderizarTabelaIntegracoes() {
+  if (!externalMetricsTable || !externalMetricsFootnote) return;
   const latestByBrand = dadosIntegracoes?.latestByBrand || {};
   externalMetricsTable.innerHTML = marcas
     .map((marca) => {
@@ -1116,7 +1122,9 @@ async function carregarIntegracoesExternas() {
   } catch (erro) {
     integrationsState.textContent = "Falha nas integracoes";
     integrationStatusBoard.innerHTML = "";
-    externalMetricsTable.innerHTML = `<tr><td colspan="21">Nao foi possivel carregar external_brand_metrics: ${escaparHtml(erro.message)}</td></tr>`;
+    if (externalMetricsTable) {
+      externalMetricsTable.innerHTML = `<tr><td colspan="21">Nao foi possivel carregar external_brand_metrics: ${escaparHtml(erro.message)}</td></tr>`;
+    }
   }
 }
 
@@ -1270,7 +1278,7 @@ document.querySelectorAll(".segment").forEach((botao) => {
   });
 });
 
-busca.addEventListener("input", renderizarAgentes);
+busca?.addEventListener("input", renderizarAgentes);
 
 document.querySelector("#sync-button")?.addEventListener("click", coletarDados);
 document.querySelector("#force-fetch")?.addEventListener("click", coletarDados);
