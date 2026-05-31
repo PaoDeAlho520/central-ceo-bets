@@ -145,7 +145,7 @@ await fs.writeFile("data/google-play-metrics.json", `${JSON.stringify(payload, n
 
 const history = await readJson("data/google-play-history.json", { updatedAt: null, checks: [] });
 history.updatedAt = collectedAt;
-history.checks = [...(history.checks || []), payload].slice(-60);
+history.checks = [...(history.checks || []), payload];
 await fs.writeFile("data/google-play-history.json", `${JSON.stringify(history, null, 2)}\n`, "utf8");
 
 console.log(JSON.stringify(payload, null, 2));

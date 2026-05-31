@@ -873,28 +873,72 @@ h3 {
 
 .integration-status-board {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
   margin-bottom: 12px;
 }
 
-.integration-status-card {
+.integration-status-card,
+.integration-metric-card {
   display: grid;
-  gap: 5px;
+  gap: 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.035);
-  padding: 11px;
+  padding: 12px;
 }
 
-.integration-status-card strong {
+.integration-status-card strong,
+.integration-metric-card strong {
   font-size: 13px;
 }
 
 .integration-status-card span,
-.integration-status-card small {
+.integration-status-card small,
+.integration-metric-card span,
+.integration-metric-card small {
   color: var(--muted);
   font-size: 11px;
+}
+
+.integration-metric-head,
+.integration-metric-foot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.integration-metric-head strong {
+  display: block;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.integration-metric-list {
+  display: grid;
+  gap: 6px;
+}
+
+.integration-metric-list p {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 8px;
+}
+
+.integration-metric-card.is-instagram {
+  border-color: rgba(167, 125, 255, 0.32);
+  background: rgba(167, 125, 255, 0.06);
+}
+
+.integration-metric-card.is-google-play {
+  border-color: rgba(40, 227, 139, 0.32);
+  background: rgba(40, 227, 139, 0.06);
 }
 
 .integration-status-card.is-connected {

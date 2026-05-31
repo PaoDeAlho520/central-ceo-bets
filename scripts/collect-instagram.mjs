@@ -119,7 +119,7 @@ await fs.writeFile("data/instagram-metrics.json", `${JSON.stringify(payload, nul
 
 const history = await readJson("data/instagram-history.json", { updatedAt: null, checks: [] });
 history.updatedAt = collectedAt;
-history.checks = [...(history.checks || []), payload].slice(-60);
+history.checks = [...(history.checks || []), payload];
 await fs.writeFile("data/instagram-history.json", `${JSON.stringify(history, null, 2)}\n`, "utf8");
 
 console.log(JSON.stringify(payload, null, 2));

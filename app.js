@@ -897,29 +897,57 @@ function nomeFonte(source) {
   }[source] || source;
 }
 
-function renderizarStatusIntegracoes() {
-  const status = dadosIntegracoes?.status || [];
-  const googlePlayAtivo = googlePlayDiarioAtivo();
-  const instagramAtivo = instagramDiarioAtivo();
-  const statusComPlayDiario = status.map((item) =>
-    item.source === "instagram_graph" && instagramAtivo
-      ? { ...item, connected: true, mode: "github_actions_daily", configuredBrands: (dadosInstagram?.brands || []).map((brand) => brand.id) }
-      : item.source === "google_play" && googlePlayAtivo
-      ? { ...item, connected: true, mode: "github_actions_daily", configuredBrands: (dadosGooglePlay?.brands || []).map((brand) => brand.id) }
-      : item,
-  );
+function resumoInstagram(brand) {
+  if (!brand?.collectedOk) return `${brand?.name || "--"}: sem coleta`;
+  return `${brand.name}: ${formatarNumero(brand.followers)} seg. | ${formatarNumero(brand.posts7)} posts 7d | ${formatarNumero(brand.posts30)} posts 30d | ${percentualOu(brand.engagementRate)} eng.`;
+}
 
-  integrationStatusBoard.innerHTML = statusComPlayDiario
-    .map(
-      (item) => `
-        <article class="integration-status-card ${item.connected ? "is-connected" : "is-fallback"}">
-          <strong>${nomeFonte(item.source)}</strong>
-          <span>${item.connected ? "API conectada" : "fallback manual"}</span>
-          <small>${item.mode || "--"}${item.configuredBrands?.length ? ` | ${item.configuredBrands.join(", ")}` : ""}</small>
-        </article>
-      `,
-    )
-    .join("");
+function resumoGooglePlay(brand) {
+  if (!brand?.collectedOk) return `${brand?.name || "--"}: sem coleta`;
+  return `${brand.name}: ${brand.downloadsText || "--"} downloads | nota ${brand.ratingText || "--"} | ${brand.reviewsText || "--"}`;
+}
+
+function renderizarStatusIntegracoes() {
+  const instagramBrands = dadosInstagram?.brands || [];
+  const googlePlayBrands = dadosGooglePlay?.brands || [];
+  const instagramHistory = dadosInstagram?.historyCount || "--";
+  const googlePlayHistory = dadosGooglePlay?.historyCount || "--";
+
+  integrationStatusBoard.innerHTML = `
+    <article class="integration-metric-card is-instagram">
+      <div class="integration-metric-head">
+        <div>
+          <span>Redes sociais</span>
+          <strong>Instagram</strong>
+        </div>
+        <small>1x por dia</small>
+      </div>
+      <div class="integration-metric-list">
+        ${instagramBrands.map((brand) => `<p>${escaparHtml(resumoInstagram(brand))}</p>`).join("") || "<p>Sem dados do Instagram.</p>"}
+      </div>
+      <div class="integration-metric-foot">
+        <span>Ultima coleta: ${dataHoraOu(dadosInstagram?.collectedAt)}</span>
+        <span>Historico: ${escaparHtml(instagramHistory)}</span>
+      </div>
+    </article>
+
+    <article class="integration-metric-card is-google-play">
+      <div class="integration-metric-head">
+        <div>
+          <span>Apps</span>
+          <strong>Google Play</strong>
+        </div>
+        <small>1x por dia</small>
+      </div>
+      <div class="integration-metric-list">
+        ${googlePlayBrands.map((brand) => `<p>${escaparHtml(resumoGooglePlay(brand))}</p>`).join("") || "<p>Sem dados do Google Play.</p>"}
+      </div>
+      <div class="integration-metric-foot">
+        <span>Ultima coleta: ${dataHoraOu(dadosGooglePlay?.collectedAt)}</span>
+        <span>Historico: ${escaparHtml(googlePlayHistory)}</span>
+      </div>
+    </article>
+  `;
 }
 
 function renderizarTabelaIntegracoes() {
@@ -929,7 +957,7 @@ function renderizarTabelaIntegracoes() {
       const metricas = latestByBrand[marca.id] || {};
       const googlePlay = googlePlayPayload(marca.id) || {};
       const instagram = instagramPayload(marca.id) || {};
-      const fontesSet = new Set(metricas.sources || []);
+      const fontesSet = new Set();
       if (instagram.collectedOk) fontesSet.add("instagram_public_daily");
       if (googlePlay.collectedOk) fontesSet.add("google_play_daily");
       const fontes = Array.from(fontesSet).map(nomeFonte).join(", ") || "Manual pendente";
@@ -990,6 +1018,8 @@ async function carregarIntegracoesExternas() {
 async function carregarGooglePlayMetrics() {
   try {
     dadosGooglePlay = await carregarJsonComFallback(["data/google-play-metrics.json"]);
+    const historicoGooglePlay = await carregarJsonComFallback(["data/google-play-history.json"]).catch(() => null);
+    dadosGooglePlay.historyCount = historicoGooglePlay?.checks?.length || 0;
     renderizarAppStore();
     if (dadosIntegracoes) {
       renderizarStatusIntegracoes();
@@ -1005,6 +1035,8 @@ async function carregarGooglePlayMetrics() {
 async function carregarInstagramMetrics() {
   try {
     dadosInstagram = await carregarJsonComFallback(["data/instagram-metrics.json"]);
+    const historicoInstagram = await carregarJsonComFallback(["data/instagram-history.json"]).catch(() => null);
+    dadosInstagram.historyCount = historicoInstagram?.checks?.length || 0;
     renderizarSocial();
     if (dadosIntegracoes) {
       renderizarStatusIntegracoes();
