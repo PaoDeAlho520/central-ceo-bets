@@ -333,6 +333,7 @@ function renderizarMarcas() {
 }
 
 function renderizarQuadroSites() {
+  if (!quadroSites) return;
   quadroSites.innerHTML = marcas
     .map((marca) => {
       const site = dadosSites.find((item) => item.id === marca.id);
@@ -368,6 +369,7 @@ function renderizarQuadroSites() {
 }
 
 function renderizarRotina() {
+  if (!listaRotina) return;
   listaRotina.innerHTML = rotina
     .map(
       (item) => `
@@ -671,6 +673,7 @@ function renderizarWebsitePerformance() {
 }
 
 function renderizarSocial() {
+  if (!socialBoard) return;
   socialBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const links = brand.site?.metricas?.socialLinks || {};
@@ -699,6 +702,7 @@ function renderizarSocial() {
 }
 
 function renderizarSeo() {
+  if (!seoBoard) return;
   seoBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const seo = brand.site?.metricas?.seo || {};
@@ -723,6 +727,7 @@ function renderizarSeo() {
 }
 
 function renderizarReputacao() {
+  if (!reputationBoard) return;
   reputationBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const termos = brand.site?.metricas?.termosRisco || [];
@@ -746,6 +751,7 @@ function renderizarReputacao() {
 }
 
 function renderizarJourney() {
+  if (!journeyBoard) return;
   journeyBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const jornada = brand.site?.metricas?.jornada || {};
@@ -769,6 +775,7 @@ function renderizarJourney() {
 }
 
 function renderizarPromocoes() {
+  if (!promotionsBoard) return;
   promotionsBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const promo = brand.site?.metricas?.promocoes || {};
@@ -791,6 +798,7 @@ function renderizarPromocoes() {
 }
 
 function renderizarAppStore() {
+  if (!appStoreBoard) return;
   appStoreBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const manual = brand.manual || {};
@@ -820,6 +828,7 @@ function renderizarAppStore() {
 }
 
 function renderizarCompliance() {
+  if (!complianceBoard) return;
   complianceBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const compliance = brand.site?.metricas?.compliance || {};
@@ -1263,12 +1272,12 @@ document.querySelectorAll(".segment").forEach((botao) => {
 
 busca.addEventListener("input", renderizarAgentes);
 
-document.querySelector("#sync-button").addEventListener("click", coletarDados);
-document.querySelector("#force-fetch").addEventListener("click", coletarDados);
-document.querySelector("#pagespeed-button").addEventListener("click", rodarPageSpeed);
-document.querySelector("#run-integrations-button").addEventListener("click", rodarIntegracoesExternas);
+document.querySelector("#sync-button")?.addEventListener("click", coletarDados);
+document.querySelector("#force-fetch")?.addEventListener("click", coletarDados);
+document.querySelector("#pagespeed-button")?.addEventListener("click", rodarPageSpeed);
+document.querySelector("#run-integrations-button")?.addEventListener("click", rodarIntegracoesExternas);
 
-document.querySelector("#briefing-button").addEventListener("click", () => {
+document.querySelector("#briefing-button")?.addEventListener("click", () => {
   const online = dadosSites.filter((site) => site.ok).length;
   const totalJogos = dadosSites.reduce((soma, site) => soma + (site.metricas?.totalJogosDetectados || 0), 0);
   const lider = [...(dadosExternal?.brands || [])].sort((a, b) => b.scoreFinal - a.scoreFinal)[0];
@@ -1277,11 +1286,11 @@ document.querySelector("#briefing-button").addEventListener("click", () => {
   );
 });
 
-document.querySelector("#compact-toggle").addEventListener("click", () => {
+document.querySelector("#compact-toggle")?.addEventListener("click", () => {
   document.body.classList.toggle("compact-mode");
 });
 
-document.querySelector("#add-event").addEventListener("click", () => {
+document.querySelector("#add-event")?.addEventListener("click", () => {
   const fonte = agentes[Math.floor(Math.random() * agentes.length)];
   const eventos = [
     "recalculou prioridade de coleta entre as tres marcas",

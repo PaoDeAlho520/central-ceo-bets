@@ -18,18 +18,8 @@
         </div>
 
         <nav class="nav-list" aria-label="Secoes">
-          <a class="nav-item is-active" href="#executive-overview" title="Executive Overview" aria-label="Executive Overview">EO</a>
-          <a class="nav-item" href="#website-performance" title="Website Performance" aria-label="Website Performance">WP</a>
-          <a class="nav-item" href="#uptime-latency" title="Uptime e Latencia" aria-label="Uptime e Latencia">UP</a>
-          <a class="nav-item" href="#social-media" title="Social Media Intelligence" aria-label="Social Media Intelligence">SM</a>
-          <a class="nav-item" href="#seo-visibility" title="SEO e Visibilidade" aria-label="SEO e Visibilidade">SV</a>
-          <a class="nav-item" href="#brand-reputation" title="Brand Reputation" aria-label="Brand Reputation">RP</a>
-          <a class="nav-item" href="#journey-audit" title="Public User Journey Audit" aria-label="Public User Journey Audit">JY</a>
-          <a class="nav-item" href="#promotions-content" title="Promotions e Conteudo" aria-label="Promotions e Conteudo">PR</a>
-          <a class="nav-item" href="#app-store" title="App Store Intelligence" aria-label="App Store Intelligence">AP</a>
-          <a class="nav-item" href="#public-compliance" title="Compliance Publico" aria-label="Compliance Publico">CO</a>
-          <a class="nav-item" href="#external-integrations" title="Integracoes externas" aria-label="Integracoes externas">EX</a>
-          <a class="nav-item" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking">BM</a>
+          <a class="nav-item is-active" href="#executive-overview" title="Home" aria-label="Home">Home</a>
+          <a class="nav-item" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking">Bench</a>
         </nav>
 
         <div class="system-pill">
@@ -193,78 +183,6 @@
           <div id="website-performance-board" class="module-grid three-cols"></div>
         </section>
 
-        <section id="uptime-latency" class="ops-grid">
-          <div class="market-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Metricas publicas extraidas</p>
-                <h2>Leitura em tempo real por site</h2>
-              </div>
-              <button id="force-fetch" class="ghost-button" type="button">Coletar agora</button>
-            </div>
-            <div id="site-board" class="site-board"></div>
-          </div>
-
-          <aside class="day-panel">
-            <div class="section-head compact">
-              <div>
-                <p class="eyebrow">Rotina do CEO</p>
-                <h2>Controle dia a dia</h2>
-              </div>
-              <button id="compact-toggle" class="icon-button" type="button" aria-label="Alternar modo compacto" title="Modo compacto">CP</button>
-            </div>
-            <div id="day-list" class="day-list"></div>
-          </aside>
-        </section>
-
-        <section class="module-grid-section">
-          <div id="social-media" class="module-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Social Media Intelligence</p>
-                <h2>Redes sociais e engajamento</h2>
-              </div>
-              <span class="audit-badge">API ou input manual</span>
-            </div>
-            <div id="social-board" class="module-list"></div>
-          </div>
-
-          <div id="seo-visibility" class="module-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">SEO & Brand Visibility</p>
-                <h2>SEO publico e indexabilidade</h2>
-              </div>
-              <span class="audit-badge">HTML publico</span>
-            </div>
-            <div id="seo-board" class="module-list"></div>
-          </div>
-        </section>
-
-        <section class="module-grid-section">
-          <div id="brand-reputation" class="module-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Brand Reputation</p>
-                <h2>Reputacao e termos de risco</h2>
-              </div>
-              <span class="audit-badge">Fontes publicas/manual</span>
-            </div>
-            <div id="reputation-board" class="module-list"></div>
-          </div>
-
-          <div id="journey-audit" class="module-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Public User Journey Audit</p>
-                <h2>Fluxos publicos com Playwright</h2>
-              </div>
-              <span class="audit-badge">Runner preparado</span>
-            </div>
-            <div id="journey-board" class="module-list"></div>
-          </div>
-        </section>
-
         <section class="module-grid-section">
           <div id="promotions-content" class="module-panel">
             <div class="section-head">
@@ -275,17 +193,6 @@
               <span class="audit-badge">Comparacao diaria</span>
             </div>
             <div id="promotions-board" class="module-list"></div>
-          </div>
-
-          <div id="app-store" class="module-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">App Store Intelligence</p>
-                <h2>Apps, notas e reviews</h2>
-              </div>
-              <span class="audit-badge">Input/manual API</span>
-            </div>
-            <div id="app-store-board" class="module-list"></div>
           </div>
         </section>
 
@@ -444,6 +351,6 @@ central-bets$ aguardando coleta publica...</pre>
       </main>
     </div>
 
-    <script src="app.js?v=20260601-remove-manual-inputs"></script>
+    <script src="app.js?v=20260601-home-benchmark-nav"></script>
   </body>
 </html>
