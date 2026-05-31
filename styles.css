@@ -678,17 +678,18 @@ h3 {
 
 .module-grid-section {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px;
 }
 
 .module-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
 .module-grid.three-cols {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .module-list {
@@ -748,21 +749,21 @@ h3 {
 
 .module-row {
   display: grid;
-  grid-template-columns: minmax(190px, 1.2fr) repeat(5, minmax(78px, 0.5fr));
+  grid-template-columns: 1fr;
   gap: 10px;
-  align-items: center;
+  align-items: start;
 }
 
 .module-row.seo-row {
-  grid-template-columns: minmax(220px, 1.4fr) repeat(8, minmax(74px, 0.45fr));
+  grid-template-columns: 1fr;
 }
 
 .module-row.journey-row {
-  grid-template-columns: minmax(260px, 1.5fr) repeat(3, minmax(92px, 0.55fr));
+  grid-template-columns: 1fr;
 }
 
 .module-row.app-store-row {
-  grid-template-columns: minmax(190px, 1.1fr) repeat(6, minmax(76px, 0.45fr));
+  grid-template-columns: 1fr;
 }
 
 .module-row strong {

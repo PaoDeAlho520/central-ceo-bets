@@ -1,6 +1,6 @@
-﻿{
-  "atualizadoEm": "2026-05-31T19:54:38.405Z",
-  "origem": "HTML publico, DNS, SSL, inputs manuais e PageSpeed opcional",
+{
+  "atualizadoEm": "2026-05-31T20:10:16.515Z",
+  "origem": "snapshot-diario-github-actions",
   "pesos": {
     "tecnico": 0.25,
     "social": 0.2,
@@ -19,9 +19,9 @@
       "urlFinal": "https://maxima.bet.br/",
       "ok": true,
       "statusHttp": 200,
-      "latenciaMs": 423,
+      "latenciaMs": 631,
       "redirects": 1,
-      "htmlBytes": 615942,
+      "htmlBytes": 615943,
       "headers": {
         "server": "Vercel",
         "contentType": "text/html; charset=utf-8",
@@ -34,7 +34,7 @@
         "hostname": "www.maxima.bet.br",
         "records": [],
         "latenciaMs": 10,
-        "erro": "queryA EDESTRUCTION www.maxima.bet.br"
+        "erro": "queryA ECONNREFUSED www.maxima.bet.br"
       },
       "ssl": {
         "ok": true,
@@ -43,23 +43,23 @@
         "erro": "",
         "validoAte": "Aug  1 22:15:06 2026 GMT",
         "emissor": "Google Trust Services",
-        "latenciaMs": 30
+        "latenciaMs": 31
       },
       "robots": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 324,
+        "latenciaMs": 311,
         "urlFinal": "https://maxima.bet.br/"
       },
       "sitemap": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 386,
+        "latenciaMs": 398,
         "urlFinal": "https://maxima.bet.br/"
       },
       "metricas": {
         "titulo": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
-        "totalPagoHoje": 13594123.97,
+        "totalPagoHoje": 13677562.010000002,
         "totalJogosDetectados": 5872,
         "categorias": [
           "Slots",
@@ -179,7 +179,7 @@
           "bonusCadastro": true,
           "campanhasCassino": true,
           "campanhasSportsbook": true,
-          "contentHash": "92158b2d99bfdaef3e146bd182a2e1074579f4cd",
+          "contentHash": "73a00c940f51dab384dfc09683dd9e6168a2fa3a",
           "score": 100
         },
         "socialLinks": {
@@ -230,7 +230,7 @@
         "alertas": []
       },
       "alertas": [],
-      "coletadoEm": "2026-05-31T19:54:38.353Z"
+      "coletadoEm": "2026-05-31T20:10:16.502Z"
     },
     {
       "id": "ultra",
@@ -240,9 +240,9 @@
       "urlFinal": "https://ultra.bet.br/",
       "ok": true,
       "statusHttp": 200,
-      "latenciaMs": 476,
+      "latenciaMs": 481,
       "redirects": 1,
-      "htmlBytes": 605724,
+      "htmlBytes": 605725,
       "headers": {
         "server": "Vercel",
         "contentType": "text/html; charset=utf-8",
@@ -254,7 +254,7 @@
         "ok": false,
         "hostname": "www.ultra.bet.br",
         "records": [],
-        "latenciaMs": 7,
+        "latenciaMs": 5,
         "erro": "queryA ECONNREFUSED www.ultra.bet.br"
       },
       "ssl": {
@@ -264,23 +264,23 @@
         "erro": "",
         "validoAte": "Aug  6 06:22:42 2026 GMT",
         "emissor": "Let's Encrypt",
-        "latenciaMs": 28
+        "latenciaMs": 83
       },
       "robots": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 17,
+        "latenciaMs": 18,
         "urlFinal": "https://www.ultra.bet.br/robots.txt"
       },
       "sitemap": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 368,
+        "latenciaMs": 418,
         "urlFinal": "https://ultra.bet.br/"
       },
       "metricas": {
         "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
-        "totalPagoHoje": 8427299.09,
+        "totalPagoHoje": 8530330.129999999,
         "totalJogosDetectados": 4531,
         "categorias": [
           "Slots",
@@ -400,7 +400,7 @@
           "bonusCadastro": true,
           "campanhasCassino": true,
           "campanhasSportsbook": true,
-          "contentHash": "995225eb7ce745eb49e629104b1591afd4a3bdf2",
+          "contentHash": "64804c807b8fa6f0be135b1e2f6d13318785aced",
           "score": 100
         },
         "socialLinks": {
@@ -451,7 +451,7 @@
         "alertas": []
       },
       "alertas": [],
-      "coletadoEm": "2026-05-31T19:54:38.391Z"
+      "coletadoEm": "2026-05-31T20:10:16.378Z"
     },
     {
       "id": "suprema",
@@ -461,9 +461,9 @@
       "urlFinal": "https://suprema.bet.br/",
       "ok": true,
       "statusHttp": 200,
-      "latenciaMs": 436,
+      "latenciaMs": 446,
       "redirects": 1,
-      "htmlBytes": 609373,
+      "htmlBytes": 609371,
       "headers": {
         "server": "Vercel",
         "contentType": "text/html; charset=utf-8",
@@ -475,7 +475,7 @@
         "ok": false,
         "hostname": "www.suprema.bet.br",
         "records": [],
-        "latenciaMs": 3,
+        "latenciaMs": 4,
         "erro": "queryA ECONNREFUSED www.suprema.bet.br"
       },
       "ssl": {
@@ -485,23 +485,23 @@
         "erro": "",
         "validoAte": "Aug  1 22:08:56 2026 GMT",
         "emissor": "Google Trust Services",
-        "latenciaMs": 23
+        "latenciaMs": 52
       },
       "robots": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 312,
+        "latenciaMs": 342,
         "urlFinal": "https://suprema.bet.br/"
       },
       "sitemap": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 409,
+        "latenciaMs": 442,
         "urlFinal": "https://suprema.bet.br/"
       },
       "metricas": {
         "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
-        "totalPagoHoje": 27179962.529999997,
+        "totalPagoHoje": 27200305.16,
         "totalJogosDetectados": 4293,
         "categorias": [
           "Slots",
@@ -621,7 +621,7 @@
           "bonusCadastro": true,
           "campanhasCassino": true,
           "campanhasSportsbook": true,
-          "contentHash": "e9f92dbf1653dbb2f76a73f9d3733eff9e286026",
+          "contentHash": "49ba9fbf70a555cae4f9ef0ced16ef42763d7916",
           "score": 100
         },
         "socialLinks": {
@@ -672,7 +672,7 @@
         "alertas": []
       },
       "alertas": [],
-      "coletadoEm": "2026-05-31T19:54:38.395Z"
+      "coletadoEm": "2026-05-31T20:10:16.375Z"
     }
   ],
   "brands": [
@@ -700,9 +700,9 @@
         "urlFinal": "https://maxima.bet.br/",
         "ok": true,
         "statusHttp": 200,
-        "latenciaMs": 423,
+        "latenciaMs": 631,
         "redirects": 1,
-        "htmlBytes": 615942,
+        "htmlBytes": 615943,
         "headers": {
           "server": "Vercel",
           "contentType": "text/html; charset=utf-8",
@@ -715,7 +715,7 @@
           "hostname": "www.maxima.bet.br",
           "records": [],
           "latenciaMs": 10,
-          "erro": "queryA EDESTRUCTION www.maxima.bet.br"
+          "erro": "queryA ECONNREFUSED www.maxima.bet.br"
         },
         "ssl": {
           "ok": true,
@@ -724,23 +724,23 @@
           "erro": "",
           "validoAte": "Aug  1 22:15:06 2026 GMT",
           "emissor": "Google Trust Services",
-          "latenciaMs": 30
+          "latenciaMs": 31
         },
         "robots": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 324,
+          "latenciaMs": 311,
           "urlFinal": "https://maxima.bet.br/"
         },
         "sitemap": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 386,
+          "latenciaMs": 398,
           "urlFinal": "https://maxima.bet.br/"
         },
         "metricas": {
           "titulo": "Maxima Bet | Cassino e Apostas Esportivas | Saques instantâneos. Cashback Diário",
-          "totalPagoHoje": 13594123.97,
+          "totalPagoHoje": 13677562.010000002,
           "totalJogosDetectados": 5872,
           "categorias": [
             "Slots",
@@ -860,7 +860,7 @@
             "bonusCadastro": true,
             "campanhasCassino": true,
             "campanhasSportsbook": true,
-            "contentHash": "92158b2d99bfdaef3e146bd182a2e1074579f4cd",
+            "contentHash": "73a00c940f51dab384dfc09683dd9e6168a2fa3a",
             "score": 100
           },
           "socialLinks": {
@@ -911,7 +911,7 @@
           "alertas": []
         },
         "alertas": [],
-        "coletadoEm": "2026-05-31T19:54:38.353Z"
+        "coletadoEm": "2026-05-31T20:10:16.502Z"
       },
       "manual": {
         "brand_id": "maxima",
@@ -983,9 +983,9 @@
         "urlFinal": "https://ultra.bet.br/",
         "ok": true,
         "statusHttp": 200,
-        "latenciaMs": 476,
+        "latenciaMs": 481,
         "redirects": 1,
-        "htmlBytes": 605724,
+        "htmlBytes": 605725,
         "headers": {
           "server": "Vercel",
           "contentType": "text/html; charset=utf-8",
@@ -997,7 +997,7 @@
           "ok": false,
           "hostname": "www.ultra.bet.br",
           "records": [],
-          "latenciaMs": 7,
+          "latenciaMs": 5,
           "erro": "queryA ECONNREFUSED www.ultra.bet.br"
         },
         "ssl": {
@@ -1007,23 +1007,23 @@
           "erro": "",
           "validoAte": "Aug  6 06:22:42 2026 GMT",
           "emissor": "Let's Encrypt",
-          "latenciaMs": 28
+          "latenciaMs": 83
         },
         "robots": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 17,
+          "latenciaMs": 18,
           "urlFinal": "https://www.ultra.bet.br/robots.txt"
         },
         "sitemap": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 368,
+          "latenciaMs": 418,
           "urlFinal": "https://ultra.bet.br/"
         },
         "metricas": {
           "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
-          "totalPagoHoje": 8427299.09,
+          "totalPagoHoje": 8530330.129999999,
           "totalJogosDetectados": 4531,
           "categorias": [
             "Slots",
@@ -1143,7 +1143,7 @@
             "bonusCadastro": true,
             "campanhasCassino": true,
             "campanhasSportsbook": true,
-            "contentHash": "995225eb7ce745eb49e629104b1591afd4a3bdf2",
+            "contentHash": "64804c807b8fa6f0be135b1e2f6d13318785aced",
             "score": 100
           },
           "socialLinks": {
@@ -1194,7 +1194,7 @@
           "alertas": []
         },
         "alertas": [],
-        "coletadoEm": "2026-05-31T19:54:38.391Z"
+        "coletadoEm": "2026-05-31T20:10:16.378Z"
       },
       "manual": {
         "brand_id": "ultra",
@@ -1266,9 +1266,9 @@
         "urlFinal": "https://suprema.bet.br/",
         "ok": true,
         "statusHttp": 200,
-        "latenciaMs": 436,
+        "latenciaMs": 446,
         "redirects": 1,
-        "htmlBytes": 609373,
+        "htmlBytes": 609371,
         "headers": {
           "server": "Vercel",
           "contentType": "text/html; charset=utf-8",
@@ -1280,7 +1280,7 @@
           "ok": false,
           "hostname": "www.suprema.bet.br",
           "records": [],
-          "latenciaMs": 3,
+          "latenciaMs": 4,
           "erro": "queryA ECONNREFUSED www.suprema.bet.br"
         },
         "ssl": {
@@ -1290,23 +1290,23 @@
           "erro": "",
           "validoAte": "Aug  1 22:08:56 2026 GMT",
           "emissor": "Google Trust Services",
-          "latenciaMs": 23
+          "latenciaMs": 52
         },
         "robots": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 312,
+          "latenciaMs": 342,
           "urlFinal": "https://suprema.bet.br/"
         },
         "sitemap": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 409,
+          "latenciaMs": 442,
           "urlFinal": "https://suprema.bet.br/"
         },
         "metricas": {
           "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
-          "totalPagoHoje": 27179962.529999997,
+          "totalPagoHoje": 27200305.16,
           "totalJogosDetectados": 4293,
           "categorias": [
             "Slots",
@@ -1426,7 +1426,7 @@
             "bonusCadastro": true,
             "campanhasCassino": true,
             "campanhasSportsbook": true,
-            "contentHash": "e9f92dbf1653dbb2f76a73f9d3733eff9e286026",
+            "contentHash": "49ba9fbf70a555cae4f9ef0ced16ef42763d7916",
             "score": 100
           },
           "socialLinks": {
@@ -1477,7 +1477,7 @@
           "alertas": []
         },
         "alertas": [],
-        "coletadoEm": "2026-05-31T19:54:38.395Z"
+        "coletadoEm": "2026-05-31T20:10:16.375Z"
       },
       "manual": {
         "brand_id": "suprema",

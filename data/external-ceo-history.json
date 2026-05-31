@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-31T19:55:01.342Z",
+  "updatedAt": "2026-05-31T20:10:16.513Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23304,6 +23304,102 @@
       "statusHttp": 200,
       "latenciaMs": 438,
       "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T19:59:21.269Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 461,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T19:59:21.269Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 29545,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T19:59:21.269Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 23476,
+      "finalScore": 58
+    },
+    {
+      "at": "2026-05-31T20:03:52.220Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 489,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:03:52.220Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 465,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:03:52.220Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 440,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:08:52.260Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 479,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:08:52.260Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 451,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:08:52.260Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 503,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:10:16.513Z",
+      "brandId": "maxima",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 631,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:10:16.513Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 481,
+      "finalScore": 60
+    },
+    {
+      "at": "2026-05-31T20:10:16.513Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 446,
+      "finalScore": 60
     }
   ],
   "daily": {
@@ -23358,7 +23454,7 @@
       }
     },
     "2026-05-31": {
-      "at": "2026-05-31T19:55:01.342Z",
+      "at": "2026-05-31T20:10:16.513Z",
       "brands": {
         "maxima": {
           "scoreFinal": 60,
@@ -23373,7 +23469,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 470
+          "latenciaMs": 631
         },
         "ultra": {
           "scoreFinal": 60,
@@ -23388,7 +23484,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 423
+          "latenciaMs": 481
         },
         "suprema": {
           "scoreFinal": 60,
@@ -23403,7 +23499,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 438
+          "latenciaMs": 446
         }
       }
     }
