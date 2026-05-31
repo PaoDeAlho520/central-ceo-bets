@@ -556,6 +556,21 @@ function percentualOu(valor, fallback = "--") {
   return `${new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(Number(valor) || 0)}%`;
 }
 
+function numeroCompacto(valor, fallback = "--") {
+  if (valor === null || valor === undefined || valor === "") return fallback;
+  return new Intl.NumberFormat("pt-BR", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(Number(valor) || 0);
+}
+
+function larguraBarra(valor, maximo) {
+  const numero = Number(valor || 0);
+  const max = Number(maximo || 0);
+  if (!max) return 0;
+  return Math.max(4, Math.min(100, Math.round((numero / max) * 100)));
+}
+
 function componente(brand, chave) {
   return brand?.componentes?.[chave] ?? 0;
 }
@@ -907,14 +922,38 @@ function resumoGooglePlay(brand) {
   return `${brand.name}: ${brand.downloadsText || "--"} downloads | nota ${brand.ratingText || "--"} | ${brand.reviewsText || "--"}`;
 }
 
+function renderizarBarrasFonte(brands, metrica, maximo, formatador) {
+  return brands
+    .map(
+      (brand) => `
+        <div class="source-bar-row">
+          <span>${escaparHtml(brand.name || brand.id)}</span>
+          <div class="source-bar-track"><i style="width: ${larguraBarra(brand[metrica], maximo)}%"></i></div>
+          <strong>${escaparHtml(formatador(brand[metrica], brand))}</strong>
+        </div>
+      `,
+    )
+    .join("");
+}
+
 function renderizarStatusIntegracoes() {
   const instagramBrands = dadosInstagram?.brands || [];
   const googlePlayBrands = dadosGooglePlay?.brands || [];
   const instagramHistory = dadosInstagram?.historyCount || "--";
   const googlePlayHistory = dadosGooglePlay?.historyCount || "--";
+  const totalSeguidores = instagramBrands.reduce((sum, brand) => sum + Number(brand.followers || 0), 0);
+  const totalPosts7 = instagramBrands.reduce((sum, brand) => sum + Number(brand.posts7 || 0), 0);
+  const mediaEngajamento = media(instagramBrands.map((brand) => brand.engagementRate));
+  const maxSeguidores = Math.max(...instagramBrands.map((brand) => Number(brand.followers || 0)), 0);
+  const liderInstagram = [...instagramBrands].sort((a, b) => Number(b.followers || 0) - Number(a.followers || 0))[0];
+  const totalDownloads = googlePlayBrands.reduce((sum, brand) => sum + Number(brand.downloadsApprox || 0), 0);
+  const totalReviews = googlePlayBrands.reduce((sum, brand) => sum + Number(brand.reviewsApprox || 0), 0);
+  const mediaRating = media(googlePlayBrands.map((brand) => brand.rating));
+  const maxDownloads = Math.max(...googlePlayBrands.map((brand) => Number(brand.downloadsApprox || 0)), 0);
+  const liderGooglePlay = [...googlePlayBrands].sort((a, b) => Number(b.downloadsApprox || 0) - Number(a.downloadsApprox || 0))[0];
 
   integrationStatusBoard.innerHTML = `
-    <article class="integration-metric-card is-instagram">
+    <article class="source-dashboard is-instagram">
       <div class="integration-metric-head">
         <div>
           <span>Redes sociais</span>
@@ -922,16 +961,44 @@ function renderizarStatusIntegracoes() {
         </div>
         <small>1x por dia</small>
       </div>
-      <div class="integration-metric-list">
-        ${instagramBrands.map((brand) => `<p>${escaparHtml(resumoInstagram(brand))}</p>`).join("") || "<p>Sem dados do Instagram.</p>"}
+
+      <div class="source-kpi-grid">
+        <div><span>Seguidores</span><strong>${numeroCompacto(totalSeguidores)}</strong></div>
+        <div><span>Posts 7d</span><strong>${formatarNumero(totalPosts7)}</strong></div>
+        <div><span>Engajamento medio</span><strong>${percentualOu(mediaEngajamento)}</strong></div>
+        <div><span>Lider</span><strong>${escaparHtml(liderInstagram?.name || "--")}</strong></div>
       </div>
+
+      <div class="source-chart-panel">
+        <div class="source-chart-head">
+          <span>Seguidores por marca</span>
+          <strong>${escaparHtml(liderInstagram?.username || "")}</strong>
+        </div>
+        ${renderizarBarrasFonte(instagramBrands, "followers", maxSeguidores, (valor) => numeroCompacto(valor))}
+      </div>
+
+      <div class="source-mini-table">
+        ${instagramBrands
+          .map(
+            (brand) => `
+              <a href="${escaparHtml(brand.url || "#")}" target="_blank" rel="noreferrer">
+                <strong>${escaparHtml(brand.name)}</strong>
+                <span>${formatarNumero(brand.posts30)} posts 30d</span>
+                <span>${percentualOu(brand.engagementRate)}</span>
+                <span>${dataHoraOu(brand.lastPostDate)}</span>
+              </a>
+            `,
+          )
+          .join("")}
+      </div>
+
       <div class="integration-metric-foot">
         <span>Ultima coleta: ${dataHoraOu(dadosInstagram?.collectedAt)}</span>
         <span>Historico: ${escaparHtml(instagramHistory)}</span>
       </div>
     </article>
 
-    <article class="integration-metric-card is-google-play">
+    <article class="source-dashboard is-google-play">
       <div class="integration-metric-head">
         <div>
           <span>Apps</span>
@@ -939,9 +1006,37 @@ function renderizarStatusIntegracoes() {
         </div>
         <small>1x por dia</small>
       </div>
-      <div class="integration-metric-list">
-        ${googlePlayBrands.map((brand) => `<p>${escaparHtml(resumoGooglePlay(brand))}</p>`).join("") || "<p>Sem dados do Google Play.</p>"}
+
+      <div class="source-kpi-grid">
+        <div><span>Downloads</span><strong>${numeroCompacto(totalDownloads)}</strong></div>
+        <div><span>Avaliacoes</span><strong>${numeroCompacto(totalReviews)}</strong></div>
+        <div><span>Nota media</span><strong>${mediaRating === null ? "--" : mediaRating.toFixed(1).replace(".", ",")}</strong></div>
+        <div><span>Lider</span><strong>${escaparHtml(liderGooglePlay?.name || "--")}</strong></div>
       </div>
+
+      <div class="source-chart-panel">
+        <div class="source-chart-head">
+          <span>Downloads por app</span>
+          <strong>${escaparHtml(liderGooglePlay?.appId || "")}</strong>
+        </div>
+        ${renderizarBarrasFonte(googlePlayBrands, "downloadsApprox", maxDownloads, (_valor, brand) => brand.downloadsText || "--")}
+      </div>
+
+      <div class="source-mini-table">
+        ${googlePlayBrands
+          .map(
+            (brand) => `
+              <a href="${escaparHtml(brand.detailsUrl || "#")}" target="_blank" rel="noreferrer">
+                <strong>${escaparHtml(brand.name)}</strong>
+                <span>${escaparHtml(brand.appId || "--")}</span>
+                <span>nota ${escaparHtml(brand.ratingText || "--")}</span>
+                <span>${escaparHtml(brand.reviewsText || "--")}</span>
+              </a>
+            `,
+          )
+          .join("")}
+      </div>
+
       <div class="integration-metric-foot">
         <span>Ultima coleta: ${dataHoraOu(dadosGooglePlay?.collectedAt)}</span>
         <span>Historico: ${escaparHtml(googlePlayHistory)}</span>
