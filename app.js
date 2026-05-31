@@ -154,6 +154,7 @@ let dadosSites = [];
 let dadosExternal = null;
 let dadosIntegracoes = null;
 let dadosGooglePlay = null;
+let dadosInstagram = null;
 let filtroAtual = "all";
 
 const gradeMarcas = document.querySelector("#brand-grid");
@@ -246,8 +247,16 @@ function googlePlayPayload(id) {
   return dadosGooglePlay?.brands?.find((brand) => brand.id === id);
 }
 
+function instagramPayload(id) {
+  return dadosInstagram?.brands?.find((brand) => brand.id === id);
+}
+
 function googlePlayDiarioAtivo() {
   return (dadosGooglePlay?.brands || []).some((brand) => brand.collectedOk);
+}
+
+function instagramDiarioAtivo() {
+  return (dadosInstagram?.brands || []).some((brand) => brand.collectedOk);
 }
 
 function rotuloStatus(status) {
@@ -542,6 +551,11 @@ function dataHoraOu(valor, fallback = "--") {
   });
 }
 
+function percentualOu(valor, fallback = "--") {
+  if (valor === null || valor === undefined || valor === "") return fallback;
+  return `${new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(Number(valor) || 0)}%`;
+}
+
 function componente(brand, chave) {
   return brand?.componentes?.[chave] ?? 0;
 }
@@ -646,6 +660,7 @@ function renderizarSocial() {
     .map((brand) => {
       const links = brand.site?.metricas?.socialLinks || {};
       const manual = brand.manual || {};
+      const instagram = instagramPayload(brand.id) || {};
       const redes = ["instagram", "tiktok", "twitter", "youtube", "linkedin"]
         .map((rede) => `<span class="${links[rede] ? "check-ok" : "check-miss"}">${rede}</span>`)
         .join("");
@@ -653,12 +668,14 @@ function renderizarSocial() {
         <article class="module-row app-store-row">
           <div>
             <strong>${escaparHtml(brand.nome)}</strong>
-            <span>${redes}</span>
+            <span>${redes}${instagram.url ? ` <a href="${escaparHtml(instagram.url)}" target="_blank" rel="noreferrer">@${escaparHtml(instagram.username)}</a>` : ""}</span>
           </div>
-          <div><strong>${valorOu(manual.followers)}</strong><span>seguidores</span></div>
-          <div><strong>${valorOu(manual.posts7)}</strong><span>posts 7d</span></div>
-          <div><strong>${valorOu(manual.posts30)}</strong><span>posts 30d</span></div>
-          <div><strong>${valorOu(manual.engagement)}</strong><span>engajamento %</span></div>
+          <div><strong>${valorNumeroOu(instagram.followers ?? manual.followers)}</strong><span>seguidores</span></div>
+          <div><strong>${valorNumeroOu(instagram.posts7 ?? manual.posts7)}</strong><span>posts 7d</span></div>
+          <div><strong>${valorNumeroOu(instagram.posts30 ?? manual.posts30)}</strong><span>posts 30d</span></div>
+          <div><strong>${percentualOu(instagram.engagementRate ?? manual.engagement)}</strong><span>engajamento</span></div>
+          <div><strong>${valorNumeroOu(instagram.avgViews ?? manual.avgViews)}</strong><span>views medias</span></div>
+          <div><strong>${dataHoraOu(instagram.lastPostDate ?? manual.lastPost)}</strong><span>ultimo post</span></div>
           <div><strong>${componente(brand, "social")}</strong><span>score social</span></div>
         </article>
       `;
@@ -868,6 +885,7 @@ function renderizarManualInputs() {
 function nomeFonte(source) {
   return {
     instagram_graph: "Instagram Graph",
+    instagram_public_daily: "Instagram diario",
     youtube_data: "YouTube Data",
     tiktok_business: "TikTok Business",
     hugme_reclame_aqui: "HugMe/Reclame Aqui",
@@ -882,8 +900,11 @@ function nomeFonte(source) {
 function renderizarStatusIntegracoes() {
   const status = dadosIntegracoes?.status || [];
   const googlePlayAtivo = googlePlayDiarioAtivo();
+  const instagramAtivo = instagramDiarioAtivo();
   const statusComPlayDiario = status.map((item) =>
-    item.source === "google_play" && googlePlayAtivo
+    item.source === "instagram_graph" && instagramAtivo
+      ? { ...item, connected: true, mode: "github_actions_daily", configuredBrands: (dadosInstagram?.brands || []).map((brand) => brand.id) }
+      : item.source === "google_play" && googlePlayAtivo
       ? { ...item, connected: true, mode: "github_actions_daily", configuredBrands: (dadosGooglePlay?.brands || []).map((brand) => brand.id) }
       : item,
   );
@@ -907,7 +928,9 @@ function renderizarTabelaIntegracoes() {
     .map((marca) => {
       const metricas = latestByBrand[marca.id] || {};
       const googlePlay = googlePlayPayload(marca.id) || {};
+      const instagram = instagramPayload(marca.id) || {};
       const fontesSet = new Set(metricas.sources || []);
+      if (instagram.collectedOk) fontesSet.add("instagram_public_daily");
       if (googlePlay.collectedOk) fontesSet.add("google_play_daily");
       const fontes = Array.from(fontesSet).map(nomeFonte).join(", ") || "Manual pendente";
       const termos = Array.isArray(metricas.risk_terms) ? metricas.risk_terms.join(", ") : "";
@@ -919,12 +942,12 @@ function renderizarTabelaIntegracoes() {
         <tr>
           <td><strong>${marca.nome}</strong><span>${marca.dominio}</span></td>
           <td>${escaparHtml(fontes)}</td>
-          <td>${valorNumeroOu(metricas.followers)}</td>
-          <td>${valorOu(metricas.engagement_rate)}</td>
-          <td>${valorNumeroOu(metricas.posts_7d)}</td>
-          <td>${valorNumeroOu(metricas.posts_30d)}</td>
-          <td>${valorNumeroOu(metricas.avg_views)}</td>
-          <td>${valorOu(metricas.last_post_date)}</td>
+          <td>${instagram.url ? `<a href="${escaparHtml(instagram.url)}" target="_blank" rel="noreferrer">${valorNumeroOu(instagram.followers)}</a>` : valorNumeroOu(metricas.followers)}</td>
+          <td>${percentualOu(instagram.engagementRate ?? metricas.engagement_rate)}</td>
+          <td>${valorNumeroOu(instagram.posts7 ?? metricas.posts_7d)}</td>
+          <td>${valorNumeroOu(instagram.posts30 ?? metricas.posts_30d)}</td>
+          <td>${valorNumeroOu(instagram.avgViews ?? metricas.avg_views)}</td>
+          <td>${dataHoraOu(instagram.lastPostDate ?? metricas.last_post_date)}</td>
           <td>${valorOu(metricas.social_score)}</td>
           <td>${valorOu(metricas.reputation_score)}</td>
           <td>${valorNumeroOu(metricas.complaints_7d)}</td>
@@ -944,7 +967,8 @@ function renderizarTabelaIntegracoes() {
     .join("");
   const rows = dadosIntegracoes?.table?.rows?.length || 0;
   const coletaPlay = dadosGooglePlay?.collectedAt ? ` Google Play diario: ${dataHoraOu(dadosGooglePlay.collectedAt)}.` : "";
-  externalMetricsFootnote.textContent = `${formatarNumero(rows)} registros em external_brand_metrics. Snapshots online atualizados 1x por dia.${coletaPlay}`;
+  const coletaInstagram = dadosInstagram?.collectedAt ? ` Instagram diario: ${dataHoraOu(dadosInstagram.collectedAt)}.` : "";
+  externalMetricsFootnote.textContent = `${formatarNumero(rows)} registros em external_brand_metrics. Snapshots online atualizados 1x por dia.${coletaInstagram}${coletaPlay}`;
 }
 
 async function carregarIntegracoesExternas() {
@@ -975,6 +999,21 @@ async function carregarGooglePlayMetrics() {
     dadosGooglePlay = { brands: [] };
     escreverTerminal(`Google Play diario indisponivel: ${erro.message}`);
     renderizarAppStore();
+  }
+}
+
+async function carregarInstagramMetrics() {
+  try {
+    dadosInstagram = await carregarJsonComFallback(["data/instagram-metrics.json"]);
+    renderizarSocial();
+    if (dadosIntegracoes) {
+      renderizarStatusIntegracoes();
+      renderizarTabelaIntegracoes();
+    }
+  } catch (erro) {
+    dadosInstagram = { brands: [] };
+    escreverTerminal(`Instagram diario indisponivel: ${erro.message}`);
+    renderizarSocial();
   }
 }
 
@@ -1144,6 +1183,7 @@ atualizarMetricas();
 atualizarRelogio();
 carregarIntegracoesExternas();
 carregarGooglePlayMetrics();
+carregarInstagramMetrics();
 coletarDados();
 setInterval(atualizarRelogio, 15_000);
 setInterval(coletarDados, 120_000);

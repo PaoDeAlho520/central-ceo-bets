@@ -1,0 +1,56 @@
+{
+  "collectedAt": "2026-05-31T20:20:12.980Z",
+  "cadence": "daily",
+  "source": "Instagram public web profile endpoint",
+  "note": "posts7/posts30 e avgViews usam a amostra publica retornada pelo endpoint web do Instagram.",
+  "brands": [
+    {
+      "id": "maxima",
+      "name": "Maxima Bet",
+      "username": "maximabet.br",
+      "url": "https://www.instagram.com/maximabet.br/",
+      "collectedOk": true,
+      "followers": 109108,
+      "mediaCount": 1518,
+      "posts7": 4,
+      "posts30": 12,
+      "avgViews": 3875,
+      "engagementRate": 0.18,
+      "lastPostDate": "2026-05-31T18:17:29.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
+    },
+    {
+      "id": "ultra",
+      "name": "Ultra Bet",
+      "username": "ultrabet.br",
+      "url": "https://www.instagram.com/ultrabet.br/",
+      "collectedOk": true,
+      "followers": 87149,
+      "mediaCount": 1025,
+      "posts7": 1,
+      "posts30": 9,
+      "avgViews": 870,
+      "engagementRate": 0.27,
+      "lastPostDate": "2026-05-28T20:49:56.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
+    },
+    {
+      "id": "suprema",
+      "name": "Suprema Bet",
+      "username": "supremabet.br",
+      "url": "https://www.instagram.com/supremabet.br/",
+      "collectedOk": true,
+      "followers": 12794,
+      "mediaCount": 743,
+      "posts7": 3,
+      "posts30": 11,
+      "avgViews": null,
+      "engagementRate": 0.04,
+      "lastPostDate": "2026-05-31T15:06:45.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
+    }
+  ]
+}
