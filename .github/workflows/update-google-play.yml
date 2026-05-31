@@ -1,0 +1,32 @@
+name: Atualizar Google Play
+
+on:
+  schedule:
+    - cron: "20 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Coletar metricas da Play Store
+        run: node scripts/collect-google-play.mjs
+
+      - name: Commit se houver mudanca
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/google-play-metrics.json data/google-play-history.json
+          git diff --cached --quiet || git commit -m "Atualiza metricas Google Play"
+          git push

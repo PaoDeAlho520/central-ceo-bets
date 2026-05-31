@@ -761,9 +761,22 @@ h3 {
   grid-template-columns: minmax(260px, 1.5fr) repeat(3, minmax(92px, 0.55fr));
 }
 
+.module-row.app-store-row {
+  grid-template-columns: minmax(190px, 1.1fr) repeat(6, minmax(76px, 0.45fr));
+}
+
 .module-row strong {
   display: block;
   font-size: 13px;
+}
+
+.module-row a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.module-row a:hover {
+  text-decoration: underline;
 }
 
 .module-row span {

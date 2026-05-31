@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2026-05-31T20:04:59.706Z",
+  "checks": [
+    {
+      "collectedAt": "2026-05-31T20:04:59.706Z",
+      "cadence": "daily",
+      "source": "Google Play public pages",
+      "brands": [
+        {
+          "id": "maxima",
+          "name": "Maxima Bet",
+          "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.maxima&hl=pt_BR",
+          "appId": "br.bet.maxima",
+          "collectedOk": true,
+          "ratingText": "3,5",
+          "reviewsText": "41 avaliações",
+          "downloadsText": "10 mil+",
+          "rating": 3.5,
+          "reviewsApprox": 41,
+          "downloadsApprox": 10000
+        },
+        {
+          "id": "ultra",
+          "name": "Ultra Bet",
+          "searchUrl": "https://play.google.com/store/search?q=ultra%20bet&c=apps&hl=pt_BR",
+          "appId": "br.bet.ultra",
+          "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.ultra&hl=pt_BR",
+          "collectedOk": true,
+          "ratingText": "4,2",
+          "reviewsText": "2,04 mil avaliações",
+          "downloadsText": "100 mil+",
+          "rating": 4.2,
+          "reviewsApprox": 2040,
+          "downloadsApprox": 100000
+        },
+        {
+          "id": "suprema",
+          "name": "Suprema Bet",
+          "searchUrl": "https://play.google.com/store/search?q=suprema%20bet&c=apps&hl=pt_BR",
+          "appId": "br.bet.suprema",
+          "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.suprema&hl=pt_BR",
+          "collectedOk": true,
+          "ratingText": "3,1",
+          "reviewsText": "18 avaliações",
+          "downloadsText": "10 mil+",
+          "rating": 3.1,
+          "reviewsApprox": 18,
+          "downloadsApprox": 10000
+        }
+      ]
+    }
+  ]
+}

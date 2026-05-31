@@ -107,6 +107,7 @@ const agentes = [
 
 const rotina = [
   { hora: "08:00", titulo: "Abertura das tres marcas", detalhe: "Disponibilidade, latencia, redirecionamentos e banners principais.", estado: "feito" },
+  { hora: "07:20", titulo: "Google Play diario", detalhe: "Downloads, nota media e quantidade de avaliacoes dos apps Maxima, Ultra e Suprema.", estado: "diario" },
   { hora: "10:30", titulo: "Revisao legal e jogo responsavel", detalhe: "Termos, politica de privacidade, prevencao a lavagem de dinheiro e paginas de ajuda.", estado: "agora" },
   { hora: "13:00", titulo: "Catalogo e provedores", detalhe: "Jogos visiveis, cassino ao vivo, esportes e categorias em destaque.", estado: "proximo" },
   { hora: "16:00", titulo: "Mesa de risco", detalhe: "Cruzar sinais publicos com APIs internas assim que credenciais forem conectadas.", estado: "proximo" },
@@ -152,6 +153,7 @@ let atividades = [
 let dadosSites = [];
 let dadosExternal = null;
 let dadosIntegracoes = null;
+let dadosGooglePlay = null;
 let filtroAtual = "all";
 
 const gradeMarcas = document.querySelector("#brand-grid");
@@ -238,6 +240,10 @@ function statusScore(score) {
 
 function brandPayload(id) {
   return dadosExternal?.brands?.find((brand) => brand.id === id);
+}
+
+function googlePlayPayload(id) {
+  return dadosGooglePlay?.brands?.find((brand) => brand.id === id);
 }
 
 function rotuloStatus(status) {
@@ -520,6 +526,18 @@ function valorNumeroOu(valor, fallback = "--") {
   return valor === null || valor === undefined || valor === "" ? fallback : formatarNumero(valor);
 }
 
+function dataHoraOu(valor, fallback = "--") {
+  if (!valor) return fallback;
+  const data = new Date(valor);
+  if (Number.isNaN(data.getTime())) return fallback;
+  return data.toLocaleString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 function componente(brand, chave) {
   return brand?.componentes?.[chave] ?? 0;
 }
@@ -628,7 +646,7 @@ function renderizarSocial() {
         .map((rede) => `<span class="${links[rede] ? "check-ok" : "check-miss"}">${rede}</span>`)
         .join("");
       return `
-        <article class="module-row">
+        <article class="module-row app-store-row">
           <div>
             <strong>${escaparHtml(brand.nome)}</strong>
             <span>${redes}</span>
@@ -740,16 +758,24 @@ function renderizarAppStore() {
   appStoreBoard.innerHTML = (dadosExternal?.brands || [])
     .map((brand) => {
       const manual = brand.manual || {};
+      const googlePlay = googlePlayPayload(brand.id) || {};
+      const appNome = googlePlay.appId || manual.appName || "App ainda nao informado";
+      const nota = googlePlay.ratingText || manual.appRating;
+      const avaliacoes = googlePlay.reviewsText || manual.appReviews;
+      const downloads = googlePlay.downloadsText || "--";
+      const coleta = googlePlay.collectedOk ? dataHoraOu(dadosGooglePlay?.collectedAt) : googlePlay.error || "sem coleta";
+      const link = googlePlay.detailsUrl || "#";
       return `
         <article class="module-row">
           <div>
             <strong>${escaparHtml(brand.nome)}</strong>
-            <span>${escaparHtml(manual.appName || "Busca/app ainda nao informado")}</span>
+            <span>${link === "#" ? escaparHtml(appNome) : `<a href="${escaparHtml(link)}" target="_blank" rel="noreferrer">${escaparHtml(appNome)}</a>`}</span>
           </div>
-          <div><strong>${valorOu(manual.appRating)}</strong><span>nota media</span></div>
-          <div><strong>${valorOu(manual.appReviews)}</strong><span>avaliacoes</span></div>
+          <div><strong>${valorOu(downloads)}</strong><span>downloads</span></div>
+          <div><strong>${valorOu(nota)}</strong><span>nota media</span></div>
+          <div><strong>${valorOu(avaliacoes)}</strong><span>avaliacoes</span></div>
           <div><strong>${valorOu(manual.appVersion)}</strong><span>versao</span></div>
-          <div><strong>${valorOu(manual.appUpdatedAt)}</strong><span>ultima atualizacao</span></div>
+          <div><strong>${valorOu(coleta)}</strong><span>coleta Play</span></div>
           <div><strong>${valorOu(componente(brand, "appStore"))}</strong><span>score app</span></div>
         </article>
       `;
@@ -916,6 +942,17 @@ async function carregarIntegracoesExternas() {
   }
 }
 
+async function carregarGooglePlayMetrics() {
+  try {
+    dadosGooglePlay = await carregarJsonComFallback(["data/google-play-metrics.json"]);
+    renderizarAppStore();
+  } catch (erro) {
+    dadosGooglePlay = { brands: [] };
+    escreverTerminal(`Google Play diario indisponivel: ${erro.message}`);
+    renderizarAppStore();
+  }
+}
+
 async function rodarIntegracoesExternas() {
   integrationsState.textContent = "Rodando conectores...";
   escreverTerminal("coleta de integracoes externas iniciada");
@@ -1079,6 +1116,7 @@ renderizarModulosExternos();
 atualizarMetricas();
 atualizarRelogio();
 carregarIntegracoesExternas();
+carregarGooglePlayMetrics();
 coletarDados();
 setInterval(atualizarRelogio, 15_000);
 setInterval(coletarDados, 120_000);
