@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-01T16:27:43.152Z",
+  "updatedAt": "2026-06-01T17:02:50.944Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23640,6 +23640,30 @@
       "statusHttp": 200,
       "latenciaMs": 1057,
       "finalScore": 66
+    },
+    {
+      "at": "2026-06-01T17:02:50.944Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 123,
+      "finalScore": 35
+    },
+    {
+      "at": "2026-06-01T17:02:50.944Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 599,
+      "finalScore": 67
+    },
+    {
+      "at": "2026-06-01T17:02:50.944Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 368,
+      "finalScore": 67
     }
   ],
   "daily": {
@@ -23744,12 +23768,12 @@
       }
     },
     "2026-06-01": {
-      "at": "2026-06-01T16:27:43.152Z",
+      "at": "2026-06-01T17:02:50.944Z",
       "brands": {
         "maxima": {
-          "scoreFinal": 34,
+          "scoreFinal": 35,
           "componentes": {
-            "tecnico": 77,
+            "tecnico": 82,
             "social": 0,
             "seo": 10,
             "reputacao": 78,
@@ -23759,12 +23783,12 @@
             "appStore": 0
           },
           "statusHttp": 403,
-          "latenciaMs": 304
+          "latenciaMs": 123
         },
         "ultra": {
-          "scoreFinal": 66,
+          "scoreFinal": 67,
           "componentes": {
-            "tecnico": 91,
+            "tecnico": 94,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23774,12 +23798,12 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 939
+          "latenciaMs": 599
         },
         "suprema": {
-          "scoreFinal": 66,
+          "scoreFinal": 67,
           "componentes": {
-            "tecnico": 91,
+            "tecnico": 94,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23789,7 +23813,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 1057
+          "latenciaMs": 368
         }
       }
     }
