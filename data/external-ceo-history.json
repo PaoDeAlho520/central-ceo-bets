@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T15:44:46.677Z",
+  "updatedAt": "2026-06-03T15:20:54.016Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23736,6 +23736,30 @@
       "statusHttp": 200,
       "latenciaMs": 491,
       "finalScore": 67
+    },
+    {
+      "at": "2026-06-03T15:20:54.016Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 362,
+      "finalScore": 34
+    },
+    {
+      "at": "2026-06-03T15:20:54.016Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 1078,
+      "finalScore": 66
+    },
+    {
+      "at": "2026-06-03T15:20:54.016Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 1140,
+      "finalScore": 66
     }
   ],
   "daily": {
@@ -23936,6 +23960,56 @@
           },
           "statusHttp": 200,
           "latenciaMs": 491
+        }
+      }
+    },
+    "2026-06-03": {
+      "at": "2026-06-03T15:20:54.016Z",
+      "brands": {
+        "maxima": {
+          "scoreFinal": 34,
+          "componentes": {
+            "tecnico": 76,
+            "social": 0,
+            "seo": 10,
+            "reputacao": 78,
+            "jornada": 10,
+            "promocoes": 0,
+            "compliance": 10,
+            "appStore": 0
+          },
+          "statusHttp": 403,
+          "latenciaMs": 362
+        },
+        "ultra": {
+          "scoreFinal": 66,
+          "componentes": {
+            "tecnico": 91,
+            "social": 22,
+            "seo": 95,
+            "reputacao": 0,
+            "jornada": 100,
+            "promocoes": 100,
+            "compliance": 100,
+            "appStore": 0
+          },
+          "statusHttp": 200,
+          "latenciaMs": 1078
+        },
+        "suprema": {
+          "scoreFinal": 66,
+          "componentes": {
+            "tecnico": 91,
+            "social": 22,
+            "seo": 95,
+            "reputacao": 0,
+            "jornada": 100,
+            "promocoes": 100,
+            "compliance": 100,
+            "appStore": 0
+          },
+          "statusHttp": 200,
+          "latenciaMs": 1140
         }
       }
     }
