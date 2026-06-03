@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T15:20:54.016Z",
+  "updatedAt": "2026-06-03T16:03:14.979Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23760,6 +23760,30 @@
       "statusHttp": 200,
       "latenciaMs": 1140,
       "finalScore": 66
+    },
+    {
+      "at": "2026-06-03T16:03:14.979Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 93,
+      "finalScore": 34
+    },
+    {
+      "at": "2026-06-03T16:03:14.979Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 313,
+      "finalScore": 67
+    },
+    {
+      "at": "2026-06-03T16:03:14.979Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 497,
+      "finalScore": 67
     }
   ],
   "daily": {
@@ -23964,7 +23988,7 @@
       }
     },
     "2026-06-03": {
-      "at": "2026-06-03T15:20:54.016Z",
+      "at": "2026-06-03T16:03:14.979Z",
       "brands": {
         "maxima": {
           "scoreFinal": 34,
@@ -23979,12 +24003,12 @@
             "appStore": 0
           },
           "statusHttp": 403,
-          "latenciaMs": 362
+          "latenciaMs": 93
         },
         "ultra": {
-          "scoreFinal": 66,
+          "scoreFinal": 67,
           "componentes": {
-            "tecnico": 91,
+            "tecnico": 93,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -23994,12 +24018,12 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 1078
+          "latenciaMs": 313
         },
         "suprema": {
-          "scoreFinal": 66,
+          "scoreFinal": 67,
           "componentes": {
-            "tecnico": 91,
+            "tecnico": 93,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -24009,7 +24033,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 1140
+          "latenciaMs": 497
         }
       }
     }
