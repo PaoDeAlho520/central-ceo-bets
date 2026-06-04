@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T13:47:55.338Z",
+  "updatedAt": "2026-06-04T14:14:58.939Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -23808,6 +23808,30 @@
       "statusHttp": 200,
       "latenciaMs": 954,
       "finalScore": 66
+    },
+    {
+      "at": "2026-06-04T14:14:58.939Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 209,
+      "finalScore": 34
+    },
+    {
+      "at": "2026-06-04T14:14:58.939Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 636,
+      "finalScore": 67
+    },
+    {
+      "at": "2026-06-04T14:14:58.939Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 582,
+      "finalScore": 67
     }
   ],
   "daily": {
@@ -24062,7 +24086,7 @@
       }
     },
     "2026-06-04": {
-      "at": "2026-06-04T13:47:55.338Z",
+      "at": "2026-06-04T14:14:58.939Z",
       "brands": {
         "maxima": {
           "scoreFinal": 34,
@@ -24077,7 +24101,7 @@
             "appStore": 0
           },
           "statusHttp": 403,
-          "latenciaMs": 264
+          "latenciaMs": 209
         },
         "ultra": {
           "scoreFinal": 67,
@@ -24092,12 +24116,12 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 768
+          "latenciaMs": 636
         },
         "suprema": {
-          "scoreFinal": 66,
+          "scoreFinal": 67,
           "componentes": {
-            "tecnico": 90,
+            "tecnico": 93,
             "social": 22,
             "seo": 95,
             "reputacao": 0,
@@ -24107,7 +24131,7 @@
             "appStore": 0
           },
           "statusHttp": 200,
-          "latenciaMs": 954
+          "latenciaMs": 582
         }
       }
     }
