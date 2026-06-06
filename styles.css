@@ -1254,6 +1254,32 @@ h3 {
   color: var(--ink);
 }
 
+.benchmark-brand-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 150px;
+  font-weight: 800;
+}
+
+.benchmark-brand-logo {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  object-fit: contain;
+}
+
+.benchmark-brand-logo-fallback {
+  color: var(--green);
+  font-size: 10px;
+  line-height: 1;
+}
+
 .benchmark-table a {
   color: var(--green);
 }

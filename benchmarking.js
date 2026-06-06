@@ -22,6 +22,14 @@ const NOMES_ABAS_BENCHMARK = {
   Ranking: "Ranking",
 };
 
+const LOGOS_MARCAS_BENCHMARK = {
+  "7games": "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/d2394ce77a6564ef2542db16e059dd5a.png",
+  bet365: "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/11ecccae2576a04db82cd50815fb9785.png",
+  betano: "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/438f137c810f6b9e59366943e0def39e.png",
+  sportingbet: "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/be706ed1df17f920262623c169f8b0cf.png",
+  superbet: "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/fbbd73008425a7cf2e25eff11641d1f9.png",
+};
+
 let dadosBenchmark = null;
 let abaBenchmarkAtual = "Brazil";
 
@@ -53,6 +61,28 @@ function escaparHtml(valor) {
     .replace(/'/g, "&#039;");
 }
 
+function nomeMarcaBenchmark(valor) {
+  return textoCelula(valor).replace(/\s+Logo\s*$/i, "").trim();
+}
+
+function chaveMarcaBenchmark(valor) {
+  return nomeMarcaBenchmark(valor)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function monogramaMarcaBenchmark(nome) {
+  return nome
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((parte) => parte[0])
+    .join("")
+    .toUpperCase() || "BM";
+}
+
 function rotuloCabecalhoBenchmark(cabecalho) {
   const texto = textoCelula(cabecalho);
   return ROTULOS_BENCHMARK[texto] || texto;
@@ -69,6 +99,25 @@ function formatarCelula(valor) {
     return `<a href="${escaparHtml(texto)}" target="_blank" rel="noreferrer">Abrir link</a>`;
   }
   return escaparHtml(texto);
+}
+
+function formatarMarcaBenchmark(valor) {
+  const nome = nomeMarcaBenchmark(valor);
+  const logo = LOGOS_MARCAS_BENCHMARK[chaveMarcaBenchmark(valor)];
+  const imagem = logo
+    ? `<img class="benchmark-brand-logo" src="${escaparHtml(logo)}" alt="${escaparHtml(nome)}" loading="lazy" />`
+    : `<span class="benchmark-brand-logo benchmark-brand-logo-fallback" aria-hidden="true">${escaparHtml(monogramaMarcaBenchmark(nome))}</span>`;
+  return `
+    <span class="benchmark-brand-cell">
+      ${imagem}
+      <span>${escaparHtml(nome)}</span>
+    </span>
+  `;
+}
+
+function formatarCelulaBenchmark(registro, cabecalho) {
+  if (cabecalho === "Brand") return formatarMarcaBenchmark(registro[cabecalho]);
+  return formatarCelula(registro[cabecalho]);
 }
 
 function planilhaAtual() {
@@ -170,7 +219,7 @@ function renderizarTabelaBenchmark() {
   cabecalhoBenchmark.innerHTML = `<tr>${cabecalhos.map((cabecalho) => `<th>${escaparHtml(rotuloCabecalhoBenchmark(cabecalho))}</th>`).join("")}</tr>`;
   corpoBenchmark.innerHTML = filtrados.length
     ? filtrados
-        .map((registro) => `<tr>${cabecalhos.map((cabecalho) => `<td>${formatarCelula(registro[cabecalho])}</td>`).join("")}</tr>`)
+        .map((registro) => `<tr>${cabecalhos.map((cabecalho) => `<td>${formatarCelulaBenchmark(registro, cabecalho)}</td>`).join("")}</tr>`)
         .join("")
     : `<tr><td class="benchmark-empty" colspan="${Math.max(cabecalhos.length, 1)}">Nenhuma linha encontrada para a busca atual.</td></tr>`;
 
