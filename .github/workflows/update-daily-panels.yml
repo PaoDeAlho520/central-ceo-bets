@@ -26,6 +26,14 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias Python
+        run: python -m pip install openpyxl
+
       - name: Coletar Google Play
         run: node scripts/collect-google-play.mjs
 
@@ -40,6 +48,13 @@ jobs:
       - name: Atualizar snapshot da home
         run: node scripts/update-home-snapshots.mjs
 
+      - name: Atualizar planilha BC
+        run: |
+          curl -L --fail "https://docs.google.com/spreadsheets/d/1ZYzpRg3Lw2H3PdODgLVPiXh0rFNo_6kq0Pk15FfhCpk/export?format=xlsx" -o data/bc-source.xlsx
+          python scripts/convert-bc-sheet.py data/bc-source.xlsx data/bc.json
+          node scripts/build-brand-logos.mjs
+          rm -f data/bc-source.xlsx
+
       - name: Commit se houver mudanca
         run: |
           git config user.name "github-actions[bot]"
@@ -48,6 +63,7 @@ jobs:
           git add data/instagram-metrics.json data/instagram-history.json
           git add data/pagespeed-cache.json data/pagespeed-history.json
           git add data/external-ceo-static.json data/external-brand-metrics-static.json data/external-ceo-history.json
+          git add data/bc.json data/brand-logos.json
           git diff --cached --quiet || git commit -m "Atualiza paineis diarios"
           git pull --rebase origin main
           git push

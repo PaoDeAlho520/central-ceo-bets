@@ -68,7 +68,7 @@ function logoRowBc(row) {
   const nome = valorPrimeiro(row, ["Nome", "Brand", "Marca", "MARCAS", "Casa de Aposta", "Agregador", "truncate", "Plataforma"]);
   if (nome && logosBc.byName?.[chaveBc(nome)]) return logosBc.byName[chaveBc(nome)];
 
-  const dominio = valorPrimeiro(row, ["Empresa", "Endereço", "Endere莽o", "DOMÍNIOS", "DOM脥NIOS", "URL"]);
+  const dominio = valorPrimeiro(row, ["Empresa", "Endereco", "Endereço", "Endere莽o", "DOMÍNIOS", "DOMINIOS", "DOM脥NIOS", "URL"]);
   if (dominio && logosBc.byDomain?.[chaveBc(dominio)]) return logosBc.byDomain[chaveBc(dominio)];
 
   return "";

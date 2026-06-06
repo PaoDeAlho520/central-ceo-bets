@@ -45,7 +45,7 @@ function addNamedLogo(row, src) {
     const key = chave(name);
     if (key && src) byName[key] = src;
   }
-  const domains = [row?.Empresa, row?.["Endereço"], row?.["Endere莽o"], row?.["DOMÍNIOS"], row?.["DOM脥NIOS"]];
+  const domains = [row?.Empresa, row?.Endereco, row?.["Endereço"], row?.["Endere莽o"], row?.["DOMÍNIOS"], row?.DOMINIOS, row?.["DOM脥NIOS"]];
   for (const domain of domains) {
     const key = chave(domain);
     if (key && src) byDomain[key] = src;
