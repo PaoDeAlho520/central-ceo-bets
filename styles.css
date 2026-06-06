@@ -1084,6 +1084,10 @@ h3 {
   margin-bottom: 12px;
 }
 
+.benchmark-controls.bc-controls {
+  grid-template-columns: minmax(260px, 1fr) auto;
+}
+
 .benchmark-controls label {
   display: grid;
   gap: 6px;
@@ -1192,6 +1196,45 @@ h3 {
   margin-bottom: 12px;
 }
 
+.bc-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.bc-tab {
+  display: inline-flex;
+  min-height: 38px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0 12px;
+}
+
+.bc-tab span {
+  border-radius: 999px;
+  background: rgba(40, 227, 139, 0.1);
+  color: var(--green);
+  font-size: 11px;
+  padding: 3px 7px;
+}
+
+.bc-tab:hover,
+.bc-tab.is-active {
+  border-color: rgba(40, 227, 139, 0.5);
+  background: rgba(40, 227, 139, 0.09);
+  color: var(--ink);
+}
+
 .benchmark-summary-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1223,6 +1266,10 @@ h3 {
 .benchmark-page .benchmark-table-wrap {
   max-height: calc(100vh - 390px);
   min-height: 430px;
+}
+
+.benchmark-page .bc-table-wrap {
+  max-height: calc(100vh - 440px);
 }
 
 .benchmark-table {

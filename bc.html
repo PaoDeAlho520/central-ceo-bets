@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BC | Central CEO de Bets</title>
+    <link rel="stylesheet" href="styles.css?v=20260606-bc-page" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">CB</div>
+          <div>
+            <p class="brand-name">Central CEO</p>
+            <p class="brand-subtitle">Operacao de bets</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Secoes">
+          <a class="nav-item" href="index.html" title="Home" aria-label="Home">Home</a>
+          <a class="nav-item" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking">BM</a>
+          <a class="nav-item is-active" href="bc.html" title="BC" aria-label="BC" aria-current="page">BC</a>
+        </nav>
+
+        <div class="system-pill">
+          <span class="pulse-dot"></span>
+          <span>monitor ativo</span>
+        </div>
+      </aside>
+
+      <main class="dashboard benchmark-page">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Planilha conectada</p>
+            <h1>BC</h1>
+            <p class="page-subtitle">
+              Consulta da planilha compartilhada com as guias internas transformadas em abas de navegacao.
+            </p>
+          </div>
+
+          <div class="topbar-actions">
+            <a class="ghost-button" href="benchmarking.html">Abrir BM</a>
+          </div>
+        </header>
+
+        <section id="bc" class="benchmark-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Base consolidada</p>
+              <h2 id="bc-title">Carregando BC</h2>
+              <p class="section-subtitle" id="bc-subtitle">Aguardando dados da planilha.</p>
+            </div>
+            <div class="market-badges">
+              <span id="bc-state">Carregando base</span>
+              <span id="bc-source">Google Sheets</span>
+            </div>
+          </div>
+
+          <div class="benchmark-metrics">
+            <article class="benchmark-kpi">
+              <span>Guias</span>
+              <strong id="bc-sheets">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Linhas totais</span>
+              <strong id="bc-rows">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Guia atual</span>
+              <strong id="bc-current">--</strong>
+            </article>
+            <article class="benchmark-kpi">
+              <span>Logos</span>
+              <strong id="bc-logos">--</strong>
+            </article>
+          </div>
+
+          <div id="bc-tabs" class="bc-tabs" role="tablist" aria-label="Guias da planilha"></div>
+
+          <div class="benchmark-controls bc-controls">
+            <label>
+              Buscar
+              <input id="bc-search" type="search" placeholder="Filtrar a guia selecionada" />
+            </label>
+            <button id="bc-clear" class="ghost-button" type="button">Limpar busca</button>
+          </div>
+
+          <div class="benchmark-summary" id="bc-summary"></div>
+
+          <div class="benchmark-table-wrap bc-table-wrap">
+            <table class="benchmark-table">
+              <thead id="bc-table-head"></thead>
+              <tbody id="bc-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="bc.js?v=20260606-bc-page"></script>
+  </body>
+</html>

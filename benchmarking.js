@@ -33,6 +33,7 @@ const LOGOS_MARCAS_BENCHMARK = {
 const CAMPOS_LOGO_BENCHMARK = ["Logo", "Logo URL", "Image", "Image URL", "Brand Logo", "Brand logo", "Logo link"];
 
 let dadosBenchmark = null;
+let logosBenchmark = {};
 let abaBenchmarkAtual = "Brazil";
 
 const seletorBenchmark = document.querySelector("#benchmark-sheet-select");
@@ -105,7 +106,8 @@ function formatarCelula(valor) {
 
 function logoDoRegistroBenchmark(registro, valor) {
   const logoPlanilha = CAMPOS_LOGO_BENCHMARK.map((campo) => textoCelula(registro?.[campo])).find((texto) => /^https?:\/\//i.test(texto));
-  return logoPlanilha || LOGOS_MARCAS_BENCHMARK[chaveMarcaBenchmark(valor)] || "";
+  const logoPorUrl = logosBenchmark[textoCelula(registro?.["Brand URL"])] || logosBenchmark[textoCelula(registro?.URL)];
+  return logoPlanilha || logoPorUrl || LOGOS_MARCAS_BENCHMARK[chaveMarcaBenchmark(valor)] || "";
 }
 
 function formatarMarcaBenchmark(valor, registro) {
@@ -283,7 +285,12 @@ async function buscarBaseBenchmarking() {
 
 async function carregarBenchmarking() {
   try {
-    dadosBenchmark = await buscarBaseBenchmarking();
+    const [base, logos] = await Promise.all([
+      buscarBaseBenchmarking(),
+      carregarLogosBenchmark(),
+    ]);
+    dadosBenchmark = base;
+    logosBenchmark = logos;
     preencherKpisBenchmark();
     preencherSeletorBenchmark();
     renderizarTabelaBenchmark();
@@ -292,6 +299,17 @@ async function carregarBenchmarking() {
     estadoBenchmark.textContent = "Falha ao carregar";
     cabecalhoBenchmark.innerHTML = "";
     corpoBenchmark.innerHTML = `<tr><td class="benchmark-empty">Nao foi possivel carregar a base: ${escaparHtml(erro.message)}</td></tr>`;
+  }
+}
+
+async function carregarLogosBenchmark() {
+  try {
+    const resposta = await fetch(`data/brand-logos.json?ts=${Date.now()}`);
+    if (!resposta.ok) throw new Error(`brand-logos: HTTP ${resposta.status}`);
+    const payload = await resposta.json();
+    return payload.logos || {};
+  } catch {
+    return {};
   }
 }
 
