@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-06-05T13:46:18.798Z",
+  "collectedAt": "2026-06-06T11:32:18.578Z",
   "cadence": "daily",
   "source": "Instagram public web profile endpoint",
   "note": "posts7/posts30 e avgViews usam a amostra publica retornada pelo endpoint web do Instagram.",
@@ -9,24 +9,48 @@
       "name": "Maxima Bet",
       "username": "maximabet.br",
       "url": "https://www.instagram.com/maximabet.br/",
-      "collectedOk": false,
-      "error": "maximabet.br: HTTP 429"
+      "collectedOk": true,
+      "followers": 109327,
+      "mediaCount": 1533,
+      "posts7": 7,
+      "posts30": 12,
+      "avgViews": 3817,
+      "engagementRate": 0.2,
+      "lastPostDate": "2026-06-04T19:04:18.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
     },
     {
       "id": "ultra",
       "name": "Ultra Bet",
       "username": "ultrabet.br",
       "url": "https://www.instagram.com/ultrabet.br/",
-      "collectedOk": false,
-      "error": "ultrabet.br: HTTP 429"
+      "collectedOk": true,
+      "followers": 87501,
+      "mediaCount": 1033,
+      "posts7": 1,
+      "posts30": 8,
+      "avgViews": 841,
+      "engagementRate": 0.22,
+      "lastPostDate": "2026-06-03T23:47:21.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
     },
     {
       "id": "suprema",
       "name": "Suprema Bet",
       "username": "supremabet.br",
       "url": "https://www.instagram.com/supremabet.br/",
-      "collectedOk": false,
-      "error": "supremabet.br: HTTP 429"
+      "collectedOk": true,
+      "followers": 12909,
+      "mediaCount": 760,
+      "posts7": 4,
+      "posts30": 12,
+      "avgViews": null,
+      "engagementRate": 0.04,
+      "lastPostDate": "2026-06-05T21:00:04.000Z",
+      "sampledPosts": 12,
+      "source": "instagram_public_web_profile_info"
     }
   ]
 }

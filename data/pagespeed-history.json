@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T14:08:15.321Z",
+  "updatedAt": "2026-06-06T11:32:25.194Z",
   "checks": [
     {
       "updatedAt": "2026-05-31T20:39:36.151Z",
@@ -1127,6 +1127,167 @@
             "requests": 232,
             "pageBytes": 605577,
             "htmlBytes": 605577,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://suprema.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          }
+        }
+      }
+    },
+    {
+      "updatedAt": "2026-06-06T11:32:25.194Z",
+      "brands": {
+        "maxima": {
+          "mobile": {
+            "strategy": "mobile",
+            "collectedAt": "2026-06-06T11:32:26.831Z",
+            "performance": 56,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.4 s",
+              "lcp": "0.8 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.1 s"
+            },
+            "requests": 238,
+            "pageBytes": 612023,
+            "htmlBytes": 612023,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://maxima.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          },
+          "desktop": {
+            "strategy": "desktop",
+            "collectedAt": "2026-06-06T11:32:28.219Z",
+            "performance": 57,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.3 s",
+              "lcp": "0.7 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.0 s"
+            },
+            "requests": 238,
+            "pageBytes": 612023,
+            "htmlBytes": 612023,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://maxima.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          }
+        },
+        "ultra": {
+          "mobile": {
+            "strategy": "mobile",
+            "collectedAt": "2026-06-06T11:32:29.720Z",
+            "performance": 56,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.5 s",
+              "lcp": "0.8 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.1 s"
+            },
+            "requests": 229,
+            "pageBytes": 606168,
+            "htmlBytes": 606168,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://ultra.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          },
+          "desktop": {
+            "strategy": "desktop",
+            "collectedAt": "2026-06-06T11:32:31.190Z",
+            "performance": 56,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.4 s",
+              "lcp": "0.8 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.1 s"
+            },
+            "requests": 229,
+            "pageBytes": 606167,
+            "htmlBytes": 606167,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://ultra.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          }
+        },
+        "suprema": {
+          "mobile": {
+            "strategy": "mobile",
+            "collectedAt": "2026-06-06T11:32:32.616Z",
+            "performance": 56,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.4 s",
+              "lcp": "0.8 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.1 s"
+            },
+            "requests": 232,
+            "pageBytes": 603632,
+            "htmlBytes": 603632,
+            "statusHttp": 200,
+            "source": "html_fallback",
+            "technicalErrors": [
+              "Muitos assets detectados no HTML"
+            ],
+            "reportUrl": "https://suprema.bet.br/",
+            "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
+          },
+          "desktop": {
+            "strategy": "desktop",
+            "collectedAt": "2026-06-06T11:32:34.418Z",
+            "performance": 52,
+            "accessibility": 100,
+            "bestPractices": 67,
+            "seo": 100,
+            "coreWebVitals": {
+              "fcp": "0.7 s",
+              "lcp": "1.1 s",
+              "cls": "estimado",
+              "tbt": "estimado",
+              "speedIndex": "1.4 s"
+            },
+            "requests": 232,
+            "pageBytes": 603632,
+            "htmlBytes": 603632,
             "statusHttp": 200,
             "source": "html_fallback",
             "technicalErrors": [

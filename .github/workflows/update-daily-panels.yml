@@ -1,0 +1,53 @@
+name: Atualizar paineis diarios
+
+on:
+  schedule:
+    - cron: "30 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-paineis-diarios
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Coletar Google Play
+        run: node scripts/collect-google-play.mjs
+
+      - name: Coletar Instagram
+        run: node scripts/collect-instagram.mjs
+
+      - name: Coletar PageSpeed
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: node scripts/collect-pagespeed.mjs
+
+      - name: Atualizar snapshot da home
+        run: node scripts/update-home-snapshots.mjs
+
+      - name: Commit se houver mudanca
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/google-play-metrics.json data/google-play-history.json
+          git add data/instagram-metrics.json data/instagram-history.json
+          git add data/pagespeed-cache.json data/pagespeed-history.json
+          git add data/external-ceo-static.json data/external-brand-metrics-static.json data/external-ceo-history.json
+          git diff --cached --quiet || git commit -m "Atualiza paineis diarios"
+          git pull --rebase origin main
+          git push
