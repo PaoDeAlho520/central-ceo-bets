@@ -6,7 +6,7 @@ const ROTULOS_BENCHMARK = {
   YoY: "Ano a ano",
   MoM: "Mes a mes",
   APS: "APS",
-  "CEB (US$)": "CEB (US$)",
+  "CEB (US$)": "CEB(BRL)",
   MI: "MI",
   Casino: "Cassino",
   Betting: "Apostas",
@@ -31,6 +31,7 @@ const LOGOS_MARCAS_BENCHMARK = {
 };
 
 const CAMPOS_LOGO_BENCHMARK = ["Logo", "Logo URL", "Image", "Image URL", "Brand Logo", "Brand logo", "Logo link"];
+const DOLAR_BENCHMARK_BRL = 5;
 
 let dadosBenchmark = null;
 let logosBenchmark = {};
@@ -104,6 +105,33 @@ function formatarCelula(valor) {
   return escaparHtml(texto);
 }
 
+function valorUsdBenchmark(valor) {
+  const texto = textoCelula(valor).replace(/\s/g, "");
+  const match = texto.match(/-?[\d.,]+/);
+  if (!match) return null;
+  const numero = Number(match[0].replace(/,/g, ""));
+  if (!Number.isFinite(numero)) return null;
+  if (/B/i.test(texto)) return numero * 1_000_000_000;
+  if (/M/i.test(texto)) return numero * 1_000_000;
+  if (/K/i.test(texto)) return numero * 1_000;
+  return numero;
+}
+
+function formatarBrlBenchmark(valorUsd) {
+  const brl = valorUsd * DOLAR_BENCHMARK_BRL;
+  const abs = Math.abs(brl);
+  if (abs >= 1_000_000_000) return `R$ ${(brl / 1_000_000_000).toFixed(2).replace(".", ",")} bi`;
+  if (abs >= 1_000_000) return `R$ ${(brl / 1_000_000).toFixed(2).replace(".", ",")} mi`;
+  if (abs >= 1_000) return `R$ ${(brl / 1_000).toFixed(2).replace(".", ",")} mil`;
+  return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(brl);
+}
+
+function formatarCebBrlBenchmark(valor) {
+  const usd = valorUsdBenchmark(valor);
+  if (usd === null) return formatarCelula(valor);
+  return `<span class="benchmark-money">${escaparHtml(formatarBrlBenchmark(usd))}</span>`;
+}
+
 function logoDoRegistroBenchmark(registro, valor) {
   const logoPlanilha = CAMPOS_LOGO_BENCHMARK.map((campo) => textoCelula(registro?.[campo])).find((texto) => /^https?:\/\//i.test(texto));
   const logoPorUrl = logosBenchmark[textoCelula(registro?.["Brand URL"])] || logosBenchmark[textoCelula(registro?.URL)];
@@ -126,6 +154,7 @@ function formatarMarcaBenchmark(valor, registro) {
 
 function formatarCelulaBenchmark(registro, cabecalho) {
   if (cabecalho === "Brand") return formatarMarcaBenchmark(registro[cabecalho], registro);
+  if (cabecalho === "CEB (US$)") return formatarCebBrlBenchmark(registro[cabecalho]);
   return formatarCelula(registro[cabecalho]);
 }
 

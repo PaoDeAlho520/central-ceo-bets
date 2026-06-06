@@ -1327,6 +1327,11 @@ h3 {
   line-height: 1;
 }
 
+.benchmark-money {
+  color: var(--green);
+  font-weight: 900;
+}
+
 .benchmark-table a {
   color: var(--green);
 }
