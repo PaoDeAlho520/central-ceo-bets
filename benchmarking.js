@@ -30,6 +30,8 @@ const LOGOS_MARCAS_BENCHMARK = {
   superbet: "https://blask-prod.ams3.cdn.digitaloceanspaces.com/strapi/fbbd73008425a7cf2e25eff11641d1f9.png",
 };
 
+const CAMPOS_LOGO_BENCHMARK = ["Logo", "Logo URL", "Image", "Image URL", "Brand Logo", "Brand logo", "Logo link"];
+
 let dadosBenchmark = null;
 let abaBenchmarkAtual = "Brazil";
 
@@ -101,9 +103,14 @@ function formatarCelula(valor) {
   return escaparHtml(texto);
 }
 
-function formatarMarcaBenchmark(valor) {
+function logoDoRegistroBenchmark(registro, valor) {
+  const logoPlanilha = CAMPOS_LOGO_BENCHMARK.map((campo) => textoCelula(registro?.[campo])).find((texto) => /^https?:\/\//i.test(texto));
+  return logoPlanilha || LOGOS_MARCAS_BENCHMARK[chaveMarcaBenchmark(valor)] || "";
+}
+
+function formatarMarcaBenchmark(valor, registro) {
   const nome = nomeMarcaBenchmark(valor);
-  const logo = LOGOS_MARCAS_BENCHMARK[chaveMarcaBenchmark(valor)];
+  const logo = logoDoRegistroBenchmark(registro, valor);
   const imagem = logo
     ? `<img class="benchmark-brand-logo" src="${escaparHtml(logo)}" alt="${escaparHtml(nome)}" loading="lazy" />`
     : `<span class="benchmark-brand-logo benchmark-brand-logo-fallback" aria-hidden="true">${escaparHtml(monogramaMarcaBenchmark(nome))}</span>`;
@@ -116,7 +123,7 @@ function formatarMarcaBenchmark(valor) {
 }
 
 function formatarCelulaBenchmark(registro, cabecalho) {
-  if (cabecalho === "Brand") return formatarMarcaBenchmark(registro[cabecalho]);
+  if (cabecalho === "Brand") return formatarMarcaBenchmark(registro[cabecalho], registro);
   return formatarCelula(registro[cabecalho]);
 }
 
