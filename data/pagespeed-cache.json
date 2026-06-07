@@ -1,76 +1,78 @@
 {
-  "updatedAt": "2026-06-06T11:32:25.194Z",
+  "updatedAt": "2026-06-07T12:05:53.047Z",
   "brands": {
     "maxima": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-06T11:32:26.831Z",
-        "performance": 56,
+        "collectedAt": "2026-06-07T12:05:53.441Z",
+        "performance": 89,
         "accessibility": 100,
-        "bestPractices": 67,
-        "seo": 100,
+        "bestPractices": 90,
+        "seo": 50,
         "coreWebVitals": {
-          "fcp": "0.4 s",
-          "lcp": "0.8 s",
+          "fcp": "0.3 s",
+          "lcp": "0.6 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.1 s"
+          "speedIndex": "0.9 s"
         },
-        "requests": 238,
-        "pageBytes": 612023,
-        "htmlBytes": 612023,
-        "statusHttp": 200,
+        "requests": 7,
+        "pageBytes": 4834,
+        "htmlBytes": 4834,
+        "statusHttp": 403,
         "source": "html_fallback",
         "technicalErrors": [
-          "Muitos assets detectados no HTML"
+          "Meta description ausente",
+          "Canonical ausente"
         ],
-        "reportUrl": "https://maxima.bet.br/",
+        "reportUrl": "https://www.maxima.bet.br/",
         "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-06T11:32:28.219Z",
-        "performance": 57,
+        "collectedAt": "2026-06-07T12:05:53.471Z",
+        "performance": 92,
         "accessibility": 100,
-        "bestPractices": 67,
-        "seo": 100,
+        "bestPractices": 90,
+        "seo": 50,
         "coreWebVitals": {
-          "fcp": "0.3 s",
-          "lcp": "0.7 s",
+          "fcp": "0.0 s",
+          "lcp": "0.4 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.0 s"
+          "speedIndex": "0.7 s"
         },
-        "requests": 238,
-        "pageBytes": 612023,
-        "htmlBytes": 612023,
-        "statusHttp": 200,
+        "requests": 7,
+        "pageBytes": 4834,
+        "htmlBytes": 4834,
+        "statusHttp": 403,
         "source": "html_fallback",
         "technicalErrors": [
-          "Muitos assets detectados no HTML"
+          "Meta description ausente",
+          "Canonical ausente"
         ],
-        "reportUrl": "https://maxima.bet.br/",
+        "reportUrl": "https://www.maxima.bet.br/",
         "warning": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'."
       }
     },
     "ultra": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-06T11:32:29.720Z",
-        "performance": 56,
+        "collectedAt": "2026-06-07T12:05:54.095Z",
+        "performance": 54,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.5 s",
-          "lcp": "0.8 s",
+          "fcp": "0.6 s",
+          "lcp": "0.9 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.1 s"
+          "speedIndex": "1.2 s"
         },
-        "requests": 229,
-        "pageBytes": 606168,
-        "htmlBytes": 606168,
+        "requests": 227,
+        "pageBytes": 605316,
+        "htmlBytes": 605316,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -81,21 +83,21 @@
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-06T11:32:31.190Z",
-        "performance": 56,
+        "collectedAt": "2026-06-07T12:05:54.343Z",
+        "performance": 59,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.4 s",
-          "lcp": "0.8 s",
+          "fcp": "0.2 s",
+          "lcp": "0.6 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.1 s"
+          "speedIndex": "0.9 s"
         },
-        "requests": 229,
-        "pageBytes": 606167,
-        "htmlBytes": 606167,
+        "requests": 226,
+        "pageBytes": 605273,
+        "htmlBytes": 605273,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -108,21 +110,21 @@
     "suprema": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-06T11:32:32.616Z",
-        "performance": 56,
+        "collectedAt": "2026-06-07T12:05:54.953Z",
+        "performance": 54,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.4 s",
-          "lcp": "0.8 s",
+          "fcp": "0.6 s",
+          "lcp": "0.9 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.1 s"
+          "speedIndex": "1.2 s"
         },
-        "requests": 232,
-        "pageBytes": 603632,
-        "htmlBytes": 603632,
+        "requests": 234,
+        "pageBytes": 603577,
+        "htmlBytes": 603577,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -133,21 +135,21 @@
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-06T11:32:34.418Z",
-        "performance": 52,
+        "collectedAt": "2026-06-07T12:05:55.215Z",
+        "performance": 59,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.7 s",
-          "lcp": "1.1 s",
+          "fcp": "0.2 s",
+          "lcp": "0.6 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.4 s"
+          "speedIndex": "0.9 s"
         },
-        "requests": 232,
-        "pageBytes": 603632,
-        "htmlBytes": 603632,
+        "requests": 233,
+        "pageBytes": 603534,
+        "htmlBytes": 603534,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [

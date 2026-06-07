@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-06-06T11:32:17.037Z",
+  "collectedAt": "2026-06-07T12:05:51.750Z",
   "cadence": "daily",
   "source": "Google Play public pages",
   "brands": [
@@ -7,42 +7,36 @@
       "id": "maxima",
       "name": "Maxima Bet",
       "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.maxima&hl=pt_BR",
-      "appId": "br.bet.maxima",
-      "collectedOk": true,
-      "ratingText": "3,3",
-      "reviewsText": "44 avaliações",
-      "downloadsText": "10 mil+",
-      "rating": 3.3,
-      "reviewsApprox": 44,
-      "downloadsApprox": 10000
+      "collectedOk": false,
+      "error": "https://play.google.com/store/apps/details?id=br.bet.maxima&hl=pt_BR: HTTP 404"
     },
     {
       "id": "ultra",
       "name": "Ultra Bet",
       "searchUrl": "https://play.google.com/store/search?q=ultra%20bet&c=apps&hl=pt_BR",
-      "appId": "br.bet.ultra",
-      "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.ultra&hl=pt_BR",
+      "appId": "com.powerbetting.tips",
+      "detailsUrl": "https://play.google.com/store/apps/details?id=com.powerbetting.tips&hl=pt_BR",
       "collectedOk": true,
-      "ratingText": "4,3",
-      "reviewsText": "2,11 mil avaliações",
+      "ratingText": "4,2",
+      "reviewsText": "706 avaliações",
       "downloadsText": "100 mil+",
-      "rating": 4.3,
-      "reviewsApprox": 2110,
+      "rating": 4.2,
+      "reviewsApprox": 706,
       "downloadsApprox": 100000
     },
     {
       "id": "suprema",
       "name": "Suprema Bet",
       "searchUrl": "https://play.google.com/store/search?q=suprema%20bet&c=apps&hl=pt_BR",
-      "appId": "br.bet.suprema",
-      "detailsUrl": "https://play.google.com/store/apps/details?id=br.bet.suprema&hl=pt_BR",
+      "appId": "com.bloosuprema",
+      "detailsUrl": "https://play.google.com/store/apps/details?id=com.bloosuprema&hl=pt_BR",
       "collectedOk": true,
-      "ratingText": "3,1",
-      "reviewsText": "18 avaliações",
-      "downloadsText": "10 mil+",
-      "rating": 3.1,
-      "reviewsApprox": 18,
-      "downloadsApprox": 10000
+      "ratingText": "",
+      "reviewsText": "",
+      "downloadsText": "1 mil+",
+      "rating": null,
+      "reviewsApprox": null,
+      "downloadsApprox": 1000
     }
   ]
 }
