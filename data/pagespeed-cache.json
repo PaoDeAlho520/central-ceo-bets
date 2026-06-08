@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-06-07T12:05:53.047Z",
+  "updatedAt": "2026-06-08T14:32:34.801Z",
   "brands": {
     "maxima": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-07T12:05:53.441Z",
-        "performance": 89,
+        "collectedAt": "2026-06-08T14:32:35.106Z",
+        "performance": 90,
         "accessibility": 100,
         "bestPractices": 90,
         "seo": 50,
         "coreWebVitals": {
-          "fcp": "0.3 s",
-          "lcp": "0.6 s",
+          "fcp": "0.2 s",
+          "lcp": "0.5 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "0.9 s"
+          "speedIndex": "0.8 s"
         },
         "requests": 7,
-        "pageBytes": 4834,
-        "htmlBytes": 4834,
+        "pageBytes": 4835,
+        "htmlBytes": 4835,
         "statusHttp": 403,
         "source": "html_fallback",
         "technicalErrors": [
@@ -30,7 +30,7 @@
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-07T12:05:53.471Z",
+        "collectedAt": "2026-06-08T14:32:35.186Z",
         "performance": 92,
         "accessibility": 100,
         "bestPractices": 90,
@@ -43,8 +43,8 @@
           "speedIndex": "0.7 s"
         },
         "requests": 7,
-        "pageBytes": 4834,
-        "htmlBytes": 4834,
+        "pageBytes": 4835,
+        "htmlBytes": 4835,
         "statusHttp": 403,
         "source": "html_fallback",
         "technicalErrors": [
@@ -58,21 +58,21 @@
     "ultra": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-07T12:05:54.095Z",
-        "performance": 54,
+        "collectedAt": "2026-06-08T14:32:35.962Z",
+        "performance": 52,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.6 s",
-          "lcp": "0.9 s",
+          "fcp": "0.7 s",
+          "lcp": "1.1 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.2 s"
+          "speedIndex": "1.4 s"
         },
         "requests": 227,
-        "pageBytes": 605316,
-        "htmlBytes": 605316,
+        "pageBytes": 603331,
+        "htmlBytes": 603331,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -83,21 +83,21 @@
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-07T12:05:54.343Z",
-        "performance": 59,
+        "collectedAt": "2026-06-08T14:32:36.462Z",
+        "performance": 58,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.2 s",
+          "fcp": "0.3 s",
           "lcp": "0.6 s",
           "cls": "estimado",
           "tbt": "estimado",
           "speedIndex": "0.9 s"
         },
-        "requests": 226,
-        "pageBytes": 605273,
-        "htmlBytes": 605273,
+        "requests": 227,
+        "pageBytes": 603331,
+        "htmlBytes": 603331,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -110,21 +110,21 @@
     "suprema": {
       "mobile": {
         "strategy": "mobile",
-        "collectedAt": "2026-06-07T12:05:54.953Z",
-        "performance": 54,
+        "collectedAt": "2026-06-08T14:32:37.650Z",
+        "performance": 50,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.6 s",
-          "lcp": "0.9 s",
+          "fcp": "1.0 s",
+          "lcp": "1.3 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "1.2 s"
+          "speedIndex": "1.7 s"
         },
-        "requests": 234,
-        "pageBytes": 603577,
-        "htmlBytes": 603577,
+        "requests": 232,
+        "pageBytes": 601325,
+        "htmlBytes": 601325,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
@@ -135,21 +135,21 @@
       },
       "desktop": {
         "strategy": "desktop",
-        "collectedAt": "2026-06-07T12:05:55.215Z",
-        "performance": 59,
+        "collectedAt": "2026-06-08T14:32:38.011Z",
+        "performance": 58,
         "accessibility": 100,
         "bestPractices": 67,
         "seo": 100,
         "coreWebVitals": {
-          "fcp": "0.2 s",
-          "lcp": "0.6 s",
+          "fcp": "0.3 s",
+          "lcp": "0.7 s",
           "cls": "estimado",
           "tbt": "estimado",
-          "speedIndex": "0.9 s"
+          "speedIndex": "1.0 s"
         },
-        "requests": 233,
-        "pageBytes": 603534,
-        "htmlBytes": 603534,
+        "requests": 231,
+        "pageBytes": 601282,
+        "htmlBytes": 601282,
         "statusHttp": 200,
         "source": "html_fallback",
         "technicalErrors": [
