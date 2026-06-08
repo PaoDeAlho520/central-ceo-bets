@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - GGR | Jogadores | Depositos</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: #0D1117;
+    color: #C9D1D9;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    padding-left: 82px;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #161B22 0%, #0D1117 100%);
+    border-bottom: 1px solid #21262D;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+  .header-left p {
+    font-size: 12px;
+    color: #8B949E;
+    margin-top: 3px;
+  }
+  .last-update {
+    font-size: 11px;
+    color: #8B949E;
+    background: #21262D;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #30363D;
+  }
+  .last-update span { color: #3FB950; font-weight: 600; }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    padding: 16px 32px 0;
+    border-bottom: 1px solid #21262D;
+    background: #0D1117;
+    position: sticky;
+    top: 73px;
+    z-index: 99;
+  }
+  .tab {
+    padding: 8px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    transition: all 0.2s;
+    color: #8B949E;
+    background: transparent;
+  }
+  .tab:hover { color: #C9D1D9; background: #161B22; }
+  .tab.active {
+    color: #fff;
+    background: #161B22;
+    border-color: #21262D;
+    border-bottom: 2px solid #0D1117;
+    margin-bottom: -1px;
+  }
+  .tab.ggr.active   { color: #00E676; border-top: 2px solid #00E676; }
+  .tab.jog.active   { color: #FFA726; border-top: 2px solid #FFA726; }
+  .tab.dep.active   { color: #29B6F6; border-top: 2px solid #29B6F6; }
+  .tab.comp.active  { color: #E879F9; border-top: 2px solid #E879F9; }
+
+  /* CONTENT */
+  .content { display: none; padding: 24px 32px; }
+  .content.active { display: block; }
+
+  /* KPI CARDS */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .kpi-card {
+    background: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: default;
+  }
+  .kpi-card:hover { border-color: #30363D; transform: translateY(-1px); }
+  .kpi-label {
+    font-size: 11px;
+    color: #8B949E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .kpi-sub {
+    font-size: 10px;
+    color: #8B949E;
+    margin-top: 4px;
+  }
+  .kpi-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-top: 5px;
+    font-weight: 600;
+  }
+  .pos { background: rgba(0,230,118,0.15); color: #00E676; }
+  .neg { background: rgba(255,82,82,0.15); color: #FF5252; }
+
+  /* CHARTS */
+  .chart-row {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .chart-row.two   { grid-template-columns: 1fr 1fr; }
+  .chart-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .chart-row.full  { grid-template-columns: 1fr; }
+
+  .chart-card {
+    background: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 10px;
+    padding: 16px;
+    transition: border-color 0.2s;
+  }
+  .chart-card:hover { border-color: #30363D; }
+  .chart-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #C9D1D9;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+
+  /* TABLE */
+  .table-wrap {
+    background: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .table-title {
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #21262D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  th {
+    background: #1C2128;
+    padding: 10px 12px;
+    text-align: center;
+    color: #8B949E;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #21262D;
+  }
+  th:first-child { text-align: left; }
+  td {
+    padding: 9px 12px;
+    text-align: center;
+    border-bottom: 1px solid #161B22;
+    color: #C9D1D9;
+  }
+  td:first-child { text-align: left; font-weight: 600; }
+  tr:hover td { background: #1C2128; }
+  tr:last-child td { border-bottom: none; }
+  .td-neg { color: #FF5252 !important; }
+  .td-total { font-weight: 700 !important; color: #fff !important; background: #1C2128; }
+  .row-ggr td:first-child { color: #00E676; }
+  .row-dep td:first-child { color: #29B6F6; }
+  .row-jog td:first-child { color: #FFA726; }
+
+  /* MONTH FILTER */
+  .filter-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .month-btn {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #30363D;
+    background: #161B22;
+    color: #8B949E;
+    transition: all 0.2s;
+  }
+  .month-btn:hover { color: #C9D1D9; border-color: #58A6FF; }
+  .month-btn.active { color: #fff; border-color: transparent; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: #484F58;
+    border-top: 1px solid #21262D;
+    margin-top: 8px;
+  }
+
+  /* PROJECT SIDEBAR */
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 200;
+    display: flex;
+    width: 82px;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    border-right: 1px solid #21262D;
+    background: #070B09;
+    padding: 14px 10px;
+  }
+  .brand-mark {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid #238636;
+    border-radius: 8px;
+    background: rgba(35, 134, 54, 0.16);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  .nav-list {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    justify-items: center;
+  }
+  .nav-item {
+    display: grid;
+    width: 54px;
+    height: 43px;
+    place-items: center;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: #8B949E;
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+  .nav-item:hover,
+  .nav-item.is-active {
+    border-color: #30363D;
+    background: #161B22;
+    color: #fff;
+  }
+  .nav-item.is-active {
+    box-shadow: inset 3px 0 0 #00E676;
+  }
+  .system-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: #8B949E;
+    font-size: 10px;
+    writing-mode: vertical-rl;
+  }
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00E676;
+    box-shadow: 0 0 0 6px rgba(0, 230, 118, 0.08);
+  }
+  @media (max-width: 768px) {
+    body { padding-left: 0; }
+    .sidebar {
+      position: static;
+      width: 100%;
+      min-height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 14px;
+    }
+    .nav-list {
+      display: flex;
+      width: auto;
+    }
+    .system-pill {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" aria-label="Navegacao principal">
+  <div class="brand-mark" aria-hidden="true">CB</div>
+  <nav class="nav-list" aria-label="Secoes">
+    <a class="nav-item" href="index.html" title="Home" aria-label="Home">Home</a>
+    <a class="nav-item" href="benchmarking.html" title="Benchmarking" aria-label="Benchmarking">BM</a>
+    <a class="nav-item" href="bc.html" title="BC" aria-label="BC">BC</a>
+    <a class="nav-item is-active" href="dep.html" title="DEP" aria-label="DEP" aria-current="page">DEP</a>
+  </nav>
+  <div class="system-pill">
+    <span class="pulse-dot"></span>
+    <span>monitor ativo</span>
+  </div>
+</aside>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <h1>Dashboard  Suprema + Maxima + Ultra</h1>
+    <p>GGR &nbsp;|&nbsp; Jogadores Ativos &nbsp;|&nbsp; Depositos &mdash; Dias 1 a 8 de cada mes &mdash; Jan a Jun 2026</p>
+  </div>
+  <div class="last-update">
+    Dados: <span id="ts">carregando...</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab ggr active"  onclick="showTab('ggr')">GGR</div>
+  <div class="tab jog"         onclick="showTab('jog')">Jogadores</div>
+  <div class="tab dep"         onclick="showTab('dep')">Depositos</div>
+  <div class="tab comp"        onclick="showTab('comp')">Comparativo</div>
+</div>
+
+<!-- ═══ TAB GGR ═══════════════════════════════════════════════════════════ -->
+<div id="tab-ggr" class="content active">
+
+  <div class="kpi-row" id="kpi-ggr"></div>
+
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#00E676"></span>GGR Diario por Mes (Dias 1-8)</div>
+      <div id="chart-ggr-lines" style="height:340px"></div>
+    </div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#00E676"></span>GGR Total por Mes</div>
+      <div id="chart-ggr-bar" style="height:280px"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#00E676"></span>Composicao GGR (% por mes)</div>
+      <div id="chart-ggr-pie" style="height:280px"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title"><span class="dot" style="background:#00E676"></span>Tabela GGR por Dia</div>
+    <table id="tbl-ggr"></table>
+  </div>
+</div>
+
+<!-- ═══ TAB JOGADORES ══════════════════════════════════════════════════════ -->
+<div id="tab-jog" class="content">
+
+  <div class="kpi-row" id="kpi-jog"></div>
+
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#FFA726"></span>Jogadores Ativos por Mes (Dias 1-8)</div>
+      <div id="chart-jog-lines" style="height:340px"></div>
+    </div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#FFA726"></span>Total Jogadores por Mes</div>
+      <div id="chart-jog-bar" style="height:280px"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#FFA726"></span>Media Diaria de Jogadores</div>
+      <div id="chart-jog-avg" style="height:280px"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title"><span class="dot" style="background:#FFA726"></span>Tabela Jogadores por Dia</div>
+    <table id="tbl-jog"></table>
+  </div>
+</div>
+
+<!-- ═══ TAB DEPOSITOS ══════════════════════════════════════════════════════ -->
+<div id="tab-dep" class="content">
+
+  <div class="kpi-row" id="kpi-dep"></div>
+
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#29B6F6"></span>Depositos por Mes (Dias 1-8)</div>
+      <div id="chart-dep-lines" style="height:340px"></div>
+    </div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#29B6F6"></span>Total Depositos por Mes</div>
+      <div id="chart-dep-bar" style="height:280px"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#29B6F6"></span>Media Diaria de Deposito</div>
+      <div id="chart-dep-avg" style="height:280px"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title"><span class="dot" style="background:#29B6F6"></span>Tabela Depositos por Dia</div>
+    <table id="tbl-dep"></table>
+  </div>
+</div>
+
+<!-- ═══ TAB COMPARATIVO ════════════════════════════════════════════════════ -->
+<div id="tab-comp" class="content">
+
+  <div class="chart-row three">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#00E676"></span>GGR Acumulado D1-D8</div>
+      <div id="chart-comp-ggr" style="height:260px"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#FFA726"></span>Jogadores Acumulados D1-D8</div>
+      <div id="chart-comp-jog" style="height:260px"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#29B6F6"></span>Depositos Acumulados D1-D8</div>
+      <div id="chart-comp-dep" style="height:260px"></div>
+    </div>
+  </div>
+
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#E879F9"></span>Visao Geral — GGR vs Deposito por Mes</div>
+      <div id="chart-comp-scatter" style="height:320px"></div>
+    </div>
+  </div>
+
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="chart-title"><span class="dot" style="background:#E879F9"></span>Todas as Metricas — Evolucao Mensal (normalizado)</div>
+      <div id="chart-comp-all" style="height:320px"></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title"><span class="dot" style="background:#E879F9"></span>Resumo Comparativo por Mes</div>
+    <table id="tbl-comp"></table>
+  </div>
+</div>
+
+<div class="footer">
+  Dashboard gerado via ClickHouse &mdash; Suprema Data &mdash; 3 Marcas Consolidadas &mdash; Dias 1-8 Jan-Jun 2026
+</div>
+
+<script>
+// ── DADOS ──────────────────────────────────────────────────────────────────
+const RAW = [{"mes": 1, "mname": "Jan", "dia": 1, "ggr": -934344.43, "dep": 2089286.05, "jog": 20428}, {"mes": 1, "mname": "Jan", "dia": 2, "ggr": 865765.0, "dep": 2711613.12, "jog": 21700}, {"mes": 1, "mname": "Jan", "dia": 3, "ggr": 662491.74, "dep": 2402789.0, "jog": 20372}, {"mes": 1, "mname": "Jan", "dia": 4, "ggr": 709326.35, "dep": 2113393.78, "jog": 19937}, {"mes": 1, "mname": "Jan", "dia": 5, "ggr": 600962.9, "dep": 2466467.4, "jog": 20046}, {"mes": 1, "mname": "Jan", "dia": 6, "ggr": 588143.25, "dep": 2519824.62, "jog": 21026}, {"mes": 1, "mname": "Jan", "dia": 7, "ggr": 802491.91, "dep": 2737287.45, "jog": 23974}, {"mes": 1, "mname": "Jan", "dia": 8, "ggr": 537773.65, "dep": 2742047.48, "jog": 24447}, {"mes": 2, "mname": "Fev", "dia": 1, "ggr": -13624.12, "dep": 2272069.56, "jog": 34902}, {"mes": 2, "mname": "Fev", "dia": 2, "ggr": 466036.1, "dep": 2305944.73, "jog": 37452}, {"mes": 2, "mname": "Fev", "dia": 3, "ggr": 867776.51, "dep": 2358902.01, "jog": 45810}, {"mes": 2, "mname": "Fev", "dia": 4, "ggr": 983050.54, "dep": 2370097.83, "jog": 47462}, {"mes": 2, "mname": "Fev", "dia": 5, "ggr": 290029.91, "dep": 2647786.41, "jog": 47358}, {"mes": 2, "mname": "Fev", "dia": 6, "ggr": 852365.1, "dep": 3197828.14, "jog": 55220}, {"mes": 2, "mname": "Fev", "dia": 7, "ggr": 816764.96, "dep": 2930644.07, "jog": 54050}, {"mes": 2, "mname": "Fev", "dia": 8, "ggr": 296663.85, "dep": 2378923.76, "jog": 49849}, {"mes": 3, "mname": "Mar", "dia": 1, "ggr": 255322.11, "dep": 1931149.12, "jog": 47199}, {"mes": 3, "mname": "Mar", "dia": 2, "ggr": 771942.26, "dep": 2645689.6, "jog": 57985}, {"mes": 3, "mname": "Mar", "dia": 3, "ggr": 481742.24, "dep": 2523116.22, "jog": 65268}, {"mes": 3, "mname": "Mar", "dia": 4, "ggr": 383106.69, "dep": 2716617.75, "jog": 62541}, {"mes": 3, "mname": "Mar", "dia": 5, "ggr": 342866.8, "dep": 2934056.01, "jog": 62358}, {"mes": 3, "mname": "Mar", "dia": 6, "ggr": 129234.57, "dep": 3648475.73, "jog": 63826}, {"mes": 3, "mname": "Mar", "dia": 7, "ggr": 614512.93, "dep": 3006293.65, "jog": 58455}, {"mes": 3, "mname": "Mar", "dia": 8, "ggr": 589065.27, "dep": 2757785.49, "jog": 59145}, {"mes": 4, "mname": "Abr", "dia": 1, "ggr": 326701.13, "dep": 2210072.96, "jog": 26461}, {"mes": 4, "mname": "Abr", "dia": 2, "ggr": 691869.13, "dep": 2730273.61, "jog": 28078}, {"mes": 4, "mname": "Abr", "dia": 3, "ggr": 235410.94, "dep": 2537297.43, "jog": 29764}, {"mes": 4, "mname": "Abr", "dia": 4, "ggr": 354092.83, "dep": 2304304.53, "jog": 28223}, {"mes": 4, "mname": "Abr", "dia": 5, "ggr": 686816.29, "dep": 1728155.57, "jog": 25098}, {"mes": 4, "mname": "Abr", "dia": 6, "ggr": 747990.4, "dep": 2602393.38, "jog": 25229}, {"mes": 4, "mname": "Abr", "dia": 7, "ggr": 1114179.42, "dep": 3343768.27, "jog": 28554}, {"mes": 4, "mname": "Abr", "dia": 8, "ggr": 677073.9, "dep": 2832966.44, "jog": 29741}, {"mes": 5, "mname": "Mai", "dia": 1, "ggr": 579264.78, "dep": 2546453.92, "jog": 23950}, {"mes": 5, "mname": "Mai", "dia": 2, "ggr": 323004.31, "dep": 2137195.57, "jog": 22273}, {"mes": 5, "mname": "Mai", "dia": 3, "ggr": 437810.12, "dep": 1882686.05, "jog": 21457}, {"mes": 5, "mname": "Mai", "dia": 4, "ggr": 1123511.73, "dep": 2508393.54, "jog": 22610}, {"mes": 5, "mname": "Mai", "dia": 5, "ggr": 760252.27, "dep": 2552020.58, "jog": 26776}, {"mes": 5, "mname": "Mai", "dia": 6, "ggr": 489658.29, "dep": 2601640.14, "jog": 25281}, {"mes": 5, "mname": "Mai", "dia": 7, "ggr": 379093.78, "dep": 2851004.63, "jog": 25858}, {"mes": 5, "mname": "Mai", "dia": 8, "ggr": 463739.19, "dep": 3181005.9, "jog": 26690}, {"mes": 6, "mname": "Jun", "dia": 1, "ggr": 668587.33, "dep": 2525869.12, "jog": 153360}, {"mes": 6, "mname": "Jun", "dia": 2, "ggr": 770443.01, "dep": 2941809.91, "jog": 155705}, {"mes": 6, "mname": "Jun", "dia": 3, "ggr": 885412.99, "dep": 3322096.49, "jog": 347050}, {"mes": 6, "mname": "Jun", "dia": 4, "ggr": 608487.68, "dep": 2889811.57, "jog": 338560}, {"mes": 6, "mname": "Jun", "dia": 5, "ggr": 550583.46, "dep": 3318910.75, "jog": 291785}, {"mes": 6, "mname": "Jun", "dia": 6, "ggr": 418399.92, "dep": 2840754.44, "jog": 241295}, {"mes": 6, "mname": "Jun", "dia": 7, "ggr": 386842.1, "dep": 1849508.0, "jog": 169586}];
+const MONTHS   = [1,2,3,4,5,6];
+const MNAMES   = ['Jan','Fev','Mar','Abr','Mai','Jun'];
+const MCOLORS  = {
+  'Jan':'#1F6FEB','Fev':'#8957E5','Mar':'#3FB950',
+  'Abr':'#F78166','Mai':'#FFA657','Jun':'#FF6B9D'
+};
+const C_GGR='#00E676', C_DEP='#29B6F6', C_JOG='#FFA726';
+const BG='#0D1117', PANEL='#161B22', GRID='#21262D', TEXT='#C9D1D9', MUTED='#8B949E';
+
+const PLOTLY_LAYOUT = {
+  paper_bgcolor: PANEL,
+  plot_bgcolor:  PANEL,
+  font: { color: TEXT, family: 'Segoe UI, system-ui, sans-serif', size: 11 },
+  margin: { t: 10, b: 40, l: 60, r: 20 },
+  xaxis: { gridcolor: GRID, zerolinecolor: GRID, tickfont: { size: 10 } },
+  yaxis: { gridcolor: GRID, zerolinecolor: GRID, tickfont: { size: 10 } },
+  legend: { bgcolor: 'rgba(0,0,0,0)', bordercolor: GRID, font: { size: 11 } },
+  hovermode: 'x unified',
+  hoverlabel: { bgcolor: '#1C2128', bordercolor: GRID, font: { color: TEXT } },
+};
+const PLOTLY_CONFIG = { responsive: true, displayModeBar: false };
+
+function bym(m) { return RAW.filter(r => r.mes === m).sort((a,b) => a.dia-b.dia); }
+function sumKey(m, k) { return bym(m).reduce((s,r)=>s+r[k], 0); }
+function avgKey(m, k) { const d=bym(m); return d.reduce((s,r)=>s+r[k],0)/d.length; }
+function fR(v) {
+  if (v === 0) return '-';
+  const s = v < 0 ? '-' : '';
+  const a = Math.abs(v);
+  if (a >= 1e6) return s+'R$'+(a/1e6).toFixed(2)+'M';
+  if (a >= 1e3) return s+'R$'+(a/1e3).toFixed(0)+'K';
+  return s+'R$'+a.toFixed(0);
+}
+function fJ(v) {
+  if (v === 0) return '-';
+  if (v >= 1e6) return (v/1e6).toFixed(2)+'M';
+  if (v >= 1e3) return (v/1e3).toFixed(0)+'K';
+  return v.toFixed(0);
+}
+function fRPlain(v) {
+  if (v === 0) return '-';
+  const s = v < 0 ? '-' : '';
+  const a = Math.abs(v);
+  if (a >= 1e6) return s+(a/1e6).toFixed(2)+'M';
+  if (a >= 1e3) return s+(a/1e3).toFixed(0)+'K';
+  return s+a.toFixed(0);
+}
+
+// ── TIMESTAMP ───────────────────────────────────────────────────────────────
+function updateTs() {
+  const now = new Date();
+  document.getElementById('ts').textContent =
+    now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+}
+updateTs();
+
+// ── TABS ────────────────────────────────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.content').forEach(e => e.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelector('.tab.'+name).classList.add('active');
+}
+
+// ── KPI CARDS ───────────────────────────────────────────────────────────────
+function buildKpiGgr() {
+  const el = document.getElementById('kpi-ggr');
+  let html = '';
+  MONTHS.forEach((m,i) => {
+    const mn = MNAMES[i];
+    const tot = sumKey(m,'ggr');
+    const cl = mn === 'Jun' ? '#FF6B9D' : MCOLORS[mn];
+    const badge = tot>=0
+      ? `<div class="kpi-badge pos">+${fRPlain(tot)}</div>`
+      : `<div class="kpi-badge neg">${fRPlain(tot)}</div>`;
+    html += `<div class="kpi-card" style="border-top:3px solid ${cl}">
+      <div class="kpi-label">${mn} 2026</div>
+      <div class="kpi-value" style="color:${cl}">${fR(tot)}</div>
+      <div class="kpi-sub">GGR Total D1-D8</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function buildKpiJog() {
+  const el = document.getElementById('kpi-jog');
+  let html = '';
+  MONTHS.forEach((m,i) => {
+    const mn = MNAMES[i];
+    const tot = sumKey(m,'jog');
+    const avg = Math.round(avgKey(m,'jog'));
+    const cl = MCOLORS[mn];
+    html += `<div class="kpi-card" style="border-top:3px solid ${cl}">
+      <div class="kpi-label">${mn} 2026</div>
+      <div class="kpi-value" style="color:${cl}">${fJ(tot)}</div>
+      <div class="kpi-sub">Media: ${fJ(avg)}/dia</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function buildKpiDep() {
+  const el = document.getElementById('kpi-dep');
+  let html = '';
+  MONTHS.forEach((m,i) => {
+    const mn = MNAMES[i];
+    const tot = sumKey(m,'dep');
+    const cl = MCOLORS[mn];
+    html += `<div class="kpi-card" style="border-top:3px solid ${cl}">
+      <div class="kpi-label">${mn} 2026</div>
+      <div class="kpi-value" style="color:${cl}">${fR(tot)}</div>
+      <div class="kpi-sub">Dep Total D1-D8</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+// ── CHARTS GGR ──────────────────────────────────────────────────────────────
+function buildGgrCharts() {
+  // Linha GGR por mes
+  const tracesLine = MONTHS.map((m,i) => {
+    const mn = MNAMES[i];
+    const rows = bym(m);
+    return {
+      x: rows.map(r=>'Dia '+r.dia),
+      y: rows.map(r=>r.ggr),
+      name: mn,
+      type: 'scatter',
+      mode: 'lines+markers',
+      line: { color: MCOLORS[mn], width: 2.5 },
+      marker: { size: 7, color: MCOLORS[mn] },
+      hovertemplate: '<b>%{fullData.name}</b><br>%{x}: <b>R$%{y:,.0f}</b><extra></extra>'
+    };
+  });
+  const layoutLine = {
+    ...PLOTLY_LAYOUT,
+    shapes: [{ type:'line', x0:0, x1:1, xref:'paper', y0:0, y1:0, yref:'y',
+               line:{color:'#58A6FF',width:1,dash:'dot'} }],
+    yaxis: { ...PLOTLY_LAYOUT.yaxis,
+      tickformat: '.3s',
+      tickprefix: 'R$'
+    }
+  };
+  Plotly.newPlot('chart-ggr-lines', tracesLine, layoutLine, PLOTLY_CONFIG);
+
+  // Bar totais
+  const totGgr = MONTHS.map(m=>sumKey(m,'ggr'));
+  Plotly.newPlot('chart-ggr-bar', [{
+    x: MNAMES, y: totGgr,
+    type: 'bar',
+    marker: { color: MNAMES.map(mn=>MCOLORS[mn]),
+              line: { color: BG, width: 1 } },
+    text: totGgr.map(v=>fR(v)),
+    textposition: 'outside',
+    hovertemplate: '<b>%{x}</b>: <b>R$%{y:,.0f}</b><extra></extra>'
+  }], {
+    ...PLOTLY_LAYOUT,
+    yaxis: { ...PLOTLY_LAYOUT.yaxis, tickformat: '.3s', tickprefix: 'R$' },
+    margin: { t:30, b:40, l:60, r:20 }
+  }, PLOTLY_CONFIG);
+
+  // Pie
+  const posTot = MONTHS.map(m=>Math.max(sumKey(m,'ggr'),0));
+  Plotly.newPlot('chart-ggr-pie', [{
+    labels: MNAMES,
+    values: posTot,
+    type: 'pie',
+    hole: 0.45,
+    marker: { colors: MNAMES.map(mn=>MCOLORS[mn]) },
+    textfont: { color: '#fff', size: 11 },
+    hovertemplate: '<b>%{label}</b>: R$%{value:,.0f} (%{percent})<extra></extra>'
+  }], {
+    ...PLOTLY_LAYOUT,
+    margin: { t:10, b:10, l:10, r:10 },
+    legend: { ...PLOTLY_LAYOUT.legend, orientation:'v', x:1.02 },
+    showlegend: true
+  }, PLOTLY_CONFIG);
+}
+
+// ── CHARTS JOGADORES ─────────────────────────────────────────────────────────
+function buildJogCharts() {
+  const tracesLine = MONTHS.map((m,i) => {
+    const mn = MNAMES[i];
+    const rows = bym(m).filter(r=>r.jog>0);
+    return {
+      x: rows.map(r=>'Dia '+r.dia),
+      y: rows.map(r=>r.jog),
+      name: mn,
+      type: 'scatter', mode: 'lines+markers',
+      line: { color: MCOLORS[mn], width: 2.5 },
+      marker: { size: 7, color: MCOLORS[mn] },
+      hovertemplate: '<b>%{fullData.name}</b><br>%{x}: <b>%{y:,.0f}</b><extra></extra>'
+    };
+  });
+  Plotly.newPlot('chart-jog-lines', tracesLine, {
+    ...PLOTLY_LAYOUT,
+    yaxis: { ...PLOTLY_LAYOUT.yaxis, tickformat: '.3s' }
+  }, PLOTLY_CONFIG);
+
+  const totJog = MONTHS.map(m=>sumKey(m,'jog'));
+  Plotly.newPlot('chart-jog-bar', [{
+    x: MNAMES, y: totJog, type:'bar',
+    marker: { color: MNAMES.map(mn=>MCOLORS[mn]), line:{color:BG,width:1} },
+    text: totJog.map(v=>fJ(v)), textposition:'outside',
+    hovertemplate: '<b>%{x}</b>: <b>%{y:,.0f}</b><extra></extra>'
+  }], { ...PLOTLY_LAYOUT, yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s'},margin:{t:30,b:40,l:60,r:20} }, PLOTLY_CONFIG);
+
+  const avgJog = MONTHS.map(m=>Math.round(avgKey(m,'jog')));
+  Plotly.newPlot('chart-jog-avg', [{
+    x: MNAMES, y: avgJog, type:'bar',
+    marker: { color: MNAMES.map(mn=>MCOLORS[mn]+'99'), line:{color:MNAMES.map(mn=>MCOLORS[mn]),width:2} },
+    text: avgJog.map(v=>fJ(v)), textposition:'outside',
+    hovertemplate: '<b>%{x}</b> media: <b>%{y:,.0f}</b>/dia<extra></extra>'
+  }], { ...PLOTLY_LAYOUT, yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s'},margin:{t:30,b:40,l:60,r:20} }, PLOTLY_CONFIG);
+}
+
+// ── CHARTS DEPOSITOS ──────────────────────────────────────────────────────────
+function buildDepCharts() {
+  const tracesLine = MONTHS.map((m,i) => {
+    const mn = MNAMES[i];
+    const rows = bym(m).filter(r=>r.dep>0);
+    return {
+      x: rows.map(r=>'Dia '+r.dia),
+      y: rows.map(r=>r.dep),
+      name: mn,
+      type:'scatter', mode:'lines+markers',
+      line:{color:MCOLORS[mn],width:2.5},
+      marker:{size:7,color:MCOLORS[mn]},
+      hovertemplate: '<b>%{fullData.name}</b><br>%{x}: <b>R$%{y:,.0f}</b><extra></extra>'
+    };
+  });
+  Plotly.newPlot('chart-dep-lines', tracesLine, {
+    ...PLOTLY_LAYOUT,
+    yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s',tickprefix:'R$'}
+  }, PLOTLY_CONFIG);
+
+  const totDep = MONTHS.map(m=>sumKey(m,'dep'));
+  Plotly.newPlot('chart-dep-bar', [{
+    x:MNAMES, y:totDep, type:'bar',
+    marker:{color:MNAMES.map(mn=>MCOLORS[mn]),line:{color:BG,width:1}},
+    text:totDep.map(v=>fR(v)), textposition:'outside',
+    hovertemplate:'<b>%{x}</b>: <b>R$%{y:,.0f}</b><extra></extra>'
+  }], {...PLOTLY_LAYOUT,yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s',tickprefix:'R$'},margin:{t:30,b:40,l:60,r:20}}, PLOTLY_CONFIG);
+
+  const avgDep = MONTHS.map(m=>avgKey(m,'dep'));
+  Plotly.newPlot('chart-dep-avg', [{
+    x:MNAMES, y:avgDep, type:'bar',
+    marker:{color:MNAMES.map(mn=>MCOLORS[mn]+'99'),line:{color:MNAMES.map(mn=>MCOLORS[mn]),width:2}},
+    text:avgDep.map(v=>fR(v)), textposition:'outside',
+    hovertemplate:'<b>%{x}</b> media: <b>R$%{y:,.0f}</b>/dia<extra></extra>'
+  }], {...PLOTLY_LAYOUT,yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s',tickprefix:'R$'},margin:{t:30,b:40,l:60,r:20}}, PLOTLY_CONFIG);
+}
+
+// ── CHARTS COMPARATIVO ────────────────────────────────────────────────────────
+function buildCompCharts() {
+  // Linha GGR acumulada
+  function accumLine(key, color) {
+    const traces = MONTHS.map((m,i) => {
+      const mn = MNAMES[i];
+      const rows = bym(m).filter(r=>r[key]>0);
+      let acc = 0;
+      return {
+        x: rows.map(r=>'D'+r.dia),
+        y: rows.map(r=>{ acc+=r[key]; return acc; }),
+        name: mn, type:'scatter', mode:'lines+markers',
+        line:{color:MCOLORS[mn],width:2},
+        marker:{size:6,color:MCOLORS[mn]},
+        hovertemplate:'<b>%{fullData.name}</b> D%{x}: <b>%{y:,.0f}</b><extra></extra>'
+      };
+    });
+    return traces;
+  }
+
+  Plotly.newPlot('chart-comp-ggr', accumLine('ggr',C_GGR), {
+    ...PLOTLY_LAYOUT, yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s',tickprefix:'R$'},
+    showlegend:true, legend:{...PLOTLY_LAYOUT.legend,orientation:'h',x:0,y:-0.2}
+  }, PLOTLY_CONFIG);
+
+  Plotly.newPlot('chart-comp-jog', accumLine('jog',C_JOG), {
+    ...PLOTLY_LAYOUT, yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s'},
+    showlegend:true, legend:{...PLOTLY_LAYOUT.legend,orientation:'h',x:0,y:-0.2}
+  }, PLOTLY_CONFIG);
+
+  Plotly.newPlot('chart-comp-dep', accumLine('dep',C_DEP), {
+    ...PLOTLY_LAYOUT, yaxis:{...PLOTLY_LAYOUT.yaxis,tickformat:'.3s',tickprefix:'R$'},
+    showlegend:true, legend:{...PLOTLY_LAYOUT.legend,orientation:'h',x:0,y:-0.2}
+  }, PLOTLY_CONFIG);
+
+  // Scatter GGR vs Dep
+  const totGgr = MONTHS.map(m=>sumKey(m,'ggr'));
+  const totDep = MONTHS.map(m=>sumKey(m,'dep'));
+  Plotly.newPlot('chart-comp-scatter', [{
+    x: totDep, y: totGgr,
+    mode: 'markers+text',
+    type: 'scatter',
+    text: MNAMES,
+    textposition: 'top center',
+    marker: { size: 18, color: MNAMES.map(mn=>MCOLORS[mn]),
+              line:{color:'#fff',width:1.5} },
+    hovertemplate: '<b>%{text}</b><br>Dep: R$%{x:,.0f}<br>GGR: R$%{y:,.0f}<extra></extra>'
+  }], {
+    ...PLOTLY_LAYOUT,
+    xaxis:{...PLOTLY_LAYOUT.xaxis,title:'Depositos (R$)',tickformat:'.3s',tickprefix:'R$'},
+    yaxis:{...PLOTLY_LAYOUT.yaxis,title:'GGR (R$)',tickformat:'.3s',tickprefix:'R$'},
+    margin:{t:20,b:60,l:70,r:20}
+  }, PLOTLY_CONFIG);
+
+  // Normalizado
+  const allKeys = ['ggr','dep','jog'];
+  const allLabels = ['GGR','Deposito','Jogadores'];
+  const allColors = [C_GGR, C_DEP, C_JOG];
+  const traces = allKeys.map((k,ki) => {
+    const vals = MONTHS.map(m=>sumKey(m,k));
+    const mx = Math.max(...vals.map(Math.abs));
+    return {
+      x: MNAMES,
+      y: vals.map(v=>v/mx*100),
+      name: allLabels[ki],
+      type:'scatter', mode:'lines+markers',
+      line:{color:allColors[ki],width:2.5},
+      marker:{size:8,color:allColors[ki]},
+      hovertemplate:`<b>${allLabels[ki]}</b>: <b>%{y:.1f}%</b><extra></extra>`
+    };
+  });
+  Plotly.newPlot('chart-comp-all', traces, {
+    ...PLOTLY_LAYOUT,
+    yaxis:{...PLOTLY_LAYOUT.yaxis,title:'% do Maximo',ticksuffix:'%'},
+    margin:{t:20,b:40,l:60,r:20}
+  }, PLOTLY_CONFIG);
+}
+
+// ── TABELAS ──────────────────────────────────────────────────────────────────
+function buildTable(id, key, fmtFn, rowClass) {
+  let html = '<thead><tr><th>Mes</th>';
+  [1,2,3,4,5,6,7,8].forEach(d => html += `<th>Dia ${d}</th>`);
+  html += '<th>TOTAL</th></tr></thead><tbody>';
+
+  MONTHS.forEach((m,i) => {
+    const mn = MNAMES[i];
+    const rows = bym(m);
+    html += `<tr class="${rowClass}"><td>${mn}/2026</td>`;
+    let tot = 0;
+    for (let d=1; d<=8; d++) {
+      const r = rows.find(x=>x.dia===d);
+      const v = r ? r[key] : 0;
+      tot += v;
+      const cls = (key==='ggr' && v<0) ? ' class="td-neg"' : '';
+      html += `<td${cls}>${fmtFn(v)}</td>`;
+    }
+    html += `<td class="td-total">${fmtFn(tot)}</td></tr>`;
+  });
+  html += '</tbody>';
+  document.getElementById(id).innerHTML = html;
+}
+
+function buildCompTable() {
+  let html = '<thead><tr><th>Mes</th><th>GGR Total</th><th>Dep Total</th><th>Jog Total</th><th>GGR/Jog</th><th>Dep/Jog</th></tr></thead><tbody>';
+  MONTHS.forEach((m,i) => {
+    const mn = MNAMES[i];
+    const g = sumKey(m,'ggr'), d = sumKey(m,'dep'), j = sumKey(m,'jog');
+    const gj = j>0 ? g/j : 0;
+    const dj = j>0 ? d/j : 0;
+    html += `<tr>
+      <td>${mn}/2026</td>
+      <td style="color:${g>=0?'#00E676':'#FF5252'}">${fR(g)}</td>
+      <td style="color:#29B6F6">${fR(d)}</td>
+      <td style="color:#FFA726">${fJ(j)}</td>
+      <td>${fR(gj)}</td>
+      <td>${fR(dj)}</td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  document.getElementById('tbl-comp').innerHTML = html;
+}
+
+// ── INIT ────────────────────────────────────────────────────────────────────
+buildKpiGgr(); buildKpiJog(); buildKpiDep();
+buildGgrCharts(); buildJogCharts(); buildDepCharts(); buildCompCharts();
+buildTable('tbl-ggr','ggr',fR,'row-ggr');
+buildTable('tbl-jog','jog',fJ,'row-jog');
+buildTable('tbl-dep','dep',fR,'row-dep');
+buildCompTable();
+
+window.addEventListener('resize', () => {
+  ['chart-ggr-lines','chart-ggr-bar','chart-ggr-pie',
+   'chart-jog-lines','chart-jog-bar','chart-jog-avg',
+   'chart-dep-lines','chart-dep-bar','chart-dep-avg',
+   'chart-comp-ggr','chart-comp-jog','chart-comp-dep',
+   'chart-comp-scatter','chart-comp-all'
+  ].forEach(id => { try { Plotly.Plots.resize(id); } catch(e){} });
+});
+</script>
+</body>
+</html>
