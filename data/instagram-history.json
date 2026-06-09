@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T14:32:34.522Z",
+  "updatedAt": "2026-06-09T13:21:00.233Z",
   "checks": [
     {
       "collectedAt": "2026-05-31T20:20:12.980Z",
@@ -307,6 +307,38 @@
     },
     {
       "collectedAt": "2026-06-08T14:32:34.522Z",
+      "cadence": "daily",
+      "source": "Instagram public web profile endpoint",
+      "note": "posts7/posts30 e avgViews usam a amostra publica retornada pelo endpoint web do Instagram.",
+      "brands": [
+        {
+          "id": "maxima",
+          "name": "Maxima Bet",
+          "username": "maximabet.br",
+          "url": "https://www.instagram.com/maximabet.br/",
+          "collectedOk": false,
+          "error": "maximabet.br: HTTP 429"
+        },
+        {
+          "id": "ultra",
+          "name": "Ultra Bet",
+          "username": "ultrabet.br",
+          "url": "https://www.instagram.com/ultrabet.br/",
+          "collectedOk": false,
+          "error": "ultrabet.br: HTTP 429"
+        },
+        {
+          "id": "suprema",
+          "name": "Suprema Bet",
+          "username": "supremabet.br",
+          "url": "https://www.instagram.com/supremabet.br/",
+          "collectedOk": false,
+          "error": "supremabet.br: HTTP 429"
+        }
+      ]
+    },
+    {
+      "collectedAt": "2026-06-09T13:21:00.233Z",
       "cadence": "daily",
       "source": "Instagram public web profile endpoint",
       "note": "posts7/posts30 e avgViews usam a amostra publica retornada pelo endpoint web do Instagram.",
