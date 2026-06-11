@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-06-10T13:54:00.890Z",
+  "atualizadoEm": "2026-06-11T14:14:20.785Z",
   "origem": "snapshot-diario-github-actions",
   "pesos": {
     "tecnico": 0.25,
@@ -19,9 +19,9 @@
       "urlFinal": "https://www.maxima.bet.br/",
       "ok": false,
       "statusHttp": 403,
-      "latenciaMs": 125,
+      "latenciaMs": 113,
       "redirects": 0,
-      "htmlBytes": 5334,
+      "htmlBytes": 5332,
       "headers": {
         "server": "cloudflare",
         "contentType": "text/html; charset=UTF-8",
@@ -45,18 +45,18 @@
         "erro": "",
         "validoAte": "Aug  1 22:15:06 2026 GMT",
         "emissor": "Google Trust Services",
-        "latenciaMs": 74
+        "latenciaMs": 73
       },
       "robots": {
         "ok": false,
         "status": 403,
-        "latenciaMs": 12,
+        "latenciaMs": 9,
         "urlFinal": "https://www.maxima.bet.br/robots.txt"
       },
       "sitemap": {
         "ok": false,
         "status": 403,
-        "latenciaMs": 176,
+        "latenciaMs": 173,
         "urlFinal": "https://www.maxima.bet.br/sitemap.xml"
       },
       "metricas": {
@@ -170,7 +170,7 @@
           "bonusCadastro": false,
           "campanhasCassino": false,
           "campanhasSportsbook": false,
-          "contentHash": "07baed1247d7d5d110cc6089d33c5a4067b8b757",
+          "contentHash": "0487fd546ab5df0ce9891cc16a6e47719bf1966b",
           "score": 0
         },
         "socialLinks": {
@@ -229,7 +229,7 @@
         "Links legais nao detectados no HTML publico",
         "Texto de licenca nao detectado no HTML publico"
       ],
-      "coletadoEm": "2026-06-10T13:54:00.120Z"
+      "coletadoEm": "2026-06-11T14:14:19.048Z"
     },
     {
       "id": "ultra",
@@ -239,9 +239,9 @@
       "urlFinal": "https://ultra.bet.br/",
       "ok": true,
       "statusHttp": 200,
-      "latenciaMs": 522,
+      "latenciaMs": 530,
       "redirects": 1,
-      "htmlBytes": 604779,
+      "htmlBytes": 607404,
       "headers": {
         "server": "Vercel",
         "contentType": "text/html; charset=utf-8",
@@ -253,8 +253,8 @@
         "ok": true,
         "hostname": "www.ultra.bet.br",
         "records": [
-          "104.18.2.243",
-          "104.18.3.243"
+          "104.18.3.243",
+          "104.18.2.243"
         ],
         "latenciaMs": 5
       },
@@ -265,24 +265,24 @@
         "erro": "",
         "validoAte": "Aug  6 06:22:42 2026 GMT",
         "emissor": "Let's Encrypt",
-        "latenciaMs": 15
+        "latenciaMs": 38
       },
       "robots": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 14,
+        "latenciaMs": 10,
         "urlFinal": "https://www.ultra.bet.br/robots.txt"
       },
       "sitemap": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 492,
+        "latenciaMs": 504,
         "urlFinal": "https://ultra.bet.br/"
       },
       "metricas": {
         "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
-        "totalPagoHoje": 4685955.75,
-        "totalJogosDetectados": 4635,
+        "totalPagoHoje": 3918227.53,
+        "totalJogosDetectados": 4610,
         "categorias": [
           "Slots",
           "Cassino ao vivo",
@@ -363,7 +363,7 @@
           "termos": [
             {
               "termo": "bonus",
-              "total": 78
+              "total": 76
             },
             {
               "termo": "bônus",
@@ -401,7 +401,7 @@
           "bonusCadastro": true,
           "campanhasCassino": true,
           "campanhasSportsbook": true,
-          "contentHash": "2fae32b5537bfc088505ed799edac46f25f197df",
+          "contentHash": "a458419fc38907d5212dcf0ec27d026b7d68abd3",
           "score": 100
         },
         "socialLinks": {
@@ -452,7 +452,7 @@
         "alertas": []
       },
       "alertas": [],
-      "coletadoEm": "2026-06-10T13:54:00.876Z"
+      "coletadoEm": "2026-06-11T14:14:19.838Z"
     },
     {
       "id": "suprema",
@@ -462,9 +462,9 @@
       "urlFinal": "https://suprema.bet.br/",
       "ok": true,
       "statusHttp": 200,
-      "latenciaMs": 490,
+      "latenciaMs": 491,
       "redirects": 1,
-      "htmlBytes": 598120,
+      "htmlBytes": 602336,
       "headers": {
         "server": "Vercel",
         "contentType": "text/html; charset=utf-8",
@@ -488,24 +488,24 @@
         "erro": "",
         "validoAte": "Aug  1 22:08:56 2026 GMT",
         "emissor": "Google Trust Services",
-        "latenciaMs": 46
+        "latenciaMs": 11
       },
       "robots": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 218,
+        "latenciaMs": 189,
         "urlFinal": "https://suprema.bet.br/"
       },
       "sitemap": {
         "ok": true,
         "status": 200,
-        "latenciaMs": 380,
+        "latenciaMs": 1474,
         "urlFinal": "https://suprema.bet.br/"
       },
       "metricas": {
         "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
-        "totalPagoHoje": 2040812.1300000001,
-        "totalJogosDetectados": 4395,
+        "totalPagoHoje": 1971523.4,
+        "totalJogosDetectados": 4336,
         "categorias": [
           "Slots",
           "Cassino ao vivo",
@@ -586,7 +586,7 @@
           "termos": [
             {
               "termo": "bonus",
-              "total": 86
+              "total": 80
             },
             {
               "termo": "bônus",
@@ -610,11 +610,11 @@
             },
             {
               "termo": "cassino",
-              "total": 200
+              "total": 199
             },
             {
               "termo": "casino",
-              "total": 1375
+              "total": 1390
             },
             {
               "termo": "sportsbook",
@@ -624,7 +624,7 @@
           "bonusCadastro": true,
           "campanhasCassino": true,
           "campanhasSportsbook": true,
-          "contentHash": "b8b5dcefd6429804ba4cdcdec2e0fbe162f1a715",
+          "contentHash": "b5677eccdc576d1a1562ac4e88067bfb5662c636",
           "score": 100
         },
         "socialLinks": {
@@ -675,7 +675,7 @@
         "alertas": []
       },
       "alertas": [],
-      "coletadoEm": "2026-06-10T13:54:00.735Z"
+      "coletadoEm": "2026-06-11T14:14:20.772Z"
     }
   ],
   "brands": [
@@ -703,9 +703,9 @@
         "urlFinal": "https://www.maxima.bet.br/",
         "ok": false,
         "statusHttp": 403,
-        "latenciaMs": 125,
+        "latenciaMs": 113,
         "redirects": 0,
-        "htmlBytes": 5334,
+        "htmlBytes": 5332,
         "headers": {
           "server": "cloudflare",
           "contentType": "text/html; charset=UTF-8",
@@ -729,18 +729,18 @@
           "erro": "",
           "validoAte": "Aug  1 22:15:06 2026 GMT",
           "emissor": "Google Trust Services",
-          "latenciaMs": 74
+          "latenciaMs": 73
         },
         "robots": {
           "ok": false,
           "status": 403,
-          "latenciaMs": 12,
+          "latenciaMs": 9,
           "urlFinal": "https://www.maxima.bet.br/robots.txt"
         },
         "sitemap": {
           "ok": false,
           "status": 403,
-          "latenciaMs": 176,
+          "latenciaMs": 173,
           "urlFinal": "https://www.maxima.bet.br/sitemap.xml"
         },
         "metricas": {
@@ -854,7 +854,7 @@
             "bonusCadastro": false,
             "campanhasCassino": false,
             "campanhasSportsbook": false,
-            "contentHash": "07baed1247d7d5d110cc6089d33c5a4067b8b757",
+            "contentHash": "0487fd546ab5df0ce9891cc16a6e47719bf1966b",
             "score": 0
           },
           "socialLinks": {
@@ -913,7 +913,7 @@
           "Links legais nao detectados no HTML publico",
           "Texto de licenca nao detectado no HTML publico"
         ],
-        "coletadoEm": "2026-06-10T13:54:00.120Z"
+        "coletadoEm": "2026-06-11T14:14:19.048Z"
       },
       "manual": {
         "brand_id": "maxima",
@@ -946,7 +946,7 @@
       "pagespeed": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:56.076Z",
+          "collectedAt": "2026-06-11T14:14:15.069Z",
           "performance": 90,
           "accessibility": 100,
           "bestPractices": 90,
@@ -956,11 +956,11 @@
             "lcp": "0.6 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "0.9 s"
+            "speedIndex": "0.8 s"
           },
           "requests": 7,
-          "pageBytes": 4836,
-          "htmlBytes": 4836,
+          "pageBytes": 4834,
+          "htmlBytes": 4834,
           "statusHttp": 403,
           "source": "html_fallback",
           "technicalErrors": [
@@ -972,7 +972,7 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:56.248Z",
+          "collectedAt": "2026-06-11T14:14:15.126Z",
           "performance": 92,
           "accessibility": 100,
           "bestPractices": 90,
@@ -985,8 +985,8 @@
             "speedIndex": "0.7 s"
           },
           "requests": 7,
-          "pageBytes": 4836,
-          "htmlBytes": 4836,
+          "pageBytes": 4834,
+          "htmlBytes": 4834,
           "statusHttp": 403,
           "source": "html_fallback",
           "technicalErrors": [
@@ -998,9 +998,9 @@
         }
       },
       "uptime": {
-        "h24": null,
-        "d7": 10,
-        "d30": 98.5
+        "h24": 0,
+        "d7": 11.1,
+        "d30": 98.3
       }
     },
     {
@@ -1008,9 +1008,9 @@
       "nome": "Ultra Bet",
       "alias": "ultra.bet",
       "url": "https://www.ultra.bet.br/",
-      "scoreFinal": 66,
+      "scoreFinal": 67,
       "componentes": {
-        "tecnico": 88,
+        "tecnico": 93,
         "social": 22,
         "seo": 95,
         "reputacao": 0,
@@ -1027,9 +1027,9 @@
         "urlFinal": "https://ultra.bet.br/",
         "ok": true,
         "statusHttp": 200,
-        "latenciaMs": 522,
+        "latenciaMs": 530,
         "redirects": 1,
-        "htmlBytes": 604779,
+        "htmlBytes": 607404,
         "headers": {
           "server": "Vercel",
           "contentType": "text/html; charset=utf-8",
@@ -1041,8 +1041,8 @@
           "ok": true,
           "hostname": "www.ultra.bet.br",
           "records": [
-            "104.18.2.243",
-            "104.18.3.243"
+            "104.18.3.243",
+            "104.18.2.243"
           ],
           "latenciaMs": 5
         },
@@ -1053,24 +1053,24 @@
           "erro": "",
           "validoAte": "Aug  6 06:22:42 2026 GMT",
           "emissor": "Let's Encrypt",
-          "latenciaMs": 15
+          "latenciaMs": 38
         },
         "robots": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 14,
+          "latenciaMs": 10,
           "urlFinal": "https://www.ultra.bet.br/robots.txt"
         },
         "sitemap": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 492,
+          "latenciaMs": 504,
           "urlFinal": "https://ultra.bet.br/"
         },
         "metricas": {
           "titulo": "ULTRA bet: Apostas Esportivas e Cassino | Saque instantâneo e Cashback Diário",
-          "totalPagoHoje": 4685955.75,
-          "totalJogosDetectados": 4635,
+          "totalPagoHoje": 3918227.53,
+          "totalJogosDetectados": 4610,
           "categorias": [
             "Slots",
             "Cassino ao vivo",
@@ -1151,7 +1151,7 @@
             "termos": [
               {
                 "termo": "bonus",
-                "total": 78
+                "total": 76
               },
               {
                 "termo": "bônus",
@@ -1189,7 +1189,7 @@
             "bonusCadastro": true,
             "campanhasCassino": true,
             "campanhasSportsbook": true,
-            "contentHash": "2fae32b5537bfc088505ed799edac46f25f197df",
+            "contentHash": "a458419fc38907d5212dcf0ec27d026b7d68abd3",
             "score": 100
           },
           "socialLinks": {
@@ -1240,7 +1240,7 @@
           "alertas": []
         },
         "alertas": [],
-        "coletadoEm": "2026-06-10T13:54:00.876Z"
+        "coletadoEm": "2026-06-11T14:14:19.838Z"
       },
       "manual": {
         "brand_id": "ultra",
@@ -1273,21 +1273,21 @@
       "pagespeed": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:56.962Z",
-          "performance": 53,
+          "collectedAt": "2026-06-11T14:14:15.952Z",
+          "performance": 52,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
-            "fcp": "0.7 s",
-            "lcp": "1.0 s",
+            "fcp": "0.8 s",
+            "lcp": "1.1 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "1.3 s"
+            "speedIndex": "1.4 s"
           },
-          "requests": 228,
-          "pageBytes": 604778,
-          "htmlBytes": 604778,
+          "requests": 230,
+          "pageBytes": 607447,
+          "htmlBytes": 607447,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1298,7 +1298,7 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:57.432Z",
+          "collectedAt": "2026-06-11T14:14:16.430Z",
           "performance": 56,
           "accessibility": 100,
           "bestPractices": 67,
@@ -1310,9 +1310,9 @@
             "tbt": "estimado",
             "speedIndex": "1.1 s"
           },
-          "requests": 228,
-          "pageBytes": 604779,
-          "htmlBytes": 604779,
+          "requests": 230,
+          "pageBytes": 607447,
+          "htmlBytes": 607447,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1323,7 +1323,7 @@
         }
       },
       "uptime": {
-        "h24": null,
+        "h24": 100,
         "d7": 100,
         "d30": 100
       }
@@ -1333,9 +1333,9 @@
       "nome": "Suprema Bet",
       "alias": "suprema.bet",
       "url": "https://www.suprema.bet.br/",
-      "scoreFinal": 66,
+      "scoreFinal": 67,
       "componentes": {
-        "tecnico": 88,
+        "tecnico": 93,
         "social": 22,
         "seo": 95,
         "reputacao": 0,
@@ -1352,9 +1352,9 @@
         "urlFinal": "https://suprema.bet.br/",
         "ok": true,
         "statusHttp": 200,
-        "latenciaMs": 490,
+        "latenciaMs": 491,
         "redirects": 1,
-        "htmlBytes": 598120,
+        "htmlBytes": 602336,
         "headers": {
           "server": "Vercel",
           "contentType": "text/html; charset=utf-8",
@@ -1378,24 +1378,24 @@
           "erro": "",
           "validoAte": "Aug  1 22:08:56 2026 GMT",
           "emissor": "Google Trust Services",
-          "latenciaMs": 46
+          "latenciaMs": 11
         },
         "robots": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 218,
+          "latenciaMs": 189,
           "urlFinal": "https://suprema.bet.br/"
         },
         "sitemap": {
           "ok": true,
           "status": 200,
-          "latenciaMs": 380,
+          "latenciaMs": 1474,
           "urlFinal": "https://suprema.bet.br/"
         },
         "metricas": {
           "titulo": "Apostas Esportivas e Cassino | Bet Autorizada. Saque instantâneo. | Suprema Bet",
-          "totalPagoHoje": 2040812.1300000001,
-          "totalJogosDetectados": 4395,
+          "totalPagoHoje": 1971523.4,
+          "totalJogosDetectados": 4336,
           "categorias": [
             "Slots",
             "Cassino ao vivo",
@@ -1476,7 +1476,7 @@
             "termos": [
               {
                 "termo": "bonus",
-                "total": 86
+                "total": 80
               },
               {
                 "termo": "bônus",
@@ -1500,11 +1500,11 @@
               },
               {
                 "termo": "cassino",
-                "total": 200
+                "total": 199
               },
               {
                 "termo": "casino",
-                "total": 1375
+                "total": 1390
               },
               {
                 "termo": "sportsbook",
@@ -1514,7 +1514,7 @@
             "bonusCadastro": true,
             "campanhasCassino": true,
             "campanhasSportsbook": true,
-            "contentHash": "b8b5dcefd6429804ba4cdcdec2e0fbe162f1a715",
+            "contentHash": "b5677eccdc576d1a1562ac4e88067bfb5662c636",
             "score": 100
           },
           "socialLinks": {
@@ -1565,7 +1565,7 @@
           "alertas": []
         },
         "alertas": [],
-        "coletadoEm": "2026-06-10T13:54:00.735Z"
+        "coletadoEm": "2026-06-11T14:14:20.772Z"
       },
       "manual": {
         "brand_id": "suprema",
@@ -1598,21 +1598,21 @@
       "pagespeed": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:58.390Z",
-          "performance": 50,
+          "collectedAt": "2026-06-11T14:14:17.266Z",
+          "performance": 52,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
-            "fcp": "0.9 s",
-            "lcp": "1.3 s",
+            "fcp": "0.8 s",
+            "lcp": "1.1 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "1.6 s"
+            "speedIndex": "1.4 s"
           },
-          "requests": 231,
-          "pageBytes": 598120,
-          "htmlBytes": 598120,
+          "requests": 232,
+          "pageBytes": 602336,
+          "htmlBytes": 602336,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1623,21 +1623,21 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:58.710Z",
-          "performance": 58,
+          "collectedAt": "2026-06-11T14:14:17.658Z",
+          "performance": 57,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
             "fcp": "0.3 s",
-            "lcp": "0.6 s",
+            "lcp": "0.7 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "0.9 s"
+            "speedIndex": "1.0 s"
           },
-          "requests": 230,
-          "pageBytes": 598077,
-          "htmlBytes": 598077,
+          "requests": 232,
+          "pageBytes": 602336,
+          "htmlBytes": 602336,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1648,7 +1648,7 @@
         }
       },
       "uptime": {
-        "h24": null,
+        "h24": 100,
         "d7": 100,
         "d30": 100
       }
@@ -1658,12 +1658,12 @@
     {
       "id": "ultra",
       "posicao": 1,
-      "score": 66
+      "score": 67
     },
     {
       "id": "suprema",
       "posicao": 2,
-      "score": 66
+      "score": 67
     },
     {
       "id": "maxima",
@@ -1743,6 +1743,12 @@
       "maxima": 32,
       "ultra": 66,
       "suprema": 66
+    },
+    {
+      "date": "2026-06-11",
+      "maxima": 32,
+      "ultra": 67,
+      "suprema": 67
     }
   ],
   "manualInputs": {
@@ -1750,12 +1756,12 @@
     "brands": {}
   },
   "pagespeed": {
-    "updatedAt": "2026-06-10T13:53:55.721Z",
+    "updatedAt": "2026-06-11T14:14:14.613Z",
     "brands": {
       "maxima": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:56.076Z",
+          "collectedAt": "2026-06-11T14:14:15.069Z",
           "performance": 90,
           "accessibility": 100,
           "bestPractices": 90,
@@ -1765,11 +1771,11 @@
             "lcp": "0.6 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "0.9 s"
+            "speedIndex": "0.8 s"
           },
           "requests": 7,
-          "pageBytes": 4836,
-          "htmlBytes": 4836,
+          "pageBytes": 4834,
+          "htmlBytes": 4834,
           "statusHttp": 403,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1781,7 +1787,7 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:56.248Z",
+          "collectedAt": "2026-06-11T14:14:15.126Z",
           "performance": 92,
           "accessibility": 100,
           "bestPractices": 90,
@@ -1794,8 +1800,8 @@
             "speedIndex": "0.7 s"
           },
           "requests": 7,
-          "pageBytes": 4836,
-          "htmlBytes": 4836,
+          "pageBytes": 4834,
+          "htmlBytes": 4834,
           "statusHttp": 403,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1809,21 +1815,21 @@
       "ultra": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:56.962Z",
-          "performance": 53,
+          "collectedAt": "2026-06-11T14:14:15.952Z",
+          "performance": 52,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
-            "fcp": "0.7 s",
-            "lcp": "1.0 s",
+            "fcp": "0.8 s",
+            "lcp": "1.1 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "1.3 s"
+            "speedIndex": "1.4 s"
           },
-          "requests": 228,
-          "pageBytes": 604778,
-          "htmlBytes": 604778,
+          "requests": 230,
+          "pageBytes": 607447,
+          "htmlBytes": 607447,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1834,7 +1840,7 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:57.432Z",
+          "collectedAt": "2026-06-11T14:14:16.430Z",
           "performance": 56,
           "accessibility": 100,
           "bestPractices": 67,
@@ -1846,9 +1852,9 @@
             "tbt": "estimado",
             "speedIndex": "1.1 s"
           },
-          "requests": 228,
-          "pageBytes": 604779,
-          "htmlBytes": 604779,
+          "requests": 230,
+          "pageBytes": 607447,
+          "htmlBytes": 607447,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1861,21 +1867,21 @@
       "suprema": {
         "mobile": {
           "strategy": "mobile",
-          "collectedAt": "2026-06-10T13:53:58.390Z",
-          "performance": 50,
+          "collectedAt": "2026-06-11T14:14:17.266Z",
+          "performance": 52,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
-            "fcp": "0.9 s",
-            "lcp": "1.3 s",
+            "fcp": "0.8 s",
+            "lcp": "1.1 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "1.6 s"
+            "speedIndex": "1.4 s"
           },
-          "requests": 231,
-          "pageBytes": 598120,
-          "htmlBytes": 598120,
+          "requests": 232,
+          "pageBytes": 602336,
+          "htmlBytes": 602336,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [
@@ -1886,21 +1892,21 @@
         },
         "desktop": {
           "strategy": "desktop",
-          "collectedAt": "2026-06-10T13:53:58.710Z",
-          "performance": 58,
+          "collectedAt": "2026-06-11T14:14:17.658Z",
+          "performance": 57,
           "accessibility": 100,
           "bestPractices": 67,
           "seo": 100,
           "coreWebVitals": {
             "fcp": "0.3 s",
-            "lcp": "0.6 s",
+            "lcp": "0.7 s",
             "cls": "estimado",
             "tbt": "estimado",
-            "speedIndex": "0.9 s"
+            "speedIndex": "1.0 s"
           },
-          "requests": 230,
-          "pageBytes": 598077,
-          "htmlBytes": 598077,
+          "requests": 232,
+          "pageBytes": 602336,
+          "htmlBytes": 602336,
           "statusHttp": 200,
           "source": "html_fallback",
           "technicalErrors": [

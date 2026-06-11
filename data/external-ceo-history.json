@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-10T13:54:00.887Z",
+  "updatedAt": "2026-06-11T14:14:20.783Z",
   "checks": [
     {
       "at": "2026-05-25T00:43:01.564Z",
@@ -24000,6 +24000,54 @@
       "statusHttp": 200,
       "latenciaMs": 490,
       "finalScore": 66
+    },
+    {
+      "at": "2026-06-11T14:14:20.046Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 22,
+      "finalScore": 32
+    },
+    {
+      "at": "2026-06-11T14:14:20.046Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 475,
+      "finalScore": 66
+    },
+    {
+      "at": "2026-06-11T14:14:20.046Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 426,
+      "finalScore": 66
+    },
+    {
+      "at": "2026-06-11T14:14:20.783Z",
+      "brandId": "maxima",
+      "ok": false,
+      "statusHttp": 403,
+      "latenciaMs": 113,
+      "finalScore": 32
+    },
+    {
+      "at": "2026-06-11T14:14:20.783Z",
+      "brandId": "ultra",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 530,
+      "finalScore": 67
+    },
+    {
+      "at": "2026-06-11T14:14:20.783Z",
+      "brandId": "suprema",
+      "ok": true,
+      "statusHttp": 200,
+      "latenciaMs": 491,
+      "finalScore": 67
     }
   ],
   "daily": {
@@ -24600,6 +24648,56 @@
           },
           "statusHttp": 200,
           "latenciaMs": 490
+        }
+      }
+    },
+    "2026-06-11": {
+      "at": "2026-06-11T14:14:20.783Z",
+      "brands": {
+        "maxima": {
+          "scoreFinal": 32,
+          "componentes": {
+            "tecnico": 71,
+            "social": 0,
+            "seo": 10,
+            "reputacao": 78,
+            "jornada": 10,
+            "promocoes": 0,
+            "compliance": 10,
+            "appStore": 0
+          },
+          "statusHttp": 403,
+          "latenciaMs": 113
+        },
+        "ultra": {
+          "scoreFinal": 67,
+          "componentes": {
+            "tecnico": 93,
+            "social": 22,
+            "seo": 95,
+            "reputacao": 0,
+            "jornada": 100,
+            "promocoes": 100,
+            "compliance": 100,
+            "appStore": 0
+          },
+          "statusHttp": 200,
+          "latenciaMs": 530
+        },
+        "suprema": {
+          "scoreFinal": 67,
+          "componentes": {
+            "tecnico": 93,
+            "social": 22,
+            "seo": 95,
+            "reputacao": 0,
+            "jornada": 100,
+            "promocoes": 100,
+            "compliance": 100,
+            "appStore": 0
+          },
+          "statusHttp": 200,
+          "latenciaMs": 491
         }
       }
     }
